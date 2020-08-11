@@ -10,6 +10,11 @@ npm run devStart
 docker build --tag webrtcvideobroadcast .  
 docker run -d -p 4000:4000 webrtcvideobroadcast  
 
+## Browse as broadcaster
+https://localhost:4000/cast.html  
+
+## Browse as viewer
+https://localhost:4000
 
 ## If stuff goes wrong
 sudo lsof -i :4000 // Get PID of items hosted on port 4000  
