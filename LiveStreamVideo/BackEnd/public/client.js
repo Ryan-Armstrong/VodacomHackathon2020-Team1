@@ -64,3 +64,22 @@ function enableAudio() {
   var video = document.querySelector("video");
   video.muted = !video.muted;
 }
+
+// Did receive message from Mini Program.
+if (typeof(my) !== 'undefined') {
+  my.onMessage = function(e) {
+    console.log(e); // {'sendToWebView': '1'}
+    document.getElementById('Message').innerHTML = "Width: " + e.width + " Height: " + e.height;
+    var video = document.querySelector("video");
+    video.height = e.height;
+    var viewportWidth = e.width;
+    var halfViewPortWidth = viewportWidth/2;
+    var widthEntireVid = e.height * 1.77766;
+    var halfEntireWidth = widthEntireVid / 2;
+    var marginLeft = halfEntireWidth - halfViewPortWidth;
+    var marginLeftVlaue = -1 * marginLeft;
+    var video = document.getElementById("videoDiv");
+    video.style.marginLeft = marginLeftVlaue + "px";
+    my.postMessage({ offset : video.style.marginLeft });
+  }
+}
