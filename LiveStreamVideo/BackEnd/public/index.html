@@ -17,11 +17,43 @@
 <body>
 
   <div class="relative">
-    <div id="videoDiv">
-      <video style="height: 724px;" playsinline autoplay muted></video>
-    </div>
+    <!-- Red -->
+    
     <div class="absolute">
-      <button id="enable-audio" onclick="enableAudio()">Enable audio</button>
+      <!-- Video must always display top left in the background -->
+      <div id="videoDiv">
+        <video style="height: 724px; background-color: black;" playsinline autoplay muted></video>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-12">          
+          <img src="the_space.svg" class="channel-image" >
+          <b class="channel-label">The Space</b>
+        </div>        
+      </div>
+    </div>
+    <div class="mid-grow">
+       <!-- OPEN SPACE FOR VIDEO -->
+    </div>
+    <div class="footer container" >
+      <div class="row deals-div" >
+        <div class="col-12 ">
+          DEALS SECTION
+        </div>        
+      </div>
+      <div id="chatHistoryContainer" class="row chat-history-div" >
+        <div class="col-12" style="margin-left: 0px; margin-right: 0px;" id="chatHistory" >
+          <!-- DO NOT PUT ANYTHING HERE -->
+        </div>        
+      </div>
+      <div class="row chat-input-div" >
+        <div class="col-12" >
+          <input placeholder="Comment" id="chatInput" type="text" class="chat-input">
+          <img src="send.svg" onclick="sendMessage()">
+        </div>        
+      </div>
     </div>
 
   </div>
@@ -44,7 +76,6 @@
   <!-- <script src="https://gw.alipayobjects.com/os/lib/alipay/appx-ide-intl/2.1.0/asset/intl/1.24.6/ide/af-appx.worker.ide.min.js"></script> -->
   <script
     src="https://gw.alipayobjects.com/os/??s/prod/web-view/common-15524.js,s/prod/web-view/index-16274.js"></script>
-
 </body>
 
 </html>

@@ -11,8 +11,11 @@
     <label for="videoSource">Video Device: </label>
     <select id="videoSource" onchange="getStream()"></select>
     <label for="audioSource">Audio Device:</label>
-    <select id="audioSource" onchange="getStream()"></select>
+    <select id="audioSource" onchange="getStream()"></select>    
     <br/>
     <video style="width: 600px;" autoplay muted></video>
+    <br/>
+    <input id="userMessage" style="width: 300px;" placeholder="Comment">
+    <button onclick="sendMessagetoViewers()" >Broadcast Message</button>
 </body>
 </html>

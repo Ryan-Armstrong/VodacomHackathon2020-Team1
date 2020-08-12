@@ -1,5 +1,22 @@
 let peerConnection;
 const socket = io.connect(window.location.origin);
+let myId = 0;
+let hardcodedUsers = [
+  {
+    fromUser : 'Vishanka',
+    icon : 'user1.png'
+  },
+  {
+    fromUser : 'NatalyJJ',
+    icon : 'user2.png'
+  },
+  {
+    fromUser : 'Vuyo_92',
+    icon : 'user3.png'
+  }
+]
+//let fromUser = "130nk3r5";
+let counter = 0;
 
 window.onunload = window.onbeforeunload = () => {
   socket.close();
@@ -59,6 +76,12 @@ socket.on("disconnectPeer", () => {
   peer.close();
 });
 
+socket.on("messageviewer", (text) => {
+  console.log("BROADCASTER " + text);
+  addMessageToHistory("The Space", "user1.png", text);
+  //socket.to(broadcaster).emit('message', fromUser, text);
+} )
+
 function enableAudio() {
   console.log("Enabling audio");
   var video = document.querySelector("video");
@@ -83,3 +106,69 @@ if (typeof(my) !== 'undefined') {
     my.postMessage({ offset : video.style.marginLeft });
   }
 }
+
+function randomiseUser()
+{
+  var fromUser = hardcodedUsers[counter];
+  counter++;
+  if (counter > 2)
+  {
+    counter = 0;
+  }
+  return fromUser;
+}
+
+function sendMessage()
+{
+  var fromUserDetails = randomiseUser();
+  var chatElement = document.getElementById('chatInput');
+  var text = chatElement.value;
+  console.log(text);
+  socket.emit("message", fromUserDetails.fromUser, text );
+  addMessageToHistory(fromUserDetails.fromUser, fromUserDetails.icon, text);
+  chatElement.value = "";
+  
+}
+
+function addMessageToHistory(fromUser, icon, message)
+{
+  var domEl = stringToHTML("<img class='chat-useravatar' src='"+ icon +"'><div class='message-container'><b class='chat-username'>"+ fromUser + "</b><div class='chat-historymessage'>"+ message +"</div></div>")
+  var historyDiv = document.getElementById('chatHistory');
+  historyDiv.appendChild(domEl);  
+  var historyDivContainer = document.getElementById('chatHistoryContainer');
+  historyDivContainer.scrollTop = historyDivContainer.scrollHeight;
+}
+
+
+/**
+ * Convert a template string into HTML DOM nodes
+ * @param  {String} str The template string
+ * @return {Node}       The template HTML
+ */
+var stringToHTML = function (str) {
+
+	// If DOMParser is supported, use it
+	if (support) {
+		var parser = new DOMParser();
+		var doc = parser.parseFromString(str, 'text/html');
+		return doc.body;
+	}
+
+	// Otherwise, fallback to old-school method
+	var dom = document.createElement('div');
+	dom.innerHTML = str;
+	return dom;
+
+};
+
+
+var support = (function () {
+	if (!window.DOMParser) return false;
+	var parser = new DOMParser();
+	try {
+		parser.parseFromString('x', 'text/html');
+	} catch(err) {
+		return false;
+	}
+	return true;
+})();
