@@ -1,17 +1,18 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-  <title>Stream Casting</title>  
+  <title>Stream Casting</title>
   <script defer src="/socket.io/socket.io.js"></script>
   <script defer src="/cast.js"></script>
 </head>
-<body>
-  <label for="videoSource">Video Device: </label>
-  <select id="videoSource" onchange="getStream()" ></select>
-  <label for="audioSource">Audio Device:</label>
-  <select id="audioSource" onchange="getStream()"></select>
-  <br>
-  <video autoplay muted ></video>
-</body>
 
+<body>
+    <label for="videoSource">Video Device: </label>
+    <select id="videoSource" onchange="getStream()"></select>
+    <label for="audioSource">Audio Device:</label>
+    <select id="audioSource" onchange="getStream()"></select>
+    <br/>
+    <video style="width: 600px;" autoplay muted></video>
+</body>
 </html>
