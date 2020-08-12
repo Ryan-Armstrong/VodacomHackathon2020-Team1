@@ -1,0 +1,29 @@
+<view class="homePage">
+  <view class="homescreen">
+    <text>Coming 16 September 2020</text>
+    <view class="videoContainer">
+      <image class="videoThumbnail" mode="scaleToFill" src="../../assets/thumbnails/montage.jpg"/>
+      <image class="playButton" src="../../assets/thumbnails/play.png"/>
+    </view>
+
+    <text>Categories</text>
+    <swiper style="width: 100vw">
+    <block a:for="{{arr}}" a:for-index="i">
+        <swiper-item >
+        <view style="display: flex">
+        <view style="width: 100px; height: 100px; background: #fff; margin: 10px" onTap="doSomething" data-id="{{i + 0}}">{{background[i + 0]}}</view>
+        <view style="width: 100px; height: 100px; background: #fff; margin: 10px" onTap="doSomething" data-id="{{i + 1}}">{{background[i + 1]}}</view>
+        <view style="width: 100px; height: 100px; background: #fff; margin: 10px" onTap="doSomething" data-id="{{i + 2}}">{{background[i + 2]}}</view>
+        </swiper-item>
+    </block>
+    </swiper>
+    <view class="scrollmenu">
+      <view a:for="{{arr}}" a:for-index="i">
+        <view>
+          {{item}}
+        </view>
+      </view>
+    </view>
+    <text>Suggested Channels</text>
+  </view> 
+</view> 

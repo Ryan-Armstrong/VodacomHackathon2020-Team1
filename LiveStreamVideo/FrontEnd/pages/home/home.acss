@@ -1,0 +1,59 @@
+.homePage {
+  width: 100vw;
+}
+
+.homescreen {
+  display: flex;
+  flex-direction: column;
+}
+
+.videoContainer {
+  display: flex;
+  align-items:center;
+}
+
+.videoThumbnail {
+  z-index: 1;
+  border-radius: 15px;
+  width: 92vw;
+  height: 28vh;
+  margin-left: 16px;
+}
+
+.playButton {
+  z-index: 2;
+  position: absolute;
+  width: 150rpx;
+  height: 150rpx;
+  margin: auto;
+  left:0px;
+  right:0px;
+}
+
+.horizontalScroll {
+  display: flex;
+}
+
+.scrollItem {
+  width: 250rpx;
+  height: 100rpx;
+  background: #FF00FF;
+}
+
+.scrollmenu {
+  background-color: #333;
+  overflow: auto;
+  white-space: nowrap;
+}
+
+.scrollmenu view {
+  display: inline-block;
+  color: white;
+  text-align: center;
+  padding: 14px;
+  text-decoration: none;
+}
+
+.scrollmenu view:hover {
+  background-color: #777;
+}
