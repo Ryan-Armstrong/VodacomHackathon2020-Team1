@@ -1,6 +1,6 @@
 Page({
   data: {
-      arr: ['Clothing', 'Technolofy', 'Home', 'Accessories', 'Fitness', 'Pets', 'Travel', 'Kitchen', 'Gardening'],
+      arr: ['Clothing', 'Technology', 'Home', 'Accessories', 'Fitness', 'Pets', 'Travel', 'Kitchen', 'Gardening'],
   },
   onLoad() {},
 });
