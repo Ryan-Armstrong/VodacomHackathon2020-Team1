@@ -6,8 +6,8 @@
     margin: 20px 0px 10px 0px;    font-size: large;
     font-weight: bold;'>We Made It</div>
     <div style='text-align: center;
-    margin: 20px 0px 10px 0px;'>by Mi Casa</div>
-    <div style='display: flex'>
+    margin: 0px 0px 20px 0px;'>by Mi Casa</div>
+    <div style='display: flex; margin-bottom: 20px'>
         <div style="font-size: 12px; margin-right: auto;">
             Tracks: 13
         </div>
@@ -18,10 +18,20 @@
             Length: 01:02:24
         </div>
     </div>
-    <div>CONTROLS</div>
-    <div>
-        TIMEBAR
+    <div style="display: flex;">
+        <img src="/icons/repeat.svg" style="width: 30px; margin-left: auto; margin-right: 14px;">
+        <img src="/icons/skip_back.svg" style="width: 30px;  margin-right: 14px;">
+        <img id="toggleBtn" src="/icons/play_filled.svg" style="width: 40px;  margin-right: 14px;"
+            onclick="togglePlaying()">
+        <img src="/icons/skip_forward.svg" style="width: 30px;  margin-right: 14px;">
+        <img src="/icons/shuffle.svg" style="width: 30px; margin-right: auto">
     </div>
+    <audio id="audio-player">
+        <source src="/audio/song.mp3" type="audio/mpeg">
+    </audio>
+
+    {{ playing }}
+
     {{# each arr as |val key|}}
     <div>{{ val.name }}</div>
     {{/each}}
