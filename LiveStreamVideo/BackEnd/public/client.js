@@ -202,7 +202,7 @@ var support = (function () {
 if (typeof(my) !== 'undefined') {
   my.onMessage = function(e) {
     console.log(e); // {'sendToWebView': '1'}
-    document.getElementById('Message').innerHTML = "Width: " + e.width + " Height: " + e.height;
+    //document.getElementById('Message').innerHTML = "Width: " + e.width + " Height: " + e.height;
     var video = document.querySelector("video");
     video.height = e.height;
     var viewportWidth = e.width;

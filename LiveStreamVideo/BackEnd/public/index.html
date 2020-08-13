@@ -10,11 +10,11 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
     integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
   <link rel="stylesheet" href="clientstyle.css">
-  <script defer src="/socket.io/socket.io.js"></script>  
+  <script defer src="/socket.io/socket.io.js"></script>
   <script defer src="/client.js"></script>
   <script defer src="/clock.js"></script>
   <script defer src="/shopAndBasket.js"></script>
-  
+
 </head>
 
 <body>
@@ -67,10 +67,8 @@
               <!-- ITEMS WILL DISPLAY HERE -->
             </div>
           </div>
-
         </div>        
       </div>
-
       <div id="productsDiv" class="products-div hidediv">
         <div class="products-title">
           Products
@@ -91,26 +89,27 @@
           </div> -->
         </div>
       </div>
-      
       <div id="chatContainer">
-        <div id="chatHistoryContainer" class="row chat-history-div">
-          <div class="col-12" style="margin-left: 0px; margin-right: 0px;" id="chatHistory">
+        <div id="chatHistoryContainer" class="row chat-history-div" >
+          <div class="col-12" style="margin-left: 0px; margin-right: 0px;" id="chatHistory" >
             <!-- DO NOT PUT ANYTHING HERE -->
-          </div>
+          </div>        
         </div>
-        <div class="row chat-input-div">
-          <div class="col-12">
+        <div class="row chat-input-div" >
+          <div class="col-12" >
             <input placeholder="Comment" id="chatInput" type="text" class="chat-input">
             <img src="images/send.svg" onclick="sendMessage()">
-          </div>
+          </div>        
         </div>
       </div>
-      </div>
-
+  </div>
+  </div>
   </div>
 
-  <br />
-  
+
+
+
+
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
     integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
     crossorigin="anonymous"></script>
