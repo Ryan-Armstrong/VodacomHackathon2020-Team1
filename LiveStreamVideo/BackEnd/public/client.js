@@ -88,25 +88,6 @@ function enableAudio() {
   video.muted = !video.muted;
 }
 
-// Did receive message from Mini Program.
-if (typeof(my) !== 'undefined') {
-  my.onMessage = function(e) {
-    console.log(e); // {'sendToWebView': '1'}
-    document.getElementById('Message').innerHTML = "Width: " + e.width + " Height: " + e.height;
-    var video = document.querySelector("video");
-    video.height = e.height;
-    var viewportWidth = e.width;
-    var halfViewPortWidth = viewportWidth/2;
-    var widthEntireVid = e.height * 1.77766;
-    var halfEntireWidth = widthEntireVid / 2;
-    var marginLeft = halfEntireWidth - halfViewPortWidth;
-    var marginLeftVlaue = -1 * marginLeft;
-    var video = document.getElementById("videoDiv");
-    video.style.marginLeft = marginLeftVlaue + "px";
-    my.postMessage({ offset : video.style.marginLeft });
-  }
-}
-
 function randomiseUser()
 {
   var fromUser = hardcodedUsers[counter];
@@ -132,7 +113,12 @@ function sendMessage()
 }
 
 function addMessageToHistory(fromUser, icon, message , type)
-{
+{  
+  if (message.startsWith("timer,"))
+  {
+    type = 'timer';
+    message = message.replace('timer,', '');
+  }
   var domEl;
   if (type == 'message')  
   {
@@ -165,7 +151,10 @@ function addMessageToHistory(fromUser, icon, message , type)
       
     }
     // Days Hours Min Seconds    
-    initializeClock('clockdiv', deadline);
+    initializeClock('clockdiv', deadline, () => {
+      // Called when clock runs out
+      document.getElementById('salesDiv').classList.remove('hidediv');
+    });
     domEl = stringToHTML("<img class='chat-useravatar' src='"+ icon +"'><div class='message-container'><b class='chat-username'>"+ fromUser + "</b><div class='chat-historymessage'>"+ "CLOCK STARTED" +"</div></div>");
   }
 
@@ -209,3 +198,21 @@ var support = (function () {
 	return true;
 })();
 
+// Did receive message from Mini Program.
+if (typeof(my) !== 'undefined') {
+  my.onMessage = function(e) {
+    console.log(e); // {'sendToWebView': '1'}
+    document.getElementById('Message').innerHTML = "Width: " + e.width + " Height: " + e.height;
+    var video = document.querySelector("video");
+    video.height = e.height;
+    var viewportWidth = e.width;
+    var halfViewPortWidth = viewportWidth/2;
+    var widthEntireVid = e.height * 1.77766;
+    var halfEntireWidth = widthEntireVid / 2;
+    var marginLeft = halfEntireWidth - halfViewPortWidth;
+    var marginLeftVlaue = -1 * marginLeft;
+    var video = document.getElementById("videoDiv");
+    video.style.marginLeft = marginLeftVlaue + "px";
+    my.postMessage({ offset : video.style.marginLeft });
+  }
+}

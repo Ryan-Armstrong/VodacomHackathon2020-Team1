@@ -14,8 +14,9 @@ function getTimeRemaining(endtime) {
     };
   }
   
-  function initializeClock(id, endtime) {
-      console.log("Starting clock" , id, endtime)
+  function initializeClock(id, endtime, functionEnd) {
+    let event = functionEnd;
+    console.log("Starting clock" , id, endtime)
     const clock = document.getElementById(id);
     clock.classList.remove('hidediv');
     //const daysSpan = clock.querySelector('.days');
@@ -34,6 +35,7 @@ function getTimeRemaining(endtime) {
       if (t.total <= 0) {
         clearInterval(timeinterval);
         clock.classList.add('hidediv');
+        event();
       }
     }
   
