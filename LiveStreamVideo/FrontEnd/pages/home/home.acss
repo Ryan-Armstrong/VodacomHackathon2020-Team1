@@ -48,16 +48,14 @@
 .scrollMenu {
   overflow: auto;
   white-space: nowrap;
-  padding: 1px;
+  padding: 1px 1px 1px 7px;
 }
 
 .scrollText{
   color: rgb(54, 54, 54);
   font-weight: 400;
   font-size: 9px;
-  text-overflow: ellipsis; 
-  overflow: hidden;
-  width: 40px;
+  width: 90rpx;
   padding-top: 6px;
 }
 
@@ -90,6 +88,7 @@
   overflow: auto;
   white-space: nowrap;
   padding: 1px;
+  padding: 1px 1px 1px 11px;
 }
 
 .scrollTextSquare {
@@ -98,7 +97,7 @@
   font-size: 9px;
   text-overflow: ellipsis; 
   overflow: hidden;
-  width: 80px;
+  width: 180rpx;
   padding-top: 6px;
 }
 
