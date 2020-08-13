@@ -12,13 +12,13 @@
   padding: 1px;
 }
 
-.scrollText{
+.scrollText {
   color: rgb(54, 54, 54);
   font-weight: 400;
   font-size: 9px;
 }
 
-.scrollImage{
+.scrollImage {
   background: #E60001;
   border-radius: 50px;
   width: 40px;
