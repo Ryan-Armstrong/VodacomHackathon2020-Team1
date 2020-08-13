@@ -8,9 +8,9 @@
 
     <text>Categories</text>
     <view class="scrollMenu">
-      <view class="scrollItem" a:for="{{arr}}" a:for-index="i">
-      <image class="scrollImage" src="../../assets/thumbnails/tshirt.png"/>
-        <view class="scrollText" >
+      <view class="scrollItem" a:for="{{arr}}" a:for-index="i"  a:key="*this" onTap="selectCategory">
+      <image id="{{item}}" class="scrollImage" src="../../assets/thumbnails/tshirt.png"/>
+        <view class="scrollText">
           {{item}}
         </view>
       </view>

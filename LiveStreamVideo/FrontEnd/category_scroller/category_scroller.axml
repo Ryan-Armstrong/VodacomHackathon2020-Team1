@@ -1,0 +1,10 @@
+<category_scroller> 
+  <view class="scrollMenu">
+    <view class="scrollItem" a:for="{{arr}}" a:for-index="i">
+    <image class="scrollImage" src="../../assets/thumbnails/tshirt.png"/>
+      <view class="scrollText" >
+        {{item}}
+      </view>
+    </view>
+  </view>
+</category_scroller>
