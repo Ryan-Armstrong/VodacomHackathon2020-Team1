@@ -1,5 +1,7 @@
 {
   "pages": [
+
+    "pages/channel/channel",
     "pages/home/home",
     "pages/index/index"
   ],
