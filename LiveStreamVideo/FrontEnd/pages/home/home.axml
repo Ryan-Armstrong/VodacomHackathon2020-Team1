@@ -1,11 +1,11 @@
 <view class="homePage">
   <view class="homescreen">
-    <text>Coming 16 September 2020</text>
+    <text class="titleText">Coming 16 September 2020</text>
     <view class="videoContainer">
       <image class="videoThumbnail" mode="scaleToFill" src="../../assets/thumbnails/montage.jpg"/>
       <image class="playButton" src="../../assets/thumbnails/play.png"/>
     </view>
-    <text>Categories</text>
+    <text class="titleText">Categories</text>
     <view class="scrollMenu">
       <view class="scrollItem" a:for="{{categoriesArr}}" a:for-index="i" a:key="*this" onTap="selectCategory">
         <view id="{{item}}" class="scrollImageView">
@@ -16,7 +16,7 @@
         </view>
       </view>
     </view>
-    <text>Suggested Channels</text>
+    <text class="titleText">Suggested Channels</text>
     <view class="scrollMenu">
       <view class="scrollItem" a:for="{{channelsArr}}" a:for-index="i" a:key="*this" onTap="selectChannel">
         <view id="{{item}}" class="scrollImageView">
@@ -27,7 +27,7 @@
         </view>
       </view>
     </view>
-    <text>Just for you</text>
+    <text class="titleText">Just for you</text>
     <view class="scrollMenuSquare">
       <view class="scrollItemSquare" a:for="{{videoForYouArr}}" a:for-index="i" a:key="*this" onTap="selectVideo">
         <image id="{{item}}" class="scrollImageSquare" src="../../assets/thumbnails/v1.png"/>
@@ -36,7 +36,7 @@
         </view>
       </view>
     </view>
-    <text>Popular in South Africa</text>
+    <text class="titleText">Popular in South Africa</text>
     <view class="scrollMenuSquare">
       <view class="scrollItemSquare" a:for="{{videoForYouArr}}" a:for-index="i" a:key="*this" onTap="selectVideo">
         <image id="{{item}}" class="scrollImageSquare" src="../../assets/thumbnails/v1.png"/>

@@ -7,6 +7,13 @@
   flex-direction: column;
 }
 
+.titleText {
+  font-weight: 600;
+  padding-left: 16px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
 .videoContainer {
   display: flex;
   align-items:center;
