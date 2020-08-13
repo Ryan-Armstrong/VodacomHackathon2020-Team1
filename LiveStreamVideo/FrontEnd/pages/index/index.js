@@ -8,7 +8,7 @@ Page({
   },
   onShow() {
     // Page showing
-    
+
   },
   onReady() {
     // Page loading complete
