@@ -1,4 +1,29 @@
-<h1>ALBUM VIEW </h1>
-<div>
-    {{ output }}
+<div class="ablum-container">
+    <div class="album-cover">
+        <img src="/images/album-cover.jpg" class="album-img">
+    </div>
+    <div style='text-align: center;
+    margin: 20px 0px 10px 0px;    font-size: large;
+    font-weight: bold;'>We Made It</div>
+    <div style='text-align: center;
+    margin: 20px 0px 10px 0px;'>by Mi Casa</div>
+    <div style='display: flex'>
+        <div style="font-size: 12px; margin-right: auto;">
+            Tracks: 13
+        </div>
+        <div style="font-size: 12px;    margin-right: auto;">
+            Released: 03/07/2020
+        </div>
+        <div style="font-size: 12px; ">
+            Length: 01:02:24
+        </div>
+    </div>
+    <div>CONTROLS</div>
+    <div>
+        TIMEBAR
+    </div>
+    {{# each arr as |val key|}}
+    <div>{{ val.name }}</div>
+    {{/each}}
+
 </div>

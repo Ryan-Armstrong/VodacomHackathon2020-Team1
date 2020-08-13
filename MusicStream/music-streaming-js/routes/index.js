@@ -3,16 +3,29 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function (req, res, next) {
-  res.render('index', {
-    title: 'Express',
-    condition: false,
-    arr: [1, 2, 3]
-  });
+  res.render('index');
 });
 
 router.get('/album/:id', function (req, res, next) {
   res.render('album', {
-    output: req.params.id
+    output: req.params.id,
+    arr: [{
+      name: 'Sober'
+    }, {
+      name: 'Obsessed'
+    }, {
+      name: 'How could you'
+    }, {
+      name: 'Sweet wine'
+    }, {
+      name: 'Love Everything'
+    }, {
+      name: 'Church bells'
+    }, {
+      name: 'Love'
+    }, {
+      name: 'Passion'
+    }]
   });
 });
 
