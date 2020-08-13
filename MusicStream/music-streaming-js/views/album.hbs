@@ -26,11 +26,13 @@
         <img src="/icons/skip_forward.svg" style="width: 30px;  margin-right: 14px;">
         <img src="/icons/shuffle.svg" style="width: 30px; margin-right: auto">
     </div>
-    <audio id="audio-player">
+    <audio id="audio-player" ontimeupdate="updateBar()">
         <source src="/audio/song.mp3" type="audio/mpeg">
     </audio>
 
-    {{ playing }}
+    <div id="progress-status">
+        <div id="myprogressBar"></div>
+    </div>
 
     {{# each arr as |val key|}}
     <div>{{ val.name }}</div>
