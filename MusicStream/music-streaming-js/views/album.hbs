@@ -18,7 +18,7 @@
             Length: 01:02:24
         </div>
     </div>
-    <div style="display: flex;">
+    <div style="display: flex; margin-bottom: 10px">
         <img src="/icons/repeat.svg" style="width: 30px; margin-left: auto; margin-right: 14px;">
         <img src="/icons/skip_back.svg" style="width: 30px;  margin-right: 14px;">
         <img id="toggleBtn" src="/icons/play_filled.svg" style="width: 40px;  margin-right: 14px;"
@@ -30,12 +30,23 @@
         <source src="/audio/song.mp3" type="audio/mpeg">
     </audio>
 
+    <div style="display: flex;">
+        <div id="currentTime" style="margin-right: auto">00:00</div>
+        <div id="durationTime">02:08</div>
+    </div>
+
+
+
     <div id="progress-status">
         <div id="myprogressBar"></div>
     </div>
-
     {{# each arr as |val key|}}
-    <div>{{ val.name }}</div>
+    <div style="height: 50px; border-bottom: 1px solid black; display: flex"><img src="/icons/play_filled.svg"
+            style="width: 30px;  margin-right: 14px;">
+        <p style="margin-right: auto;">{{ val.name }}</p>
+        <img src="/icons/favourite.svg" style="margin-right: 10px;">
+        <img src="/icons/overflow_dots.svg">
+    </div>
     {{/each}}
 
 </div>

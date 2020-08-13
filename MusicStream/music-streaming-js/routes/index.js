@@ -9,6 +9,7 @@ router.get('/', function (req, res, next) {
 router.get('/album/:id', function (req, res, next) {
   res.render('album', {
     output: req.params.id,
+    duration: 168,
     arr: [{
       name: 'Sober'
     }, {

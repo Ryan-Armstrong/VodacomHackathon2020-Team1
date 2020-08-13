@@ -31,12 +31,13 @@
 #progress-status {
   width: 100%;
   background-color: #ddd;
+  margin-bottom: 15px;
 }
 
 #myprogressBar {
   width: 0;
-  height: 35px;
-  background-color: #4CAF50;
+  height: 5px;
+  background-color: #E60202;
   text-align: center;
   line-height: 32px;
   color: black;
