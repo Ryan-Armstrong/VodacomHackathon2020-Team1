@@ -77,11 +77,6 @@ div.relative {
   display: none; 
 } 
 
-.deals-div
-{
-  height: 100px;
-}
-
 .chat-input
 {
   margin: 5px;
@@ -122,3 +117,81 @@ div.relative {
   margin-right: 5px;
 }
 
+.hidediv
+{
+  display: none !important;
+}
+
+/* Clock countdown styles */
+
+#clockdiv{
+  font-family: sans-serif;
+  color: #fff;
+  display: inline-block;
+  font-weight: 100;
+  text-align: center;
+  font-size: 25px;
+  background-color: white;
+  border-radius: 8px;
+  color: black;
+  padding: 0px 10px 5px 10px;
+}
+
+#clockdiv > div{
+  padding: 5px;
+  border-radius: 3px;
+  /* background: rgb(2,0,36);
+background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(92,0,0,1) 0%, rgba(0,0,0,1) 100%); */
+  display: inline-block;
+  color: white;
+  background: linear-gradient(230deg, #ff0000, #5a0000);
+    background-size: 400% 400%;
+
+    -webkit-animation: GradientAnimation 8s ease infinite;
+    -moz-animation: GradientAnimation 8s ease infinite;
+    -o-animation: GradientAnimation 8s ease infinite;
+    animation: GradientAnimation 8s ease infinite;
+}
+
+#clockdiv div > span{
+  padding: 7px;
+  border-radius: 3px;
+  background: rgb(2,0,36);
+  background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(255,0,0,1) 0%, rgba(255,123,123,1) 100%);
+  display: inline-block;
+  color: white;
+  font-weight: 600;
+}
+
+#clockdiv > span
+{  
+  font-size: large;
+}
+
+.smalltext{
+  padding-top: 5px;
+  font-size: 12px;
+}
+
+@-webkit-keyframes GradientAnimation {
+  0%{background-position:90% 0%}
+  50%{background-position:11% 100%}
+  100%{background-position:90% 0%}
+}
+@-moz-keyframes GradientAnimation {
+  0%{background-position:90% 0%}
+  50%{background-position:11% 100%}
+  100%{background-position:90% 0%}
+}
+@-o-keyframes GradientAnimation {
+  0%{background-position:90% 0%}
+  50%{background-position:11% 100%}
+  100%{background-position:90% 0%}
+}
+@keyframes GradientAnimation {
+  0%{background-position:90% 0%}
+  50%{background-position:11% 100%}
+  100%{background-position:90% 0%}
+}
+
+/* ----------------------------- */

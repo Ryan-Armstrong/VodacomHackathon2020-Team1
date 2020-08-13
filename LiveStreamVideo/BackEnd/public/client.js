@@ -4,15 +4,15 @@ let myId = 0;
 let hardcodedUsers = [
   {
     fromUser : 'Vishanka',
-    icon : 'user1.png'
+    icon : 'images/user1.png'
   },
   {
     fromUser : 'NatalyJJ',
-    icon : 'user2.png'
+    icon : 'images/user2.png'
   },
   {
     fromUser : 'Vuyo_92',
-    icon : 'user3.png'
+    icon : 'images/user3.png'
   }
 ]
 //let fromUser = "130nk3r5";
@@ -76,9 +76,9 @@ socket.on("disconnectPeer", () => {
   peer.close();
 });
 
-socket.on("messageviewer", (text) => {
+socket.on("messageviewer", (text, type) => {
   console.log("BROADCASTER " + text);
-  addMessageToHistory("The Space", "user1.png", text);
+  addMessageToHistory("The Space", "images/the_space.svg", text, type);
   //socket.to(broadcaster).emit('message', fromUser, text);
 } )
 
@@ -125,14 +125,50 @@ function sendMessage()
   var text = chatElement.value;
   console.log(text);
   socket.emit("message", fromUserDetails.fromUser, text );
-  addMessageToHistory(fromUserDetails.fromUser, fromUserDetails.icon, text);
+  addMessageToHistory(fromUserDetails.fromUser, fromUserDetails.icon, text, "message");
+  //addMessageToHistory(fromUserDetails.fromUser, fromUserDetails.icon, text, "timer");
   chatElement.value = "";
   
 }
 
-function addMessageToHistory(fromUser, icon, message)
+function addMessageToHistory(fromUser, icon, message , type)
 {
-  var domEl = stringToHTML("<img class='chat-useravatar' src='"+ icon +"'><div class='message-container'><b class='chat-username'>"+ fromUser + "</b><div class='chat-historymessage'>"+ message +"</div></div>")
+  var domEl;
+  if (type == 'message')  
+  {
+    domEl = stringToHTML("<img class='chat-useravatar' src='"+ icon +"'><div class='message-container'><b class='chat-username'>"+ fromUser + "</b><div class='chat-historymessage'>"+ message +"</div></div>");
+  }
+  else if (type == 'link')
+  {
+    domEl = stringToHTML("<img class='chat-useravatar' src='"+ icon +"'><div class='message-container'><b class='chat-username'>"+ fromUser + "</b><br><a href='"+ message +"' class='chat-historymessage'>"+ message +"</a></div>");
+  }
+  else if (type == 'timer')
+  {
+    if (message == '')
+    {
+      deadline = new Date(Date.parse(new Date()) + 60 * 1000);
+      //deadline = new Date(Date.parse(new Date()) + 15 * 24 * 60 * 60 * 1000);
+    }
+    else
+    {
+      var total = 1;
+      var items = message.split(",");
+      //var days = items[0];
+      //if (days != 0) total = total * parseInt(days);
+      var hours = items[0];
+      if (hours != 0) total = total * parseInt(hours);
+      var min = items[1];
+      if (min != 0) total = total * parseInt(min);
+      var seconds = items[2];
+      if (seconds != 0) total = total * parseInt(seconds);
+      deadline = new Date(Date.parse(new Date()) + total * 1000);
+      
+    }
+    // Days Hours Min Seconds    
+    initializeClock('clockdiv', deadline);
+    domEl = stringToHTML("<img class='chat-useravatar' src='"+ icon +"'><div class='message-container'><b class='chat-username'>"+ fromUser + "</b><div class='chat-historymessage'>"+ "CLOCK STARTED" +"</div></div>");
+  }
+
   var historyDiv = document.getElementById('chatHistory');
   historyDiv.appendChild(domEl);  
   var historyDivContainer = document.getElementById('chatHistoryContainer');
@@ -172,3 +208,4 @@ var support = (function () {
 	}
 	return true;
 })();
+

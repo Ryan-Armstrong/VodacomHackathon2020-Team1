@@ -16,6 +16,10 @@
     <video style="width: 600px;" autoplay muted></video>
     <br/>
     <input id="userMessage" style="width: 300px;" placeholder="Comment">
-    <button onclick="sendMessagetoViewers()" >Broadcast Message</button>
+    <button onclick="sendMessagetoViewers('message')" >Broadcast Message</button>
+    <button onclick="sendMessagetoViewers('link')" >Broadcast Link</button>
+    <button onclick="sendMessagetoViewers('timer')" >H,M,S Start Timer (0,60,60)</button>
+    <br/>
+    <label id="receivedMessages" style="width: 100%;"></label>
 </body>
 </html>

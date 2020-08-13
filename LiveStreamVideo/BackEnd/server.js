@@ -44,12 +44,12 @@ io.sockets.on("connection", socket => {
     console.log(fromUser, text);
     socket.to(broadcaster).emit('message', fromUser, text);
   })
-  socket.on("messageall", (message) => {
+  socket.on("messageall", (message, type) => {
     console.log(message);
     for (var i = 0; i < socketIds.length; i++)
     {
       console.log("Sending to " + socketIds[i]);
-      socket.to(socketIds[i]).emit('messageviewer', message);
+      socket.to(socketIds[i]).emit('messageviewer', message, type);
     }
   })
 });

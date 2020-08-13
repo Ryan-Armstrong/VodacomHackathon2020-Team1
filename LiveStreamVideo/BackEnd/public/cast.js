@@ -44,13 +44,15 @@ socket.on("candidate", (id, candidate) => {
 
 socket.on("message", (fromUser, text) => {
   console.log(fromUser, text);
+  var labelEl = document.getElementById('receivedMessages');
+  labelEl.innerHTML += "<b>" + fromUser + " : </b>" + text + "<br/>";
   // TODO: Add this to some div so that you can see the messages
 });
 
 
-function sendMessagetoViewers() {
+function sendMessagetoViewers(type) {
   var message = document.getElementById('userMessage').value;
-  socket.emit("messageall", message);
+  socket.emit("messageall", message, type);
   document.getElementById('userMessage').value = '';
 }
 

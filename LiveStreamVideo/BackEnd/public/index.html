@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="clientstyle.css">
   <script defer src="/socket.io/socket.io.js"></script>
   <script defer src="/client.js"></script>
+  <script defer src="/clock.js"></script>
 </head>
 
 <body>
@@ -29,7 +30,7 @@
     <div class="container">
       <div class="row">
         <div class="col-12">          
-          <img src="the_space.svg" class="channel-image" >
+          <img src="images/the_space.svg" class="channel-image" >
           <b class="channel-label">The Space</b>
         </div>        
       </div>
@@ -38,9 +39,28 @@
        <!-- OPEN SPACE FOR VIDEO -->
     </div>
     <div class="footer container" >
-      <div class="row deals-div" >
-        <div class="col-12 ">
-          DEALS SECTION
+      <div class="row">
+        <div class="col-12">
+          
+          <div id="clockdiv" class="hidediv">
+            <span>Start shopping in</span><br>
+            <!-- <div>
+              <span class="days"></span>
+              <div class="smalltext">days</div>
+            </div> -->
+            <div>
+              <span class="hours">00</span>
+              <div class="smalltext">hours</div>
+            </div>
+            <div>
+              <span class="minutes">00</span>
+              <div class="smalltext">minutes</div>
+            </div>
+            <div>
+              <span class="seconds">00</span>
+              <div class="smalltext">seconds</div>
+            </div>
+          </div>
         </div>        
       </div>
       <div id="chatHistoryContainer" class="row chat-history-div" >
@@ -51,7 +71,7 @@
       <div class="row chat-input-div" >
         <div class="col-12" >
           <input placeholder="Comment" id="chatInput" type="text" class="chat-input">
-          <img src="send.svg" onclick="sendMessage()">
+          <img src="images/send.svg" onclick="sendMessage()">
         </div>        
       </div>
     </div>
