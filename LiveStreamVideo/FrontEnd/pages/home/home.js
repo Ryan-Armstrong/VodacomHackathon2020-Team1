@@ -13,5 +13,6 @@ Page({
   },
   selectVideo(ev) {
     console.log(ev)
+    my.navigateTo({ url: '../index/index' });
   }
 });
