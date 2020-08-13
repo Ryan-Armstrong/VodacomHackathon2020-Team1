@@ -1,4 +1,5 @@
 const peer = {};
+var peerIds = [];
 const socket = io.connect(window.location.origin);
 
 window.onunload = window.onbeforeunload = () => {
@@ -40,6 +41,20 @@ socket.on("candidate", (id, candidate) => {
   console.log("Socket new candidate", id);
   peer[id].addIceCandidate(new RTCIceCandidate(candidate));
 });
+
+socket.on("message", (fromUser, text) => {
+  console.log(fromUser, text);
+  var labelEl = document.getElementById('receivedMessages');
+  labelEl.innerHTML += "<b>" + fromUser + " : </b>" + text + "<br/>";
+  // TODO: Add this to some div so that you can see the messages
+});
+
+
+function sendMessagetoViewers(type) {
+  var message = document.getElementById('userMessage').value;
+  socket.emit("messageall", message, type);
+  document.getElementById('userMessage').value = '';
+}
 
 // Initialize
 getStream().then(gotDevices); //Get stream immediately, then poppulate the possible audo and video streams
