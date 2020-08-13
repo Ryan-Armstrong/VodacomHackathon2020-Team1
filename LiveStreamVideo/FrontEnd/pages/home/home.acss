@@ -43,16 +43,6 @@
   margin-left: 16px;
 }
 
-.playButton {
-  z-index: 2;
-  position: absolute;
-  width: 150rpx;
-  height: 150rpx;
-  margin: auto;
-  left:0px;
-  right:0px;
-}
-
 .scrollItem {
   display: inline-block;
   text-align: center;

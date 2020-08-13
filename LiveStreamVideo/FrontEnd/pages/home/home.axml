@@ -6,7 +6,6 @@
     </view>
     <view class="videoContainer" onTap="selectVideo">
       <image class="videoThumbnail" mode="scaleToFill" src="../../assets/thumbnails/sponsored_vid.png"/>
-      <image class="playButton" src="../../assets/thumbnails/play.png"/>
     </view>
 
     <text class="titleText">Categories</text>
