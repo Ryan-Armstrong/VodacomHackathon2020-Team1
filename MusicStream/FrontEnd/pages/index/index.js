@@ -32,4 +32,14 @@ Page({
       path: 'pages/index/index',
     };
   },
+
+  subscribeButtonTapped() {
+    console.log("Subscribe button tapped.");
+  },
+  getTicketButtonTapped() {
+    console.log("Get ticket button tapped.");
+  },
+  skipButtonTapped() {
+    console.log("Skip button tapped.");
+  }
 });
