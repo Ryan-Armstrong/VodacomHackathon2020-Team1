@@ -2,7 +2,7 @@
   <view class="homescreen">
     <text class="titleText">Coming 16 September 2020</text>
     <view class="videoContainer">
-      <image class="videoThumbnail" mode="scaleToFill" src="../../assets/thumbnails/montage.jpg"/>
+      <image class="videoThumbnail" mode="scaleToFill" src="../../assets/thumbnails/sponsored_vid.png"/>
       <image class="playButton" src="../../assets/thumbnails/play.png"/>
     </view>
 
@@ -10,7 +10,7 @@
     <view class="scrollMenu">
       <view class="scrollItem" a:for="{{categoriesArr}}" a:for-index="i" a:key="*this" onTap="selectCategory">
         <view id="{{item}}" class="scrollImageView">
-          <image class="scrollImage" src="../../assets/thumbnails/clothing.svg"/>
+          <image class="scrollImage" src="../../assets/thumbnails/{{item}}.svg"/>
         </view>
         <view class="scrollText">
           {{item}}
@@ -21,9 +21,7 @@
     <text class="titleText">Suggested Channels</text>
     <view class="scrollMenu">
       <view class="scrollItem" a:for="{{channelsArr}}" a:for-index="i" a:key="*this" onTap="selectChannel">
-        <view id="{{item}}" class="scrollImageView">
-          <image class="scrollImage" src="../../assets/thumbnails/clothing.svg"/>
-        </view>
+        <image id="{{item}}" class="scrollChannelImageView" src="../../assets/channels/{{i+1}}.svg"/>
         <view class="scrollText">
           {{item}}
         </view>
@@ -33,17 +31,17 @@
     <text class="titleText">Just for you</text>
     <view class="scrollMenuSquare">
       <view class="scrollItemSquare" a:for="{{videoForYouArr}}" a:for-index="i" a:key="*this" onTap="selectVideo">
-        <image id="{{item}}" class="scrollImageSquare" src="../../assets/thumbnails/v1.png"/>
+        <image id="{{item}}" class="scrollImageSquare" src="../../assets/thumbnails/v{{i+1}}.png"/>
         <view class="scrollTextSquare">
           {{item}}
         </view>
       </view>
     </view>
-    
+
     <text class="titleText">Popular in South Africa</text>
     <view class="scrollMenuSquare">
       <view class="scrollItemSquare" a:for="{{videoForYouArr}}" a:for-index="i" a:key="*this" onTap="selectVideo">
-        <image id="{{item}}" class="scrollImageSquare" src="../../assets/thumbnails/v1.png"/>
+        <image id="{{item}}" class="scrollImageSquare" src="../../assets/thumbnails/v{{8 - i}}.png"/>
         <view class="scrollTextSquare">
           {{item}}
         </view>

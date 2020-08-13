@@ -1,8 +1,8 @@
 Page({
   data: {
-      categoriesArr: ['Clothing', 'Technology', 'Home', 'Accessories', 'Fitness', 'Pets', 'Travel', 'Kitchen', 'Gardening'],
-      channelsArr: ['Juni', 'FTN', 'Vodacom', 'Blu Betty', 'Takealot', 'Frankees', 'The Shine', 'DealDay', 'HomeDepot'],
-      videoForYouArr: ['Lola\'s new collection', 'Nike Pastel Dreams', 'GoGo Mini Bags', 'Blu Betty', 'Takealot', 'Frankees', 'The Shine', 'DealDay', 'HomeDepot'],
+      categoriesArr: ['Clothing', 'Electronics', 'Home', 'Accessories', 'Fitness', 'Pets', 'Travel'],
+      channelsArr: ['Juni', 'FTN', 'Vodacom', 'Blu Betty', 'Takealot', 'Frankees', 'The Shine'],
+      videoForYouArr: ['Lola\'s new collection', 'Nike Pastel Dreams', 'GoGo Mini Bags', 'Blu Betty', 'Takealot', 'Frankees', 'The Shine', 'DealDay'],
   },
   onLoad() {},
   selectCategory(ev) {
