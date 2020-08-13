@@ -20,7 +20,7 @@
       </view>
     </view>
 
-    <text class="titleText">Suggested Channels</text>
+    <text class="titleText">Suggested channels</text>
     <view class="scrollMenu">
       <view class="scrollItem" a:for="{{channelsArr}}" a:for-index="i" a:key="*this" onTap="selectChannel">
         <image id="{{item}}" class="scrollChannelImageView" src="../../assets/channels/{{i+1}}.svg"/>
