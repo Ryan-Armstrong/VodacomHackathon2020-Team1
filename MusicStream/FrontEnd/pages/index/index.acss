@@ -22,7 +22,7 @@
 
 .divider {
   background: #bfbfbf;
-  height: 1rpx;
+  height: 2rpx;
   margin-left: 25rpx;
   margin-right: 25rpx;
 }
@@ -57,9 +57,9 @@
 
 .subscription-option-button {
   display: inline-block;
-  background: #e60301;
+  background: #E60202;
   width: 350rpx;
-  border: #e60301;
+  border: #E60202;
   border-radius: 60rpx;
 
   font-family: sans-serif;
@@ -74,6 +74,6 @@
 
   font-family: sans-serif;
   font-size: 15px;
-  color:  #e60301;
+  color:  #E60202;
   font-weight: normal;
 }
