@@ -58,6 +58,7 @@
   text-overflow: ellipsis; 
   overflow: hidden;
   width: 40px;
+  padding-top: 6px;
 }
 
 .scrollImageView {
@@ -65,6 +66,7 @@
   border-radius: 50px;
   width: 40px;
   height: 40px;
+  margin: auto;
 }
 
 .scrollImage{
@@ -97,6 +99,7 @@
   text-overflow: ellipsis; 
   overflow: hidden;
   width: 80px;
+  padding-top: 6px;
 }
 
 .scrollImageSquare {

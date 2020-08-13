@@ -5,6 +5,7 @@
       <image class="videoThumbnail" mode="scaleToFill" src="../../assets/thumbnails/montage.jpg"/>
       <image class="playButton" src="../../assets/thumbnails/play.png"/>
     </view>
+
     <text class="titleText">Categories</text>
     <view class="scrollMenu">
       <view class="scrollItem" a:for="{{categoriesArr}}" a:for-index="i" a:key="*this" onTap="selectCategory">
@@ -16,6 +17,7 @@
         </view>
       </view>
     </view>
+
     <text class="titleText">Suggested Channels</text>
     <view class="scrollMenu">
       <view class="scrollItem" a:for="{{channelsArr}}" a:for-index="i" a:key="*this" onTap="selectChannel">
@@ -27,6 +29,7 @@
         </view>
       </view>
     </view>
+
     <text class="titleText">Just for you</text>
     <view class="scrollMenuSquare">
       <view class="scrollItemSquare" a:for="{{videoForYouArr}}" a:for-index="i" a:key="*this" onTap="selectVideo">
@@ -36,6 +39,7 @@
         </view>
       </view>
     </view>
+    
     <text class="titleText">Popular in South Africa</text>
     <view class="scrollMenuSquare">
       <view class="scrollItemSquare" a:for="{{videoForYouArr}}" a:for-index="i" a:key="*this" onTap="selectVideo">
