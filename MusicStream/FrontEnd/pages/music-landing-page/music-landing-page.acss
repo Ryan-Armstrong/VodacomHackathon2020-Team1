@@ -1,0 +1,95 @@
+.music-landing-page-container {
+  display: flex;
+  flex-direction: column;
+  background: white;
+}
+
+.tab-bar {
+  display: flex;
+  margin: 25rpx;
+}
+
+.tab-bar-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.tab-bar-item-text {
+  margin-right: 25rpx;
+}
+
+.tab-bar-item-icon {
+  margin-right: 25rpx;
+  height: 15px;
+  width: 15px;
+  object-fit: contain;
+}
+
+.tab-bar-indicator {
+  border-radius: 1px;
+  background: #E60202;
+  height: 2px;
+  width: 35px;
+  margin-left: 1px;
+}
+
+.banner-ad-swiper {
+  margin: 25rpx;
+  width: 94vw;
+  height: 250rpx;
+  border-radius: 20rpx;
+}
+
+.banner-image-view {
+  object-fit: cover;
+  width: 94vw;
+  height: 250rpx;
+}
+
+.titleText {
+  font-weight: 600;
+  padding-left: 16px;
+  padding-top: 16px;
+  padding-bottom: 5px;
+}
+
+.scrollMenuSquare {
+  display: flex;
+  overflow: auto;
+  white-space: nowrap;
+  padding: 1px;
+  padding: 1px 1px 1px 11px;
+}
+
+.scrollItemSquare {
+  display: flex;
+  flex-direction: column;
+  padding: 3px;
+  margin: 3px;
+  text-decoration: none;
+  text-align: center;
+  align-items: center;
+}
+
+.scrollImageSquare {
+  display: flex;
+  border-radius: 10px;
+  width: 110px;
+  height: 110px;
+}
+
+.scrollTitleTextSquare {
+  font-size: 12px;
+  font-weight: 600;
+  padding-top: 6px;
+}
+
+.scrollSubtitleTextSquare {
+  color: rgb(54, 54, 54);
+  font-weight: 400;
+  font-size: 9px;
+  text-overflow: ellipsis; 
+  overflow: hidden;
+  width: 180rpx;
+  padding-top: 3px;
+}

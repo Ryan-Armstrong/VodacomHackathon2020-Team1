@@ -1,4 +1,31 @@
+const app = getApp();
+
 Page({
-  data: {},
-  onLoad() {},
+  data: {
+    bannerAds: ['banner_1', 'banner_2', 'banner_3'],
+    newReleases: app.newReleases,
+    recommendedAlbums: app.recommendedAlbums,
+    popularAlbums: app.popularAlbums
+  },
+  onLoad() {
+    console.log("Music landing page loaded.")
+
+  },
+
+  viewPlaylists() {
+    console.log("View playlists");
+  },
+  viewPurchasedMusic() {
+    console.log("View purchased");
+  },
+  viewSubscriptions() {
+    console.log("View subscriptions");
+  },
+  searchMusic() {
+    console.log("Search music");
+  },
+
+  selectedAlbum(e) {
+    console.log("Selected album with event: ", e);
+  }
 });
