@@ -1,11 +1,8 @@
 {
   "pages": [
-
-    "pages/channel/channel",
     "pages/home/home",
-    "pages/index/index"
-    
-    
+    "pages/index/index",
+    "pages/channel/channel"   
   ],
   "window": {
     "defaultTitle": "EZ Video Stream"
