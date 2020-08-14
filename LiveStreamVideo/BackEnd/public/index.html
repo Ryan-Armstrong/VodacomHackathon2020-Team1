@@ -13,6 +13,8 @@
   <script defer src="/socket.io/socket.io.js"></script>
   <script defer src="/client.js"></script>
   <script defer src="/clock.js"></script>
+  <script defer src="/shopAndBasket.js"></script>
+
 </head>
 
 <body>
@@ -23,7 +25,7 @@
     <div class="absolute">
       <!-- Video must always display top left in the background -->
       <div id="videoDiv">
-        <video style="height: 724px; background-color: black;" playsinline autoplay muted></video>
+        <video style="height: 815px; background-color: black;" playsinline autoplay muted></video>
       </div>
     </div>
 
@@ -31,7 +33,7 @@
       <div class="row">
         <div class="col-12">          
           <img src="images/the_space.svg" class="channel-image" >
-          <b class="channel-label">The Space</b>
+          <b id="channelName" class="channel-label">The Space</b>
         </div>        
       </div>
     </div>
@@ -39,9 +41,8 @@
        <!-- OPEN SPACE FOR VIDEO -->
     </div>
     <div class="footer container" >
-      <div class="row">
-        <div class="col-12">
-          
+      <div id="clockproductsdiv" class="row">
+        <div class="col-12">          
           <div id="clockdiv" class="hidediv">
             <span>Start shopping in</span><br>
             <!-- <div>
@@ -61,25 +62,51 @@
               <div class="smalltext">seconds</div>
             </div>
           </div>
+          <div id="salesDiv" class="sales-container hidediv" >
+            <div id="salesItems" class="scrollMenuSquare">
+              <!-- ITEMS WILL DISPLAY HERE -->
+            </div>
+          </div>
         </div>        
       </div>
-      <div id="chatHistoryContainer" class="row chat-history-div" >
-        <div class="col-12" style="margin-left: 0px; margin-right: 0px;" id="chatHistory" >
-          <!-- DO NOT PUT ANYTHING HERE -->
-        </div>        
+      <div id="productsDiv" class="products-div hidediv">
+        <div class="products-title">
+          Products
+        </div>
+        <div id="productItems" class="product-items">
+          <!-- <div class="row">
+            <div class="col-4">              
+              <img src="shopimages/shop_item_1.png" class="product-image">
+            </div>
+            <div class="col-8">
+              <div class="product-info">
+                <h3>Title 1</h3>
+                <span>Some very long description about a very cool dress that you can buy</span>
+                <br>
+                <button>Add to cart</button>
+              </div>
+            </div>
+          </div> -->
+        </div>
       </div>
-      <div class="row chat-input-div" >
-        <div class="col-12" >
-          <input placeholder="Comment" id="chatInput" type="text" class="chat-input">
-          <img src="images/send.svg" onclick="sendMessage()">
-        </div>        
+      <div id="chatContainer">
+        <div id="chatHistoryContainer" class="row chat-history-div" >
+          <div class="col-12" style="margin-left: 0px; margin-right: 0px;" id="chatHistory" >
+            <!-- DO NOT PUT ANYTHING HERE -->
+          </div>        
+        </div>
+        <div class="row chat-input-div" >
+          <div class="col-12" >
+            <input placeholder="Comment" id="chatInput" type="text" class="chat-input">
+            <img src="images/send.svg" onclick="sendMessage()">
+          </div>        
+        </div>
       </div>
-    </div>
-
+  </div>
+  </div>
   </div>
 
-  <br />
-  <label id="Message">Test</label>
+
 
 
 

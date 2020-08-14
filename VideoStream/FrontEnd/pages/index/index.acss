@@ -74,6 +74,18 @@
   font-weight: normal;
 }
 
+.subscription-option-title-container {
+  display: flex;
+}
+
+.suscription-option-expand-image {
+  width: 35rpx;
+  height: 35rpx;
+  object-fit: contain;
+
+  margin-left: 400rpx;
+}
+
 .skip-button {
   background: none;
   border: none;
