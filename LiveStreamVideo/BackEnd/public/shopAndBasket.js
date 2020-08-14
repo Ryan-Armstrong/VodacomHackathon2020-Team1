@@ -28,6 +28,7 @@ const shopItems = [
         cost : 200
     },
 ];
+let cartCount = 0;
 
 const cartItems = [];
 
@@ -48,7 +49,7 @@ function viewShopItems(itemNo)
     + shopItem.image + '" class="product-image"></div><div class="col-8"><div class="product-info"><span class="product-title">'
     + shopItem.title +'</span><br><span>'
     + shopItem.description +'</span><br><button class="product-addcart-button" onclick="addToCart('
-    + shopItem.id +')">Add to cart</button></div></div></div>';
+    + shopItem.id +', false)">Add to cart</button></div></div></div>';
 
     for (var i = 0; i < shopItems.length; i++) {
         if (i != itemNo - 1)
@@ -58,7 +59,7 @@ function viewShopItems(itemNo)
             + shopItem.image + '" class="product-image"></div><div class="col-8"><div class="product-info"><span class="product-title">'
             + shopItem.title +'</span><br><span>'
             + shopItem.description +'</span><br><button class="product-addcart-button" onclick="addToCart('
-            + shopItem.id +')">Add to cart</button></div></div></div>';
+            + shopItem.id +', false)">Add to cart</button></div></div></div>';
         }
     }
 }
@@ -73,29 +74,88 @@ function initializeShopItems()
     }
 }
 
-function addToCart(itemId)
+function addToCart(itemId, remove)
 {
-    // For now just assume itemId - 1 as the index
     var index = itemId - 1;
+    var cartItemToTest = cartItems[index];
+    if (cartItemToTest != null && remove && cartItemToTest.count == 0)
+    {
+        return;
+    }
+    document.getElementById('cartControl').classList.remove('hidediv');
+    // For now just assume itemId - 1 as the index
+    
     if (cartItems[index] == null)
     {
         cartItems[index] = {
             count : 1,
             description: shopItems[index].title,
             cost : shopItems[index].cost,
+            id : itemId
         }
     }
     else
-    {
+    {        
         cartItems[index] = {
-            count : cartItems[index].count + 1,
+            count : remove ? cartItems[index].count - 1 : cartItems[index].count + 1,
             description: shopItems[index].title,
-            cost : cartItems[index].cost + shopItems[index].cost,
+            cost : remove ? cartItems[index].cost - shopItems[index].cost : cartItems[index].cost + shopItems[index].cost,
+            id : itemId
         }
     }
+    cartCount = cartCount + 1;
     console.log(cartItems);
+    document.getElementById('cartCountControl').innerHTML = cartCount;
+}
+
+function populateCart()
+{
+    var cartItemsEl = document.getElementById('cartItems');
+    cartItemsEl.innerHTML = "";
+    var cartTotalEl = document.getElementById('cartTotal');
+    cartTotalEl.innerHTML = "";
+    var total = 0;
+    for(var i = 0; i < cartItems.length; i++)
+    {
+        var cartItem = cartItems[i];
+        if (cartItem != null)
+        {
+        total += cartItem.cost;
+
+        cartItemsEl.innerHTML += '<div class="row cart-row-main"><div class="col-6"><span class="cart-description">'+
+        cartItem.description + '</span></div><div class="col-3"><span onclick="removeCartItem('+
+        cartItem.id+')" class="cart-remove">&nbsp;&nbsp;－</span><span class="cart-number">&nbsp;'+
+        cartItem.count+'</span><span onclick="addCartItem('+
+        cartItem.id+')" class="cart-add">+</span></div><div class="col-3"><span>R</span><span>'+ 
+        cartItem.cost +'</span></div></div><div class="cart-row"></div>';
+        }
+    }
+    cartTotalEl.innerHTML = total;
+}
+
+
+function addCartItem(id)
+{
+    console.log("add", id);
+    addToCart(id,false);
+    populateCart();
+}
+
+function removeCartItem(id)
+{
+    console.log("remove", id);
+    addToCart(id, true);
+    populateCart();
+}
+
+function checkoutBasket()
+{
+    console.log("check out");
+    cartClose();
+    my.postMessage({ type : 'ConfirmCheckout' });
 }
 
 initializeShopItems();
 // viewShopItems(1);
 // document.getElementById('salesDiv').classList.remove('hidediv');
+//document.getElementById('cartDiv').classList.remove('hidediv');

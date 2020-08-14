@@ -1,8 +1,17 @@
+@font-face {
+  font-family: "San Francisco";
+  font-weight: 400;
+  src: url("SFProText.otf");
+}
+
+
 body {
     overflow: hidden; /* Hide scrollbars */
     color: white;
     background-color: transparent;
+    font-family: "San Francisco";
   }
+
 
   button:focus {outline:0;}
 
@@ -68,6 +77,8 @@ div.relative {
 .chat-input-div
 {
   /* height: 25px; */
+  text-align: left;
+  font-size: small;
 }
 
 .chat-history-div
@@ -77,6 +88,7 @@ div.relative {
   overflow-y: scroll;  
   padding-left: 10px;
   padding-right: 10px;
+  margin-bottom: 10px;
 }
 
 .chat-history-div::-webkit-scrollbar { 
@@ -86,11 +98,12 @@ div.relative {
 .chat-input
 {
   margin: 5px;
-  width: 70%;
+  width: 80%;
   border-radius: 25px;
   padding: 5px;
   background-color: transparent;
-  color: white;
+  color: #ffffff;
+  border: 1px solid #ffffff;
 }
 
 .chat-historymessage
@@ -141,6 +154,7 @@ div.relative {
   border-radius: 8px;
   color: black;
   padding: 0px 10px 5px 10px;
+  opacity: 0.9;
 }
 
 #clockdiv > div{
@@ -150,23 +164,23 @@ div.relative {
 background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(92,0,0,1) 0%, rgba(0,0,0,1) 100%); */
   display: inline-block;
   color: white;
-  background: linear-gradient(230deg, #ff0000, #5a0000);
-    background-size: 400% 400%;
-
-    -webkit-animation: GradientAnimation 8s ease infinite;
-    -moz-animation: GradientAnimation 8s ease infinite;
-    -o-animation: GradientAnimation 8s ease infinite;
-    animation: GradientAnimation 8s ease infinite;
+  background: #FAFAFA;   
+    
 }
 
 #clockdiv div > span{
   padding: 7px;
   border-radius: 3px;
-  background: rgb(2,0,36);
-  background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(255,0,0,1) 0%, rgba(255,123,123,1) 100%);
+  background: linear-gradient(269deg, #760000, #F15C3E);
+    background-size: 400% 400%;
+  
   display: inline-block;
   color: white;
   font-weight: 600;
+
+  -webkit-animation: AnimationName 7s ease infinite;
+  -moz-animation: AnimationName 7s ease infinite;
+  animation: AnimationName 7s ease infinite;
 }
 
 #clockdiv > span
@@ -177,27 +191,23 @@ background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(92,0,0,1) 0%, rgba(0,0
 .smalltext{
   padding-top: 5px;
   font-size: 12px;
+  color: #282828;
 }
 
-@-webkit-keyframes GradientAnimation {
-  0%{background-position:90% 0%}
-  50%{background-position:11% 100%}
-  100%{background-position:90% 0%}
+@-webkit-keyframes AnimationName {
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
 }
-@-moz-keyframes GradientAnimation {
-  0%{background-position:90% 0%}
-  50%{background-position:11% 100%}
-  100%{background-position:90% 0%}
+@-moz-keyframes AnimationName {
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
 }
-@-o-keyframes GradientAnimation {
-  0%{background-position:90% 0%}
-  50%{background-position:11% 100%}
-  100%{background-position:90% 0%}
-}
-@keyframes GradientAnimation {
-  0%{background-position:90% 0%}
-  50%{background-position:11% 100%}
-  100%{background-position:90% 0%}
+@keyframes AnimationName {
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
 }
 
 /* ----------------------------- */
@@ -244,33 +254,37 @@ background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(92,0,0,1) 0%, rgba(0,0
 
 /* Products */
 
+
 .products-div
 {
   background-color: white;
   border-radius: 20px;
+  color: black;
+  padding-top: 1px;
 }
 
 .products-title
 {
-  font-size: x-large;
+  font-size: medium;
   /* margin-left: 15px; */
   margin-top: 15px;
   color: black;
   text-align: left;
   margin-left: 10px;
+  font-weight: 600;
 }
 
 .product-title
 {
-  font-size: large;
+  font-size: medium;
   font-weight: 500;
 }
 
 
 .product-items
 {
-  height: 200px;
-  max-height: 200px;
+  height: 300px;
+  max-height: 300px;
   overflow-y: scroll;
   overflow-x: hidden;  
   padding: 5px;
@@ -287,6 +301,11 @@ background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(92,0,0,1) 0%, rgba(0,0
 
 .product-item{
   padding: 5px;
+  height: 120px;
+}
+.product-item > .col-4
+{
+  padding: 8px !important;  
 }
 
 .product-image
@@ -317,5 +336,101 @@ background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(92,0,0,1) 0%, rgba(0,0
 .chat-history-div::-webkit-scrollbar { 
   display: none; 
 } 
+
+/* ----------------------------- */
+
+/* CART View */
+
+.cart-div
+{  
+  margin-right: 15px;
+  margin-top: 0px;
+}
+
+.cart-images
+{
+  /* margin-top: 13px; */
+  margin-right: -10px;
+}
+
+.cart-number-of-items
+{
+  background-color: red;
+  border-radius: 20px;  
+  color: white;
+  font-size: small;
+  width: 17px !important; 
+  height: 17px;
+}
+
+.checkout-button
+{
+  background-color: red;
+  border-radius: 20px;
+  border: 0px hidden;
+  color: white;
+  padding: 3px 30px 3px 30px;
+  margin-bottom: 10px;
+}
+
+.cart-items
+{
+  color: black;
+  font-size: small;
+}
+
+
+.cart-remove
+{
+  border-top: 1px solid red;
+  border-left: 1px solid red;
+  border-bottom: 1px solid red;
+  border-right: 0px hidden;
+  border-radius: 20px 0px 0px 20px;
+  width: 20px;
+  float: left;  
+  
+}
+
+.cart-add
+{
+  border-top: 1px solid red;
+  border-right: 1px solid red;
+  border-bottom: 1px solid red;
+  border-left: 0px hidden;
+  border-radius: 0px 20px 20px 0px;
+  width: 20px;
+  float: left;  
+  
+}
+
+.cart-number
+{
+  border-top: 1px solid red;
+  border-right: 0px hidden;
+  border-bottom: 1px solid red;
+  border-left: 0px hidden;
+  border-radius: 0px;
+  width: 20px;
+  float: left;  
+}
+
+.cart-row
+{
+  border-bottom: 1px solid lightgray;  
+  padding-top: 5px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.cart-row-main
+{
+  padding-top: 5px;
+}
+
+.cart-description
+{
+  margin-left: 10px;
+}
 
 /* ----------------------------- */
