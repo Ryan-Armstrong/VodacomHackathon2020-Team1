@@ -1,7 +1,8 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/music-landing-page/music-landing-page"
+    "pages/music-landing-page/music-landing-page",
+    "pages/search-page/search-page"
   ],
   "window": {
     "defaultTitle": "Music Streaming"
