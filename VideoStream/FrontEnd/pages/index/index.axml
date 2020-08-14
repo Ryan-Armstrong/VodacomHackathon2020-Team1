@@ -1,0 +1,39 @@
+<view class="subscription-container">
+
+  <image class="page-header-image" src="../../assets/video_welcome_header.png"/>
+
+  <view class="page-title">Welcome to Video Streaming</view>
+  <view class="page-subtitle">Enjoy your favourite shows and movies with the watch option that suits you best.</view>
+
+  <view class="subscription-option">
+    <view class="subscription-option-title">Subscribe</view>
+    <view class="subscription-option-container">
+      <view class="subscription-option-subtitle">A monthly subscription service where you only pay for the content you love to watch.</view>
+      <button class="subscription-option-button" onTap="subscribeButtonTapped">Subscribe</button>
+    </view>
+  </view>
+
+  <view class="divider"></view>
+
+  <view class="subscription-option">
+    <view class="subscription-option-title">Music Ticket</view>
+    <view class="subscription-option-container">
+      <view class="subscription-option-subtitle">A ticket to watch any content for a certain amount of time only.</view>
+      <button class="subscription-option-button" onTap="getTicketButtonTapped">Get Ticket</button>
+    </view>
+  </view>
+
+  <view class="divider"></view>
+
+  <view class="subscription-option" onTap="rentOrPurchaseViewTapped">
+    <view class="subscription-option-title-container">
+      <view class="subscription-option-title">Rent or Purchase</view>
+      <image class="suscription-option-expand-image" src="../../assets/icons/expand.png"/>
+    </view>
+    
+    <view class="subscription-option-subtitle">Only pay a once off fee when you choose to rent or purchase your favourites.</view>
+  </view>
+
+  <button class="skip-button" onTap="skipButtonTapped">Skip for now and start browsing</button>
+
+</view>

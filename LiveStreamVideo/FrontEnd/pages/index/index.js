@@ -1,8 +1,6 @@
 const app = getApp();
 
 Page({
-  
-  
  onLoad(query) {
     // Page loading
     this.webViewContext = my.createWebViewContext('web-view-1');   

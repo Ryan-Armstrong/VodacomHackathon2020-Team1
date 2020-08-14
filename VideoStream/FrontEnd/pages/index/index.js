@@ -35,12 +35,14 @@ Page({
 
   subscribeButtonTapped() {
     console.log("Subscribe button tapped.");
-    my.navigateTo({ url: '../music-landing-page/music-landing-page' });
   },
   getTicketButtonTapped() {
     console.log("Get ticket button tapped.");
   },
   skipButtonTapped() {
     console.log("Skip button tapped.");
+  },
+  rentOrPurchaseViewTapped() {
+    console.log("Rent or purchase view tapped.")
   }
 });

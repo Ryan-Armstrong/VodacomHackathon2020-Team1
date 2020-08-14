@@ -1,6 +1,9 @@
 {
   "pages": [
+    "pages/home/home",
     "pages/index/index"
+    
+    
   ],
   "window": {
     "defaultTitle": "EZ Video Stream"
