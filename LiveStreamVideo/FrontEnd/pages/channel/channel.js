@@ -1,8 +1,8 @@
 Page({
   data: {
-      fluidityArr: ['Clothing', 'Electronics', 'Home', 'Accessories', 'Fitness', 'Pets', 'Travel'],
-      amandaArr: ['Juni', 'FTN', 'Vodacom', 'Blu Betty', 'Takealot', 'Frankees', 'The Shine'],
-      inkaturahArr: ['Lola\'s new collection', 'Nike Pastel Dreams', 'Juni - Sustaibability', 'GoGo Mini Bags', 'Blu Betty', 'Takealot', 'Frankees', 'The Shine'],
+      fluidityArr: ['It\'s A Wrap Dress', 'Shell Tops', 'Swing Tunic & Tie', 'Two Tone Tunic'],
+      amandaArr: ['Amanda\'s Picks', '2020 Accessories', 'Autumn Collection', 'All About Shoes'],
+      inkaturahArr: ['Best of 2020', 'Wild Collection', 'Cleo\'s Collection' , 'New in Store'],
   },
   onLoad() {},
   selectVideo(ev) {

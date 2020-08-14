@@ -27,7 +27,7 @@
     </view>
     <view class="scrollMenuSquare">
       <view class="scrollItemSquare" a:for="{{fluidityArr}}" a:for-index="i" a:key="*this" onTap="selectVideo">
-        <image id="{{item}}" class="scrollImageSquare" src="../../assets/thumbnails/v{{i+1}}.png"/>
+        <image id="{{item}}" class="scrollImageSquare" src="../../assets/thumbnails/fluidity_{{i+1}}.png"/>
         <view class="scrollTextSquare">
           {{item}}
         </view>
@@ -38,8 +38,8 @@
      Amanda Laird Cherry Apparel
     </view>
     <view class="scrollMenuSquare">
-      <view class="scrollItemSquare" a:for="{{fluidityArr}}" a:for-index="i" a:key="*this" onTap="selectVideo">
-        <image id="{{item}}" class="scrollImageSquare" src="../../assets/thumbnails/v{{8 - i}}.png"/>
+      <view class="scrollItemSquare" a:for="{{amandaArr}}" a:for-index="i" a:key="*this" onTap="selectVideo">
+        <image id="{{item}}" class="scrollImageSquare" src="../../assets/thumbnails/alc_{{i+1}}.png"/>
         <view class="scrollTextSquare">
           {{item}}
         </view>
@@ -51,7 +51,7 @@
     </view>
     <view class="scrollMenuSquare">
       <view class="scrollItemSquare" a:for="{{inkaturahArr}}" a:for-index="i" a:key="*this" onTap="selectVideo">
-        <image id="{{item}}" class="scrollImageSquare" src="../../assets/thumbnails/v{{i+1}}.png"/>
+        <image id="{{item}}" class="scrollImageSquare" src="../../assets/thumbnails/ink_{{i+1}}.png"/>
         <view class="scrollTextSquare">
           {{item}}
         </view>
