@@ -1,6 +1,6 @@
 <div class="ablum-container">
     <div class="album-cover">
-        <img src="/images/album-cover.jpg" class="album-img">
+        <img src="/assets/images/album-cover.jpg" class="album-img">
     </div>
     <div style='text-align: center;
     margin: 20px 0px 10px 0px;    font-size: large;
@@ -8,26 +8,27 @@
     <div style='text-align: center;
     margin: 0px 0px 20px 0px;'>by Mi Casa</div>
     <div style='display: flex; margin-bottom: 20px'>
-        <div style="font-size: 12px; margin-right: auto;">
-            Tracks: 13
-        </div>
         <div style="font-size: 12px;    margin-right: auto;">
             Released: 03/07/2020
         </div>
+        <div style="font-size: 12px; margin-right: auto;">
+            Tracks: 13
+        </div>
+
         <div style="font-size: 12px; ">
             Length: 01:02:24
         </div>
     </div>
     <div style="display: flex; margin-bottom: 10px">
-        <img src="/icons/repeat.svg" style="width: 30px; margin-left: auto; margin-right: 14px;">
-        <img src="/icons/skip_back.svg" style="width: 30px;  margin-right: 14px;">
-        <img id="toggleBtn" src="/icons/play_filled.svg" style="width: 40px;  margin-right: 14px;"
+        <img src="/assets/icons/repeat.svg" style="width: 30px; margin-left: auto; margin-right: 14px;">
+        <img src="/assets/icons/skip_back.svg" style="width: 30px;  margin-right: 14px;">
+        <img id="toggleBtn" src="/assets/icons/play_filled.svg" style="width: 40px;  margin-right: 14px;"
             onclick="togglePlaying()">
-        <img src="/icons/skip_forward.svg" style="width: 30px;  margin-right: 14px;">
-        <img src="/icons/shuffle.svg" style="width: 30px; margin-right: auto">
+        <img src="/assets/icons/skip_forward.svg" style="width: 30px;  margin-right: 14px;">
+        <img src="/assets/icons/shuffle.svg" style="width: 30px; margin-right: auto">
     </div>
     <audio id="audio-player" ontimeupdate="updateBar()">
-        <source src="/audio/song.mp3" type="audio/mpeg">
+        <source src="/assets/audio/song.mp3" type="audio/mpeg">
     </audio>
 
     <div style="display: flex;">
@@ -41,11 +42,11 @@
         <div id="myprogressBar"></div>
     </div>
     {{# each arr as |val key|}}
-    <div style="height: 50px; border-bottom: 1px solid black; display: flex"><img src="/icons/play_filled.svg"
+    <div style="height: 50px; border-bottom: 1px solid #d7d7d7; display: flex"><img src="/assets/icons/play_filled.svg"
             style="width: 30px;  margin-right: 14px;">
         <p style="margin-right: auto;">{{ val.name }}</p>
-        <img src="/icons/favourite.svg" style="margin-right: 10px;">
-        <img src="/icons/overflow_dots.svg">
+        <img src="/assets/icons/favourite.svg" style="margin-right: 10px;">
+        <img src="/assets/icons/overflow_dots.svg">
     </div>
     {{/each}}
 
