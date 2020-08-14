@@ -7,6 +7,7 @@ Page({
   onLoad() {},
   selectCategory(ev) {
     console.log(ev)
+    my.navigateTo({ url: '../category/category' });
   },
   selectChannel(ev) {
     console.log(ev)
