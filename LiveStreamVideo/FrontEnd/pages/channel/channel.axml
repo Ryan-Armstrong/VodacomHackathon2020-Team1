@@ -1,0 +1,62 @@
+<view class="channelPage">
+  <view class="channelScreen">
+    <view class="topRow">
+      <image id="{{item}}" class="channelImageView" src="../../assets/channels/7.svg"/>
+      <view class="topColumn">
+        <view class="titleText">
+      The Space
+        </view>
+        <view class="titleDescription">
+     Designer clothing by South Africans, for South Africans.
+        </view>
+      </view>
+    </view>
+    <view class="topRow">
+      <image id="{{item}}" class="imageSquare" src="../../assets/thumbnails/v1.png" onTap="selectVideo"/>
+      <view class="topColumn">
+        <view class="titleText">
+     Summer 2020 Coming Soon
+        </view>
+        <view class="titleDescription">
+     Get exclusive access to the new creations some of our most popular designers have in store for summer 2020!
+        </view>
+      </view>
+    </view>
+    <view class="rowTitleText">
+     Fluidity
+    </view>
+    <view class="scrollMenuSquare">
+      <view class="scrollItemSquare" a:for="{{fluidityArr}}" a:for-index="i" a:key="*this" onTap="selectVideo">
+        <image id="{{item}}" class="scrollImageSquare" src="../../assets/thumbnails/fluidity_{{i+1}}.png"/>
+        <view class="scrollTextSquare">
+          {{item}}
+        </view>
+      </view>
+    </view>
+
+    <view class="rowTitleText">
+     Amanda Laird Cherry Apparel
+    </view>
+    <view class="scrollMenuSquare">
+      <view class="scrollItemSquare" a:for="{{amandaArr}}" a:for-index="i" a:key="*this" onTap="selectVideo">
+        <image id="{{item}}" class="scrollImageSquare" src="../../assets/thumbnails/alc_{{i+1}}.png"/>
+        <view class="scrollTextSquare">
+          {{item}}
+        </view>
+      </view>
+    </view>
+    
+    <view class="rowTitleText">
+     Inkaturah
+    </view>
+    <view class="scrollMenuSquare">
+      <view class="scrollItemSquare" a:for="{{inkaturahArr}}" a:for-index="i" a:key="*this" onTap="selectVideo">
+        <image id="{{item}}" class="scrollImageSquare" src="../../assets/thumbnails/ink_{{i+1}}.png"/>
+        <view class="scrollTextSquare">
+          {{item}}
+        </view>
+      </view>
+    </view>
+
+  </view>
+</view>
