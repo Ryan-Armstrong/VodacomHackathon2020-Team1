@@ -260,11 +260,12 @@ background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(92,0,0,1) 0%, rgba(0,0
   background-color: white;
   border-radius: 20px;
   color: black;
+  padding-top: 1px;
 }
 
 .products-title
 {
-  font-size: x-large;
+  font-size: medium;
   /* margin-left: 15px; */
   margin-top: 15px;
   color: black;
@@ -275,7 +276,7 @@ background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(92,0,0,1) 0%, rgba(0,0
 
 .product-title
 {
-  font-size: large;
+  font-size: medium;
   font-weight: 500;
 }
 
@@ -348,7 +349,7 @@ background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(92,0,0,1) 0%, rgba(0,0
 
 .cart-images
 {
-  margin-top: 13px;
+  /* margin-top: 13px; */
   margin-right: -10px;
 }
 
