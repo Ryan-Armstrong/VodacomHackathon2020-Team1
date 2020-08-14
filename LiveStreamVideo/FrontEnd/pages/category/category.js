@@ -1,8 +1,8 @@
 Page({
   data: {
-      fluidityArr: ['It\'s A Wrap Dress', 'Shell Tops', 'Swing Tunic & Tie', 'Two Tone Tunic'],
-      amandaArr: ['Amanda\'s Picks', '2020 Accessories', 'Autumn Collection', 'All About Shoes'],
-      inkaturahArr: ['Best of 2020', 'Wild Collection', 'Cleo\'s Collection' , 'New in Store'],
+      spaceArr: ['Summer 2020', 'It\'s A Wrap Dress', 'Autumn Collection', 'Shell Tops'],
+      goodArr: ['Floral Flash Sale', 'New Jumpsuits', 'Animal Print', 'Winter Warmer'],
+      blueArr: ['Introducing Amy', 'Best In Boots', 'August Pre-Sale' , 'The Classics'],
   },
   onLoad() {},
   selectVideo(ev) {

@@ -1,11 +1,11 @@
 <view class="categoryPage">
   <view class="categoryScreen">
     <view class="rowTitleText">
-     Fluidity
+     The Space
     </view>
     <view class="scrollMenuSquare">
-      <view class="scrollItemSquare" a:for="{{fluidityArr}}" a:for-index="i" a:key="*this" onTap="selectVideo">
-        <image id="{{item}}" class="scrollImageSquare" src="../../assets/thumbnails/fluidity_{{i+1}}.png"/>
+      <view class="scrollItemSquare" a:for="{{spaceArr}}" a:for-index="i" a:key="*this" onTap="selectVideo">
+        <image id="{{item}}" class="scrollImageSquare" src="../../assets/thumbnails/ts{{i+1}}.png"/>
         <view class="scrollTextSquare">
           {{item}}
         </view>
@@ -13,11 +13,11 @@
     </view>
 
     <view class="rowTitleText">
-     Amanda Laird Cherry Apparel
+     Good Clothing
     </view>
     <view class="scrollMenuSquare">
-      <view class="scrollItemSquare" a:for="{{amandaArr}}" a:for-index="i" a:key="*this" onTap="selectVideo">
-        <image id="{{item}}" class="scrollImageSquare" src="../../assets/thumbnails/alc_{{i+1}}.png"/>
+      <view class="scrollItemSquare" a:for="{{goodArr}}" a:for-index="i" a:key="*this" onTap="selectVideo">
+        <image id="{{item}}" class="scrollImageSquare" src="../../assets/thumbnails/good_{{i+1}}.png"/>
         <view class="scrollTextSquare">
           {{item}}
         </view>
@@ -25,11 +25,11 @@
     </view>
     
     <view class="rowTitleText">
-     Inkaturah
+     Blue Betty
     </view>
     <view class="scrollMenuSquare">
-      <view class="scrollItemSquare" a:for="{{inkaturahArr}}" a:for-index="i" a:key="*this" onTap="selectVideo">
-        <image id="{{item}}" class="scrollImageSquare" src="../../assets/thumbnails/ink_{{i+1}}.png"/>
+      <view class="scrollItemSquare" a:for="{{blueArr}}" a:for-index="i" a:key="*this" onTap="selectVideo">
+        <image id="{{item}}" class="scrollImageSquare" src="../../assets/thumbnails/betty_{{i+1}}.png"/>
         <view class="scrollTextSquare">
           {{item}}
         </view>
