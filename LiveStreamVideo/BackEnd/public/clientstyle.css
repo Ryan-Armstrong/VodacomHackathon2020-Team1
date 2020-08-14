@@ -22,6 +22,7 @@ body {
     color: white;
     background-color: transparent;
     font-family: "San Francisco";
+    line-height: normal;
   }
 
 
@@ -170,6 +171,11 @@ div.relative {
   opacity: 0.9;
 }
 
+label
+{
+  margin-bottom: 0px !important;
+}
+
 #clockdiv > div{
   padding: 5px;
   border-radius: 3px;
@@ -289,14 +295,14 @@ background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(92,0,0,1) 0%, rgba(0,0
 
 .product-title
 {
-  font-size: 10pt;
+  font-size: 12pt;
   font-weight: 500;
   color: #282828;
 }
 
 .product-descriptiom
 {
-  font-size: 8pt;
+  font-size: 9pt;
   color: #4A4A4A;
 }
 
@@ -330,7 +336,7 @@ background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(92,0,0,1) 0%, rgba(0,0
 .product-image
 {  
   width: 100%;
-  
+  margin-left: 10px;
   /* height: 120px; */
   /* border: 2px solid lightgray; */
   box-shadow: 2px 2px 5px lightgray;
@@ -349,9 +355,9 @@ background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(92,0,0,1) 0%, rgba(0,0
   color: white;
   border-radius: 15px;
   position: absolute;
-  bottom: 5px;
+  bottom: 0px;
   border: hidden;
-  font-size: 8pt;
+  font-size: 9pt;
 }
 
 .chat-history-div::-webkit-scrollbar { 
@@ -398,6 +404,7 @@ background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(92,0,0,1) 0%, rgba(0,0
 {
   color: black;
   font-size: small;
+  margin-bottom: 10px;
 }
 
 
@@ -439,14 +446,14 @@ background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(92,0,0,1) 0%, rgba(0,0
 .cart-row
 {
   border-bottom: 1px solid lightgray;  
-  padding-top: 5px;
+  padding-top: 10px;
   margin-left: 10px;
   margin-right: 10px;
 }
 
 .cart-row-main
 {
-  padding-top: 5px;
+  padding-top: 10px;
 }
 
 .cart-description

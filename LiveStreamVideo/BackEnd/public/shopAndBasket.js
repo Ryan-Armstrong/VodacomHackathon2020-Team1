@@ -48,7 +48,7 @@ function viewShopItems(itemNo)
     productItemsDiv.innerHTML += '<div class="row product-item"><div class="col-3"><img src="' 
     + shopItem.image + '" class="product-image"></div><div class="col-9"><div class="product-info"><label class="product-title">'
     + shopItem.title +'</label><br><label class="product-descriptiom">'
-    + shopItem.description +'</span><br><button class="product-addcart-button" onclick="addToCart('
+    + shopItem.description +'</label><br><button class="product-addcart-button" onclick="addToCart('
     + shopItem.id +', false)">Add to cart</button></div></div></div>';
 
     for (var i = 0; i < shopItems.length; i++) {
@@ -124,7 +124,7 @@ function populateCart()
 
         cartItemsEl.innerHTML += '<div class="row cart-row-main"><div class="col-6"><span class="cart-description">'+
         cartItem.description + '</span></div><div class="col-3"><span onclick="removeCartItem('+
-        cartItem.id+')" class="cart-remove">&nbsp;&nbsp;－</span><span class="cart-number">&nbsp;'+
+        cartItem.id+')" class="cart-remove">&nbsp;&nbsp;-</span><span class="cart-number">&nbsp;'+
         cartItem.count+'</span><span onclick="addCartItem('+
         cartItem.id+')" class="cart-add">+</span></div><div class="col-3"><span>R</span><span>'+ 
         cartItem.cost +'</span></div></div><div class="cart-row"></div>';
@@ -157,5 +157,5 @@ function checkoutBasket()
 
 initializeShopItems();
 // viewShopItems(1);
-// document.getElementById('salesDiv').classList.remove('hidediv');
+//document.getElementById('productsDiv').classList.remove('hidediv');
 //document.getElementById('cartDiv').classList.remove('hidediv');
