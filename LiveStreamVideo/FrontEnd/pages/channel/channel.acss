@@ -28,6 +28,24 @@
   padding-top: 16px;
 }
 
+.likeRow {
+  display: flex;
+  flex-direction: row;
+  padding-top: 10px;
+}
+
+.imageLike {
+  width: 18px;
+  height: 18px;
+}
+
+.textLike {
+  font-size: 9px;
+  padding-top: 4px;
+  padding-left: 7px;
+  font-weight: 600;
+}
+
 .topColumn {
   display: flex;
   flex-direction: column;
