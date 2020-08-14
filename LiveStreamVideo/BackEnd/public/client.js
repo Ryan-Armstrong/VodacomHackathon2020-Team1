@@ -167,6 +167,7 @@ function addMessageToHistory(fromUser, icon, message , type)
 function productsGoBack()
 {
   document.getElementById('chatContainer').classList.remove('hidediv');
+  document.getElementById('salesDiv').classList.remove('hidediv');
   document.getElementById('productsDiv').classList.add('hidediv');  
 }
 
