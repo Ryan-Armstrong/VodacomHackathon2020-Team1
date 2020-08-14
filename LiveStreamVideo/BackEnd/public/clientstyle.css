@@ -1,8 +1,17 @@
+@font-face {
+  font-family: "San Francisco";
+  font-weight: 400;
+  src: url("SFProText.otf");
+}
+
+
 body {
     overflow: hidden; /* Hide scrollbars */
     color: white;
     background-color: transparent;
+    font-family: "San Francisco";
   }
+
 
   button:focus {outline:0;}
 
@@ -68,6 +77,8 @@ div.relative {
 .chat-input-div
 {
   /* height: 25px; */
+  text-align: left;
+  font-size: small;
 }
 
 .chat-history-div
@@ -77,6 +88,7 @@ div.relative {
   overflow-y: scroll;  
   padding-left: 10px;
   padding-right: 10px;
+  margin-bottom: 10px;
 }
 
 .chat-history-div::-webkit-scrollbar { 
@@ -86,11 +98,12 @@ div.relative {
 .chat-input
 {
   margin: 5px;
-  width: 70%;
+  width: 80%;
   border-radius: 25px;
   padding: 5px;
   background-color: transparent;
-  color: white;
+  color: #ffffff;
+  border: 1px solid #ffffff;
 }
 
 .chat-historymessage
@@ -141,6 +154,7 @@ div.relative {
   border-radius: 8px;
   color: black;
   padding: 0px 10px 5px 10px;
+  opacity: 0.9;
 }
 
 #clockdiv > div{
@@ -150,7 +164,7 @@ div.relative {
 background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(92,0,0,1) 0%, rgba(0,0,0,1) 100%); */
   display: inline-block;
   color: white;
-  background: linear-gradient(230deg, #ff0000, #5a0000);
+  background: linear-gradient(230deg, #fafafa, #cacaca);
     background-size: 400% 400%;
 
     -webkit-animation: GradientAnimation 8s ease infinite;
@@ -177,6 +191,7 @@ background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(92,0,0,1) 0%, rgba(0,0
 .smalltext{
   padding-top: 5px;
   font-size: 12px;
+  color: #282828;
 }
 
 @-webkit-keyframes GradientAnimation {
