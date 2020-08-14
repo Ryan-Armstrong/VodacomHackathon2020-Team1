@@ -15,7 +15,9 @@ https://localhost:4000/cast.html
 
 ## Browse as viewer
 https://localhost:4000
-
+s
 ## If stuff goes wrong
 sudo lsof -i :4000 // Get PID of items hosted on port 4000  
 kill -9 <PID> // Kill that process  
+OR  
+kill -9 $(lsof -t -i:4000) 
