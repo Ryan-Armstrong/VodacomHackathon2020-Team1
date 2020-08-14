@@ -2,6 +2,12 @@
   background: white;
 }
 
+.page-header-image {
+  margin: 25rpx;
+  width: 94vw;
+  object-fit: contain;
+}
+
 .page-title {
   font-family: sans-serif;
   font-size: 20px;

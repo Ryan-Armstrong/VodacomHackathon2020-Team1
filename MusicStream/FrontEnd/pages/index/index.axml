@@ -1,4 +1,7 @@
 <view class="subscription-container">
+
+  <image class="page-header-image" src="../../assets/music_welcome_header.png"/>
+
   <view class="page-title">Welcome to Music Streaming</view>
   <view class="page-subtitle">Subscribe to start streaming your favourite music in the way that suits you best.</view>
 
