@@ -164,23 +164,23 @@ div.relative {
 background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(92,0,0,1) 0%, rgba(0,0,0,1) 100%); */
   display: inline-block;
   color: white;
-  background: linear-gradient(230deg, #fafafa, #cacaca);
-    background-size: 400% 400%;
-
-    -webkit-animation: GradientAnimation 8s ease infinite;
-    -moz-animation: GradientAnimation 8s ease infinite;
-    -o-animation: GradientAnimation 8s ease infinite;
-    animation: GradientAnimation 8s ease infinite;
+  background: #FAFAFA;   
+    
 }
 
 #clockdiv div > span{
   padding: 7px;
   border-radius: 3px;
-  background: rgb(2,0,36);
-  background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(255,0,0,1) 0%, rgba(255,123,123,1) 100%);
+  background: linear-gradient(269deg, #e60202, #f15c3e);
+    background-size: 400% 400%;
+  
   display: inline-block;
   color: white;
   font-weight: 600;
+
+  -webkit-animation: AnimationName 7s ease infinite;
+  -moz-animation: AnimationName 7s ease infinite;
+  animation: AnimationName 7s ease infinite;
 }
 
 #clockdiv > span
@@ -194,25 +194,20 @@ background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(92,0,0,1) 0%, rgba(0,0
   color: #282828;
 }
 
-@-webkit-keyframes GradientAnimation {
-  0%{background-position:90% 0%}
-  50%{background-position:11% 100%}
-  100%{background-position:90% 0%}
+@-webkit-keyframes AnimationName {
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
 }
-@-moz-keyframes GradientAnimation {
-  0%{background-position:90% 0%}
-  50%{background-position:11% 100%}
-  100%{background-position:90% 0%}
+@-moz-keyframes AnimationName {
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
 }
-@-o-keyframes GradientAnimation {
-  0%{background-position:90% 0%}
-  50%{background-position:11% 100%}
-  100%{background-position:90% 0%}
-}
-@keyframes GradientAnimation {
-  0%{background-position:90% 0%}
-  50%{background-position:11% 100%}
-  100%{background-position:90% 0%}
+@keyframes AnimationName {
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
 }
 
 /* ----------------------------- */
