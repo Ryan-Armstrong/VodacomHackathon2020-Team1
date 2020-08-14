@@ -19,26 +19,3 @@
   text-align: center;
   padding-bottom: 10px;
 }
-
-.progress {
-  width: 1px;
-  height: 3px;
-  background: #006b5a;
-  transition: width 0.1s linear;
-}
-
-
-#progress-status {
-  width: 100%;
-  background-color: #ddd;
-  margin-bottom: 15px;
-}
-
-#myprogressBar {
-  width: 0;
-  height: 5px;
-  background-color: #E60202;
-  text-align: center;
-  line-height: 32px;
-  color: black;
-}
