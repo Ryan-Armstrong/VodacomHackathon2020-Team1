@@ -1,0 +1,19 @@
+.banner-ad-swiper {
+  margin: 25rpx;
+  width: 94vw;
+  height: 250rpx;
+  border-radius: 20rpx;
+}
+
+.banner-image-view {
+  object-fit: cover;
+  width: 94vw;
+  height: 250rpx;
+}
+
+.titleText {
+  font-weight: 600;
+  padding-left: 16px;
+  padding-top: 16px;
+  padding-bottom: 5px;
+}

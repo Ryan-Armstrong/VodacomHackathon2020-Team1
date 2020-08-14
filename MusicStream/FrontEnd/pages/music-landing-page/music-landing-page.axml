@@ -1,3 +1,19 @@
-<view>
-  Music landing page
+<view class="music-landing-page-container">
+  <swiper class="banner-ad-swiper" indicator-dots="true" autoplay="true" interval="5000">
+    <block a:for="{{bannerAds}}">
+      <swiper-item>
+        <image class="banner-image-view" src="../../assets/banner-ads/{{item}}.png"/>
+      </swiper-item>
+    </block>
+  </swiper>
+
+  <text class="titleText">New Releases</text>
+  <view class="scrollMenuSquare">
+    <view class="scrollItemSquare" a:for="{{videoForYouArr}}" a:for-index="i" a:key="*this" onTap="selectVideo">
+      <image id="{{item}}" class="scrollImageSquare" src="../../assets/thumbnails/v{{i+1}}.png"/>
+      <view class="scrollTextSquare">
+        {{item}}
+      </view>
+    </view>
+  </view>
 </view>
