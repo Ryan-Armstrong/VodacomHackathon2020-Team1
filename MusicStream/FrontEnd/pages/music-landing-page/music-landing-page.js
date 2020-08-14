@@ -11,4 +11,21 @@ Page({
     console.log("Music landing page loaded.")
 
   },
+
+  viewPlaylists() {
+    console.log("View playlists");
+  },
+  viewPurchasedMusic() {
+    console.log("View purchased");
+  },
+  viewSubscriptions() {
+    console.log("View subscriptions");
+  },
+  searchMusic() {
+    console.log("Search music");
+  },
+
+  selectedAlbum(e) {
+    console.log("Selected album with event: ", e);
+  }
 });

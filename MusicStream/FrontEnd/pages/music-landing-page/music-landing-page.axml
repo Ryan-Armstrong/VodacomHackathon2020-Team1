@@ -1,4 +1,15 @@
 <view class="music-landing-page-container">
+  <view class="tab-bar">
+    <view class="tab-bar-item">
+      <view class="tab-bar-item-text">Home</view>
+      <view class="tab-bar-indicator"></view>
+    </view>
+    <view class="tab-bar-item-text" onTap="viewPlaylists">Playlists</view>
+    <view class="tab-bar-item-text" onTap="viewPurchasedMusic">Purchased</view>
+    <view class="tab-bar-item-text" onTap="viewSubscriptions">Subscription</view>
+    <image class="tab-bar-item-icon" src="../../assets/icons/search.png" onTap="searchMusic"/>
+  </view>
+
   <swiper class="banner-ad-swiper" indicator-dots="true" autoplay="true" interval="5000">
     <block a:for="{{bannerAds}}">
       <swiper-item>

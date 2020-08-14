@@ -1,6 +1,36 @@
 .music-landing-page-container {
   display: flex;
   flex-direction: column;
+  background: white;
+}
+
+.tab-bar {
+  display: flex;
+  margin: 25rpx;
+}
+
+.tab-bar-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.tab-bar-item-text {
+  margin-right: 25rpx;
+}
+
+.tab-bar-item-icon {
+  margin-right: 25rpx;
+  height: 15px;
+  width: 15px;
+  object-fit: contain;
+}
+
+.tab-bar-indicator {
+  border-radius: 1px;
+  background: #E60202;
+  height: 2px;
+  width: 35px;
+  margin-left: 1px;
 }
 
 .banner-ad-swiper {
