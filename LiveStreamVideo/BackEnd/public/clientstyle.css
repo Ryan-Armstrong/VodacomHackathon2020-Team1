@@ -1,7 +1,10 @@
 body {
     overflow: hidden; /* Hide scrollbars */
     color: white;
+    background-color: transparent;
   }
+
+  button:focus {outline:0;}
 
 .col-12
 {
@@ -36,12 +39,15 @@ div.relative {
     margin-left: 10px;
     margin-right: 10px;
     margin-top: 5px;
+    float: left;
   }
 
   .channel-label
   {
     font-size: medium;    
     font-weight: 300;
+    float: left;
+    margin-top: 8px;
   }
 
 
@@ -193,5 +199,123 @@ background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(92,0,0,1) 0%, rgba(0,0
   50%{background-position:11% 100%}
   100%{background-position:90% 0%}
 }
+
+/* ----------------------------- */
+
+/* Sales */
+
+.sales-container
+{  
+  height: 100%;
+}
+
+.scrollMenuSquare {
+  overflow: auto;
+  white-space: nowrap;
+  padding: 1px;
+}
+
+.scrollItemSquare {
+  display: inline-block;
+  text-align: center;
+  padding: 3px;
+  margin: 0px 5px 0px 5px;
+  text-decoration: none;  
+}
+
+.scrollImageSquare {
+  border-radius: 10px;
+  border: 2px solid lightgray;
+  width: 100px;
+}
+
+.scrollTextSquare {
+  color: rgb(54, 54, 54);
+  font-weight: 400;
+  font-size: 9px;
+  text-overflow: ellipsis; 
+  overflow: hidden;
+  width: 80px;
+  padding-top: 6px;
+}
+
+/* ----------------------------- */
+
+
+/* Products */
+
+.products-div
+{
+  background-color: white;
+  border-radius: 20px;
+}
+
+.products-title
+{
+  font-size: x-large;
+  /* margin-left: 15px; */
+  margin-top: 15px;
+  color: black;
+  text-align: left;
+  margin-left: 10px;
+}
+
+.product-title
+{
+  font-size: large;
+  font-weight: 500;
+}
+
+
+.product-items
+{
+  height: 200px;
+  max-height: 200px;
+  overflow-y: scroll;
+  overflow-x: hidden;  
+  padding: 5px;
+  /* padding-left: 10px;
+  padding-right: 10px; */
+  background-color: transparent;
+  text-align: left;  
+  border-radius: 20px;
+}
+
+.product-items::-webkit-scrollbar { 
+  display: none; 
+} 
+
+.product-item{
+  padding: 5px;
+}
+
+.product-image
+{  
+  width: 100%;
+  /* height: 120px; */
+  /* border: 2px solid lightgray; */
+  box-shadow: 2px 2px 5px lightgray;
+  border-radius: 6px;
+}
+
+.product-info
+{
+  color: black;
+  padding-left: 10px;
+}
+
+.product-addcart-button
+{
+  background-color: red;
+  color: white;
+  border-radius: 15px;
+  position: absolute;
+  bottom: 0px;
+  border: hidden;
+}
+
+.chat-history-div::-webkit-scrollbar { 
+  display: none; 
+} 
 
 /* ----------------------------- */
