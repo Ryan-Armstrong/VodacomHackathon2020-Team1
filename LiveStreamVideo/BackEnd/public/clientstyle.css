@@ -244,10 +244,12 @@ background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(92,0,0,1) 0%, rgba(0,0
 
 /* Products */
 
+
 .products-div
 {
   background-color: white;
   border-radius: 20px;
+  color: black;
 }
 
 .products-title
@@ -258,6 +260,7 @@ background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(92,0,0,1) 0%, rgba(0,0
   color: black;
   text-align: left;
   margin-left: 10px;
+  font-weight: 600;
 }
 
 .product-title
@@ -269,8 +272,8 @@ background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(92,0,0,1) 0%, rgba(0,0
 
 .product-items
 {
-  height: 200px;
-  max-height: 200px;
+  height: 300px;
+  max-height: 300px;
   overflow-y: scroll;
   overflow-x: hidden;  
   padding: 5px;
@@ -287,6 +290,11 @@ background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(92,0,0,1) 0%, rgba(0,0
 
 .product-item{
   padding: 5px;
+  height: 120px;
+}
+.product-item > .col-4
+{
+  padding: 8px !important;  
 }
 
 .product-image
@@ -317,5 +325,101 @@ background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(92,0,0,1) 0%, rgba(0,0
 .chat-history-div::-webkit-scrollbar { 
   display: none; 
 } 
+
+/* ----------------------------- */
+
+/* CART View */
+
+.cart-div
+{  
+  margin-right: 15px;
+  margin-top: 0px;
+}
+
+.cart-images
+{
+  margin-top: 13px;
+  margin-right: -10px;
+}
+
+.cart-number-of-items
+{
+  background-color: red;
+  border-radius: 20px;  
+  color: white;
+  font-size: small;
+  width: 17px !important; 
+  height: 17px;
+}
+
+.checkout-button
+{
+  background-color: red;
+  border-radius: 20px;
+  border: 0px hidden;
+  color: white;
+  padding: 3px 30px 3px 30px;
+  margin-bottom: 10px;
+}
+
+.cart-items
+{
+  color: black;
+  font-size: small;
+}
+
+
+.cart-remove
+{
+  border-top: 1px solid red;
+  border-left: 1px solid red;
+  border-bottom: 1px solid red;
+  border-right: 0px hidden;
+  border-radius: 20px 0px 0px 20px;
+  width: 20px;
+  float: left;  
+  
+}
+
+.cart-add
+{
+  border-top: 1px solid red;
+  border-right: 1px solid red;
+  border-bottom: 1px solid red;
+  border-left: 0px hidden;
+  border-radius: 0px 20px 20px 0px;
+  width: 20px;
+  float: left;  
+  
+}
+
+.cart-number
+{
+  border-top: 1px solid red;
+  border-right: 0px hidden;
+  border-bottom: 1px solid red;
+  border-left: 0px hidden;
+  border-radius: 0px;
+  width: 20px;
+  float: left;  
+}
+
+.cart-row
+{
+  border-bottom: 1px solid lightgray;  
+  padding-top: 5px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.cart-row-main
+{
+  padding-top: 5px;
+}
+
+.cart-description
+{
+  margin-left: 10px;
+}
 
 /* ----------------------------- */

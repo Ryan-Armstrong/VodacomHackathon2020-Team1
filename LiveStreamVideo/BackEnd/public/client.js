@@ -164,6 +164,30 @@ function addMessageToHistory(fromUser, icon, message , type)
   historyDivContainer.scrollTop = historyDivContainer.scrollHeight;
 }
 
+function productsGoBack()
+{
+  document.getElementById('chatContainer').classList.remove('hidediv');
+  document.getElementById('productsDiv').classList.add('hidediv');  
+}
+
+function cartGoBack()
+{
+  document.getElementById('productsDiv').classList.remove('hidediv');
+  document.getElementById('cartDiv').classList.add('hidediv');  
+}
+
+function goToCart()
+{
+  document.getElementById('productsDiv').classList.add('hidediv');
+  populateCart();
+  document.getElementById('cartDiv').classList.remove('hidediv');
+}
+
+function cartClose()
+{
+  document.getElementById('cartDiv').classList.add('hidediv');
+  document.getElementById('chatContainer').classList.remove('hidediv');
+}
 
 /**
  * Convert a template string into HTML DOM nodes
