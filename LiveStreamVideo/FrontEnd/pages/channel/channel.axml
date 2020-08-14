@@ -20,6 +20,12 @@
         <view class="titleDescription">
      Get exclusive access to the new creations some of our most popular designers have in store for summer 2020!
         </view>
+        <view class="likeRow">
+          <image id="favourite" class="imageLike" src="../../assets/thumbnails/favourite{{isFavourited}}.svg" onTap="toggleFavourite"/>
+          <view class="textLike">
+      {{amountLikes}} likes
+          </view>
+        </view>
       </view>
     </view>
     <view class="rowTitleText">
@@ -33,7 +39,6 @@
         </view>
       </view>
     </view>
-
     <view class="rowTitleText">
      Amanda Laird Cherry Apparel
     </view>
@@ -45,7 +50,6 @@
         </view>
       </view>
     </view>
-    
     <view class="rowTitleText">
      Inkaturah
     </view>
@@ -57,6 +61,5 @@
         </view>
       </view>
     </view>
-
   </view>
 </view>
