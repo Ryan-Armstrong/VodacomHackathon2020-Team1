@@ -9,11 +9,29 @@
 
   <text class="titleText">New Releases</text>
   <view class="scrollMenuSquare">
-    <view class="scrollItemSquare" a:for="{{videoForYouArr}}" a:for-index="i" a:key="*this" onTap="selectVideo">
-      <image id="{{item}}" class="scrollImageSquare" src="../../assets/thumbnails/v{{i+1}}.png"/>
-      <view class="scrollTextSquare">
-        {{item}}
-      </view>
+    <view class="scrollItemSquare" a:for="{{newReleases}}" a:for-index="i" a:key="*this" onTap="selectedAlbum">
+      <image id="{{item}}" class="scrollImageSquare" src="../../assets/{{item.thumbnail}}"/>
+      <view class="scrollTitleTextSquare">{{item.title}}</view>
+      <view class="scrollSubtitleTextSquare">{{item.artistName}}</view>
     </view>
   </view>
+
+  <text class="titleText">Recommended Albums</text>
+  <view class="scrollMenuSquare">
+    <view class="scrollItemSquare" a:for="{{recommendedAlbums}}" a:for-index="i" a:key="*this" onTap="selectedAlbum">
+      <image id="{{item}}" class="scrollImageSquare" src="../../assets/{{item.thumbnail}}"/>
+      <view class="scrollTitleTextSquare">{{item.title}}</view>
+      <view class="scrollSubtitleTextSquare">{{item.artistName}}</view>
+    </view>
+  </view>
+
+  <text class="titleText">Popular in South Africa</text>
+  <view class="scrollMenuSquare">
+    <view class="scrollItemSquare" a:for="{{popularAlbums}}" a:for-index="i" a:key="*this" onTap="selectedAlbum">
+      <image id="{{item}}" class="scrollImageSquare" src="../../assets/{{item.thumbnail}}"/>
+      <view class="scrollTitleTextSquare">{{item.title}}</view>
+      <view class="scrollSubtitleTextSquare">{{item.artistName}}</view>
+    </view>
+  </view>
+
 </view>
