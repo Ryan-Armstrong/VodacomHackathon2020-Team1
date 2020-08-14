@@ -45,9 +45,9 @@ function viewShopItems(itemNo)
     productItemsDiv.innerHTML = "";
 
     var shopItem = shopItems[itemNo - 1];
-    productItemsDiv.innerHTML += '<div class="row product-item"><div class="col-4"><img src="' 
-    + shopItem.image + '" class="product-image"></div><div class="col-8"><div class="product-info"><span class="product-title">'
-    + shopItem.title +'</span><br><span>'
+    productItemsDiv.innerHTML += '<div class="row product-item"><div class="col-3"><img src="' 
+    + shopItem.image + '" class="product-image"></div><div class="col-9"><div class="product-info"><label class="product-title">'
+    + shopItem.title +'</label><br><label class="product-descriptiom">'
     + shopItem.description +'</span><br><button class="product-addcart-button" onclick="addToCart('
     + shopItem.id +', false)">Add to cart</button></div></div></div>';
 
@@ -55,10 +55,10 @@ function viewShopItems(itemNo)
         if (i != itemNo - 1)
         {
             var shopItem = shopItems[i];
-            productItemsDiv.innerHTML += '<div class="row product-item"><div class="col-4"><img src="' 
-            + shopItem.image + '" class="product-image"></div><div class="col-8"><div class="product-info"><span class="product-title">'
-            + shopItem.title +'</span><br><span>'
-            + shopItem.description +'</span><br><button class="product-addcart-button" onclick="addToCart('
+            productItemsDiv.innerHTML += '<div class="row product-item"><div class="col-3"><img src="' 
+            + shopItem.image + '" class="product-image"></div><div class="col-9"><div class="product-info"><label class="product-title">'
+            + shopItem.title +'</label><br><label class="product-descriptiom">'
+            + shopItem.description +'</label><br><button class="product-addcart-button" onclick="addToCart('
             + shopItem.id +', false)">Add to cart</button></div></div></div>';
         }
     }

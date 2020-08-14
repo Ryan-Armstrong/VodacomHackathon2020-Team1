@@ -10,7 +10,7 @@
     <image class="tab-bar-item-icon" src="../../assets/icons/search.png" onTap="searchMusic"/>
   </view>
 
-  <swiper class="banner-ad-swiper" indicator-dots="true" autoplay="true" interval="5000">
+  <swiper class="banner-ad-swiper" indicator-dots="true" indicator-active-color="#E60202" autoplay="true" interval="5000">
     <block a:for="{{bannerAds}}">
       <swiper-item>
         <image class="banner-image-view" src="../../assets/banner-ads/{{item}}.png"/>

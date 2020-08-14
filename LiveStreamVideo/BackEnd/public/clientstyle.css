@@ -4,6 +4,18 @@
   src: url("SFProText.otf");
 }
 
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: white;
+  opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: white;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+  color: white;
+}
 
 body {
     overflow: hidden; /* Hide scrollbars */
@@ -54,7 +66,7 @@ div.relative {
   .channel-label
   {
     font-size: medium;    
-    font-weight: 300;
+    font-weight: 500;
     float: left;
     margin-top: 8px;
   }
@@ -104,6 +116,7 @@ div.relative {
   background-color: transparent;
   color: #ffffff;
   border: 1px solid #ffffff;
+  padding-left: 15px;
 }
 
 .chat-historymessage
@@ -265,10 +278,10 @@ background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(92,0,0,1) 0%, rgba(0,0
 
 .products-title
 {
-  font-size: medium;
+  font-size: 14pt;
   /* margin-left: 15px; */
   margin-top: 15px;
-  color: black;
+  color: #282828;
   text-align: left;
   margin-left: 10px;
   font-weight: 600;
@@ -276,10 +289,16 @@ background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(92,0,0,1) 0%, rgba(0,0
 
 .product-title
 {
-  font-size: medium;
+  font-size: 10pt;
   font-weight: 500;
+  color: #282828;
 }
 
+.product-descriptiom
+{
+  font-size: 8pt;
+  color: #4A4A4A;
+}
 
 .product-items
 {
@@ -287,7 +306,7 @@ background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(92,0,0,1) 0%, rgba(0,0
   max-height: 300px;
   overflow-y: scroll;
   overflow-x: hidden;  
-  padding: 5px;
+  padding: 10 px;
   /* padding-left: 10px;
   padding-right: 10px; */
   background-color: transparent;
@@ -301,7 +320,7 @@ background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(92,0,0,1) 0%, rgba(0,0
 
 .product-item{
   padding: 5px;
-  height: 120px;
+  height: 80px;
 }
 .product-item > .col-4
 {
@@ -311,6 +330,7 @@ background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(92,0,0,1) 0%, rgba(0,0
 .product-image
 {  
   width: 100%;
+  
   /* height: 120px; */
   /* border: 2px solid lightgray; */
   box-shadow: 2px 2px 5px lightgray;
@@ -329,8 +349,9 @@ background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(92,0,0,1) 0%, rgba(0,0
   color: white;
   border-radius: 15px;
   position: absolute;
-  bottom: 0px;
+  bottom: 5px;
   border: hidden;
+  font-size: 8pt;
 }
 
 .chat-history-div::-webkit-scrollbar { 
@@ -389,7 +410,7 @@ background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(92,0,0,1) 0%, rgba(0,0
   border-radius: 20px 0px 0px 20px;
   width: 20px;
   float: left;  
-  
+  color: red;
 }
 
 .cart-add
@@ -401,7 +422,7 @@ background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(92,0,0,1) 0%, rgba(0,0
   border-radius: 0px 20px 20px 0px;
   width: 20px;
   float: left;  
-  
+  color: red;
 }
 
 .cart-number
