@@ -18,7 +18,7 @@
 }
 
 body {
-    overflow: hidden; /* Hide scrollbars */
+    /*overflow: hidden; /* Hide scrollbars */
     color: white;
     background-color: transparent;
     font-family: "San Francisco";
