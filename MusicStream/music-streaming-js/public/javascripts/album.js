@@ -7,6 +7,7 @@ var min = 0;
 var sec = 0;
 var shuffle = true;
 var currentPlaying = undefined;
+var repeat = false;
 
 var songs = [{
   id: 1,
@@ -103,12 +104,17 @@ var album = [{
 //document.getElementById('albumCover').src = album
 
 function updateCoverImg(id) {
-  selectedAlbum = album.filter(a => a.id === id)[0];
+  if (id) {
+    selectedAlbum = album.filter(a => a.id === id)[0];
+  } else {
+    selectedAlbum = album[0];
+  }
   document.getElementById('albumCover').src = selectedAlbum.thumbnail;
   document.getElementById('albumName').innerHTML = selectedAlbum.title;
   document.getElementById('artis').innerHTML = selectedAlbum.artistName;
   document.getElementById('releaseData').innerHTML = 'Released:' + selectedAlbum.releaseDate;
   document.getElementById('tracks').innerHTML = 'Tracks:' + selectedAlbum.songs.length;
+
 }
 
 function setInitValues(id) {
@@ -219,6 +225,16 @@ function myTimer() {
     secString = addZero(sec);
     minString = addZero(min);
     document.getElementById('currentTime').innerHTML = minString + ":" + secString;
+  }
+}
+
+function repeatClicked() {
+  if (repeat === true) {
+    repeat = false;
+    document.getElementById(`repeatBtn`).src = "/assets/icons/repeat_off.svg"
+  } else {
+    repeat = true;
+    document.getElementById(`repeatBtn`).src = "/assets/icons/repeat.svg"
   }
 }
 

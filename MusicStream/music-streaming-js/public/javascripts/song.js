@@ -131,18 +131,17 @@ var singleSongs = [{
 ];
 
 function updateSongImg(id) {
-
+    let selectedSong
     audioPlayer = document.getElementById("audio-player");
     if (id) {
-        let selectedSong = singleSongs.filter(s => s.id === id)[0]
-        document.getElementById('albumCover').src = selectedSong.thumbnail;
-        document.getElementById('albumName').innerHTML = selectedSong.title;
-        document.getElementById('artis').innerHTML = selectedSong.artistName;
+        selectedSong = singleSongs.filter(s => s.id === id)[0]
     } else {
-        document.getElementById('albumCover').src = singleSongs[0].thumbnail;
-        document.getElementById('albumName').innerHTML = singleSongs[0].title;
-        document.getElementById('artis').innerHTML = singleSongs[0].artistName;
+        selectedSong = singleSongs[0]
     }
+
+    document.getElementById('albumCover').src = selectedSong.thumbnail;
+    document.getElementById('albumName').innerHTML = selectedSong.title;
+    document.getElementById('artis').innerHTML = selectedSong.artistName;
 
 }
 
