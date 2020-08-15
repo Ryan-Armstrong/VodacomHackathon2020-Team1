@@ -23,6 +23,7 @@ Page({
   },
   searchMusic() {
     console.log("Search music");
+    my.navigateTo({ url: '../search-page/search-page' });
   },
 
   selectedAlbum(e) {
