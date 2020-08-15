@@ -172,7 +172,6 @@ function playSong(id) {
             document.getElementById('albumName').innerHTML = currentSong.title;
             document.getElementById('artis').innerHTML = currentSong.artistName;
         }
-        audioPlayer.load();
         audioPlayer.play();
         clearInterval(myVar);
         myVar = setInterval(myTimer, 1000);
@@ -192,16 +191,17 @@ function prevSong() {
     }
 }
 
-function nextSong()
-if (currentSong.id !== 3) {
-    stopAndClear();
-    playSong(currentSong.id + 1);
+function nextSong() {
+    if (currentSong.id !== 3) {
+        stopAndClear();
+        playSong(currentSong.id + 1);
 
-} else {
-    stopAndClear();
-    playSong(1);
+    } else {
+        stopAndClear();
+        playSong(1);
+    }
 }
-}
+
 
 function stopAndClear() {
     var audioPlayer = document.getElementById("audio-player");
@@ -226,21 +226,26 @@ function addToFav() {
         modal.style.display = "none"
     }, 1000)
 
-    if (currentSong.fav) {
-        newArray[currentSong.id - 1] = {
-            ...newArray[currentSong.id - 1],
+    if (currentSong === undefined) {
+        currentSong = singleSongs[0];
+    }
+    let index = singleSongs.findIndex(s => s.id === currentSong.id);
+    if (singleSongs[index].fav) {
+        newArray[index] = {
+            ...newArray[index],
             fav: false
         }
         singleSongs = newArray;
         document.getElementById(`favIcon`).src = "/assets/icons/favourite.svg"
-        document.getElementById(`popUpMessage`).innerHTML = singleSongs[counter].title + ' was removed from favourites'
+        document.getElementById(`popUpMessage`).innerHTML = currentSong.title + ' was removed from favourites'
     } else {
-        newArray[currentSong.id - 1] = {
-            ...newArray[currentSong.id - 1],
+        newArray[index] = {
+            ...newArray[index],
             fav: true
         }
         singleSongs = newArray;
+        console.log("singleSongs", singleSongs);
         document.getElementById(`favIcon`).src = "/assets/icons/favourite_filled.svg"
-        document.getElementById(`popUpMessage`).innerHTML = singleSongs[counter].title + ' was added to favourites'
+        document.getElementById(`popUpMessage`).innerHTML = currentSong.title + ' was added to favourites'
     }
 }
