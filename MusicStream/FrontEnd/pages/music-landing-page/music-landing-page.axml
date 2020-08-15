@@ -20,8 +20,8 @@
 
   <text class="titleText">New Releases</text>
   <view class="scrollMenuSquare">
-    <view class="scrollItemSquare" a:for="{{newReleases}}" a:for-index="i" a:key="*this" onTap="selectedAlbum">
-      <image id="{{item}}" class="scrollImageSquare" src="../../assets/{{item.thumbnail}}"/>
+    <view class="scrollItemSquare" a:for="{{newReleases}}" a:for-index="i" a:key="*this" >
+      <image data-id="{{item}}" class="scrollImageSquare" src="../../assets/{{item.thumbnail}}" onTap="selectedSong"/>
       <view class="scrollTitleTextSquare">{{item.title}}</view>
       <view class="scrollSubtitleTextSquare">{{item.artistName}}</view>
     </view>
@@ -29,8 +29,8 @@
 
   <text class="titleText">Recommended Albums</text>
   <view class="scrollMenuSquare">
-    <view class="scrollItemSquare" a:for="{{recommendedAlbums}}" a:for-index="i" a:key="*this" onTap="selectedAlbum">
-      <image id="{{item}}" class="scrollImageSquare" src="../../assets/{{item.thumbnail}}"/>
+    <view class="scrollItemSquare" a:for="{{recommendedAlbums}}" a:for-index="i" a:key="*this" >
+      <image data-id="{{item}}" class="scrollImageSquare" src="../../assets/{{item.thumbnail}}" onTap="selectedAlbum"/>
       <view class="scrollTitleTextSquare">{{item.title}}</view>
       <view class="scrollSubtitleTextSquare">{{item.artistName}}</view>
     </view>
@@ -38,8 +38,8 @@
 
   <text class="titleText">Popular in South Africa</text>
   <view class="scrollMenuSquare">
-    <view class="scrollItemSquare" a:for="{{popularAlbums}}" a:for-index="i" a:key="*this" onTap="selectedAlbum">
-      <image id="{{item}}" class="scrollImageSquare" src="../../assets/{{item.thumbnail}}"/>
+    <view class="scrollItemSquare" a:for="{{popularAlbums}}" a:for-index="i" a:key="*this" >
+      <image data-id="{{item}}" class="scrollImageSquare" src="../../assets/{{item.thumbnail}}" onTap="selectedAlbum"/>
       <view class="scrollTitleTextSquare">{{item.title}}</view>
       <view class="scrollSubtitleTextSquare">{{item.artistName}}</view>
     </view>

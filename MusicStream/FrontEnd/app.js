@@ -1,4 +1,5 @@
 App({
+  selectedItem: String,
   newReleases: [
     {
       id:"1",
