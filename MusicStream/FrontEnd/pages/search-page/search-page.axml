@@ -1,0 +1,18 @@
+<view class="searchPage">
+  <view class="searchSreen">
+    <view class="searchHolder">
+      <view class="searchField">
+     <image class="searchImage" src="../../assets/icons/search_grey.svg"/>
+
+  <view class="searchInputHolder">
+    <input 
+      class="searchInput"
+      placeholder="Search for a track, artist or album"
+      onBlur="onBlur"
+      value="{{inputValue}}"
+    />
+  </view>
+      </view>
+    </view>
+  </view>
+</view>

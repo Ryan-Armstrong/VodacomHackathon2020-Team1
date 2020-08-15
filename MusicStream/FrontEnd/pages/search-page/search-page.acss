@@ -1,0 +1,45 @@
+.searchPage {
+  width: 100vw;
+}
+
+.searchSreen {
+  display: flex;
+  flex-direction: column;
+}
+
+.searchHolder{
+  display: flex;
+  flex-direction: row;
+  padding: 16px;
+}
+
+.searchImage{
+  width: 18px;
+  height: 29px;
+  float: left;
+}
+
+.searchField {
+  width: 100vw;
+  padding: 5px 5px 5px 10px;
+  border-radius: 10px;
+  background-color: rgba(142,142,147,0.1);
+  color: #8E8E93;
+}
+
+.searchInputHolder {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.searchInput{
+  display: block;
+  font-size: 16px;
+  font-weight: 400;
+  background: none;
+  border:none;
+  width: 100%;
+  color: rgb(77, 77, 77);
+}
