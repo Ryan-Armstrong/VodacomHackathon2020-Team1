@@ -174,7 +174,7 @@
 {
   border-radius: 10px;
   width: 120px;
-  height: 156px;
+  height: 165px;
   margin-left: 16px;
   margin-top: 16px;
 }
@@ -251,5 +251,5 @@
   margin-left: 16px;
   margin-top: 5px;
   width: 90px;
-  height: 20px;
+  height: 23px;
 }
