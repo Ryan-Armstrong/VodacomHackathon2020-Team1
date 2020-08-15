@@ -132,25 +132,25 @@ var singleSongs = [{
 ];
 
 function updateSongImg(id) {
-    console.log("I GOT TRIGGERED");
+    let selectedSong;
     if (id) {
-        currentSong = singleSongs.filter(s => s.id === id)[0];
+        selectedSong = singleSongs.filter(s => s.id === id)[0];
     } else {
-        currentSong = singleSongs[0];
+        selectedSong = singleSongs[0];
     }
     if (!imageSet) {
-        document.getElementById('songCover').src = currentSong.thumbnail;
+        document.getElementById('songCover').src = selectedSong.thumbnail;
         imageSet = true
     }
 
-    document.getElementById('albumName').innerHTML = currentSong.title;
-    document.getElementById('artis').innerHTML = currentSong.artistName;
+    document.getElementById('albumName').innerHTML = selectedSong.title;
+    document.getElementById('artis').innerHTML = selectedSong.artistName;
 
 }
 
 
 
-function playSong(key) {
+function playSong(id) {
     audioPlayer = document.getElementById("audio-player");
     duration = audioPlayer.duration;
     document.getElementById("durationTime").innerHTML = "02:26";
@@ -162,15 +162,13 @@ function playSong(key) {
     } else {
         playing = true;
         document.getElementById("toggleBtn").src = "/assets/icons/pause_filled.svg";
-        if (currentSong === undefined && !key) {
-            console.log("NOTHING IS PLAYING");
+        if (currentSong === undefined && !id) {
             currentSong = singleSongs[0];
             audioPlayer.src = currentSong.audio;
-        } else if (key) {
-            console.log("KEY", key);
-            currentSong = singleSongs[key];
+        } else if (id) {
+            currentSong = singleSongs.filter(s => s.id === id)[0];
             audioPlayer.src = currentSong.audio;
-            document.getElementById('albumCover').src = currentSong.thumbnail;
+            document.getElementById('songCover').src = currentSong.thumbnail;
             document.getElementById('albumName').innerHTML = currentSong.title;
             document.getElementById('artis').innerHTML = currentSong.artistName;
         }
@@ -183,37 +181,33 @@ function playSong(key) {
 
 
 function prevSong() {
-    console.log("counter", counter);
-    if (counter > 0) {
+    if (currentSong.id !== 1) {
         stopAndClear();
-        counter--;
-        setTimeout(() => {
-            playSong(counter);
-        }, 500)
+
+        playSong(currentSong.id - 1);
+
     } else {
         stopAndClear();
-        playSong(2);
+        playSong(3);
     }
 }
 
-function nextSong() {
-    console.log("counter", counter);
-    if (counter < 1) {
-        stopAndClear();
-        counter++;
-        setTimeout(() => {
-            playSong(counter);
-        }, 500)
-    } else {
-        stopAndClear();
-        playSong(0);
-    }
+function nextSong()
+if (currentSong.id !== 3) {
+    stopAndClear();
+    playSong(currentSong.id + 1);
+
+} else {
+    stopAndClear();
+    playSong(1);
+}
 }
 
 function stopAndClear() {
     var audioPlayer = document.getElementById("audio-player");
     audioPlayer.pause();
     document.getElementById("toggleBtn").src = "/assets/icons/play_filled.svg";
+    document.getElementById("durationTime").innerHTML = "00:00";
     clearInterval(myVar);
     playing = false;
     width = 0;
