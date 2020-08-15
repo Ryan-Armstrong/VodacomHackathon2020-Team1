@@ -94,6 +94,29 @@ var album = [{
   }
 ];
 
+var singleSongs = [{
+    id: "1",
+    title: "Cardigan",
+    releaseDate: "03/03/2020",
+    thumbnail: "/assets/images/new_release_1.png",
+    artistName: "Taylor Swift, Folklore",
+  },
+  {
+    id: "2",
+    title: "Easy",
+    releaseDate: "08/07/2020",
+    thumbnail: "new-release-thumbnails/new_release_2.png",
+    artistName: "Troye Sivan",
+  },
+  {
+    id: "3",
+    title: "Stupid Love",
+    releaseDate: "01/07/2020",
+    thumbnail: "new-release-thumbnails/new_release_3.png",
+    artistName: "Lady Gaga",
+  }
+]
+
 /* GET home page. */
 router.get('/', function (req, res, next) {
   res.render('index');
@@ -107,5 +130,16 @@ router.get('/album/:id', function (req, res, next) {
     data: album
   });
 });
+
+router.get('/song/:id', function (req, res, next) {
+
+  let selectedSong = singleSongs.filter(s => s.id === req.params.id)[0];
+
+  res.render('song', {
+    output: req.params.id,
+    duration: 168,
+    song: selectedSong
+  });
+})
 
 module.exports = router;
