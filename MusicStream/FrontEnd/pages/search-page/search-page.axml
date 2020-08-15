@@ -11,8 +11,8 @@
     <view class="titleText">
       Popular Searches
     </view>
-    <view class="arrHolder" a:for="{{searchArr}}" a:for-index="i" a:key="*this" onTap="selectSong">
-      <image class="holderImage" src="../../assets/search-thumbnails/s_{{i+1}}.png"/>
+    <view class="arrHolder" a:for="{{searchArr}}" a:for-index="i" a:key="*this" >
+      <image class="holderImage" src="../../assets/search-thumbnails/s_{{i+1}}.png" onTap="loadSong" data-id="{{item}}"/>
       <view class="columnFlex">
         
       <view class="typeText">
