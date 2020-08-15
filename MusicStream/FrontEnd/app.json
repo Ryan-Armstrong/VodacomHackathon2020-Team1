@@ -1,8 +1,8 @@
 {
   "pages": [
-    "pages/search-page/search-page",
     "pages/index/index",
     "pages/music-landing-page/music-landing-page",
+    "pages/search-page/search-page",
     "pages/album-view/album-view"
   ],
   "window": {
