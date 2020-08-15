@@ -351,7 +351,7 @@ background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(92,0,0,1) 0%, rgba(0,0
 
 .product-addcart-button
 {
-  background-color: red;
+  background-color: #E60202;
   color: white;
   border-radius: 15px;
   position: absolute;
@@ -382,7 +382,7 @@ background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(92,0,0,1) 0%, rgba(0,0
 
 .cart-number-of-items
 {
-  background-color: red;
+  background-color: #E60202;
   border-radius: 20px;  
   color: white;
   font-size: small;
@@ -392,7 +392,7 @@ background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(92,0,0,1) 0%, rgba(0,0
 
 .checkout-button
 {
-  background-color: red;
+  background-color: #E60202;
   border-radius: 20px;
   border: 0px hidden;
   color: white;
@@ -410,33 +410,33 @@ background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(92,0,0,1) 0%, rgba(0,0
 
 .cart-remove
 {
-  border-top: 1px solid red;
-  border-left: 1px solid red;
-  border-bottom: 1px solid red;
+  border-top: 1px solid #E60202;
+  border-left: 1px solid #E60202;
+  border-bottom: 1px solid #E60202;
   border-right: 0px hidden;
   border-radius: 20px 0px 0px 20px;
   width: 20px;
   float: left;  
-  color: red;
+  color: #E60202;
 }
 
 .cart-add
 {
-  border-top: 1px solid red;
-  border-right: 1px solid red;
-  border-bottom: 1px solid red;
+  border-top: 1px solid #E60202;
+  border-right: 1px solid #E60202;
+  border-bottom: 1px solid #E60202;
   border-left: 0px hidden;
   border-radius: 0px 20px 20px 0px;
   width: 20px;
   float: left;  
-  color: red;
+  color: #E60202;
 }
 
 .cart-number
 {
-  border-top: 1px solid red;
+  border-top: 1px solid #E60202;
   border-right: 0px hidden;
-  border-bottom: 1px solid red;
+  border-bottom: 1px solid #E60202;
   border-left: 0px hidden;
   border-radius: 0px;
   width: 20px;

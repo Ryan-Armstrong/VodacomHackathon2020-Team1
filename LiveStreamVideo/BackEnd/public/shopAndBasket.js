@@ -29,6 +29,7 @@ const shopItems = [
     },
 ];
 let cartCount = 0;
+let cartTotal = 0;
 
 const cartItems = [];
 
@@ -131,6 +132,7 @@ function populateCart()
         }
     }
     cartTotalEl.innerHTML = total;
+    cartTotal = total;
 }
 
 
@@ -152,7 +154,10 @@ function checkoutBasket()
 {
     console.log("check out");
     cartClose();
-    my.postMessage({ type : 'ConfirmCheckout' });
+    my.postMessage({ 
+        type : 'ConfirmCheckout',
+        cost : cartTotal
+    });
 }
 
 initializeShopItems();
