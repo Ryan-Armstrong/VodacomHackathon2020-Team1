@@ -23,9 +23,9 @@ Page({
     });
   },
   loadVideo(e) {
-    app.selectedItem = e.target.dataset.id;
-    // my.navigateTo({
-    //   url: '../album-view/album-view'
-    // });
+    // app.selectedItem = e.target.dataset.id;
+    my.navigateTo({
+      url: '../videoinfo/videoinfo'
+    });
   }
 });
