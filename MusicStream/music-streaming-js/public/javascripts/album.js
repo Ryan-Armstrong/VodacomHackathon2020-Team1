@@ -1,6 +1,6 @@
 var playing = false;
-var width = 1;
-var duration;
+var width = 0;
+var duration = undefined;
 var timer = 0;
 var myVar;
 var min = 0;
@@ -51,46 +51,93 @@ var album = [{
 }];
 
 
-function togglePlaying() {
+function setInitValues(id) {
+
+  let newArray = album;
+  newArray[id - 1] = {
+    ...newArray[id - 1],
+    playing: false
+  }
+  album = newArray;
+  document.getElementById(`play-${id}`).src = "/assets/icons/play_filled.svg";
+  playing = false;
+  width = 0;
+  duration = undefined;
+  timer = 0;
+  myVar;
+  min = 0;
+  sec = 0;
+}
+
+function togglePlaying(id = '') {
+  console.log("ID", id);
   let newArray = album;
   var audioPlayer = document.getElementById("audio-player");
   duration = audioPlayer.duration;
   document.getElementById("durationTime").innerHTML = "02:26";
+  console.log("PLAYING", playing);
   if (playing) {
-    audioPlayer.pause();
     playing = false;
-    clearInterval(myVar);
+    audioPlayer.pause();
     document.getElementById("toggleBtn").src = "/assets/icons/play_filled.svg";
+    document.getElementById(`play-${currentPlaying.id}`).src = "/assets/icons/play_filled.svg";
+    clearInterval(myVar);
   } else {
-    if (currentPlaying === undefined) {
+    playing = true;
+    audioPlayer.play();
+    document.getElementById("toggleBtn").src = "/assets/icons/pause_filled.svg";
+    if (currentPlaying === undefined && shuffle && !id) {
+      console.log("NO CURRENT SONG");
+      let randomSong = Math.floor(Math.random() * (album.length - 1))
+      newArray[randomSong] = {
+        ...newArray[randomSong],
+        playing: true
+      }
+      album = newArray;
+      currentPlaying = album[randomSong];
+
+    } else if (currentPlaying === undefined && !id) {
       newArray[0] = {
         ...newArray[0],
         playing: true
       }
       album = newArray;
       currentPlaying = album[0];
-      document.getElementById(`play-${currentPlaying.id}`).src = "/assets/icons/pause_filled.svg";
+    } else if (id) {
+      console.log("UPDATE CURRENT SONG", id);
+      newArray[id] = {
+        ...newArray[id],
+        playing: true
+      }
+      album = newArray;
+      currentPlaying = album.filter(a => a.id === id)[0];
     }
-
-    audioPlayer.play();
-    document.getElementById("toggleBtn").src = "/assets/icons/pause_filled.svg";
-    playing = true;
     clearInterval(myVar);
     myVar = setInterval(myTimer, 1000);
+    console.log("CURRENTPLAYING", currentPlaying);
+    document.getElementById(`play-${currentPlaying.id}`).src = "/assets/icons/pause_filled.svg";
   }
+
 }
 
-function playSelectedSong(id) {
-  togglePlaying();
-  document.getElementById(`play-${currentPlaying.id}`).src = "/assets/icons/play_filled.svg";
-  currentPlaying = album[id];
-  document.getElementById(`play-${currentPlaying.id}`).src = "/assets/icons/pause_filled.svg";
-  let newArray = album;
-  newArray[id] = {
-    ...newArray[id],
-    playing: true
+function playSelectedSong(id = '') {
+  console.log("SELECTED SONG", id);
+  if (currentPlaying) {
+
+    if (currentPlaying.id !== id) {
+      console.log("I GOT HERE");
+      setInitValues(currentPlaying.id);
+      currentPlaying = album.filter(a => a.id === id)[0];
+      let newArray = album;
+      newArray[id] = {
+        ...newArray[id],
+        playing: true
+      }
+      album = newArray;
+    }
   }
-  album = newArray;
+  togglePlaying(id);
+
 
 }
 
@@ -171,19 +218,63 @@ function shuffleClicked() {
 
 }
 
-function openDropDown() {
-  document.getElementById("myDropdown").classList.toggle("show");
+function prevSong() {
+  let newArray = album;
+
+  if (currentPlaying) {
+    console.log("FIRST IF");
+    if (currentPlaying.id - 1 > 0) {
+      newArray[currentPlaying.id - 1] = {
+        ...newArray[currentPlaying.id - 1],
+        playing: true
+      }
+
+      album = newArray
+      setInitValues(currentPlaying.id);
+      currentPlaying = album.filter(a => a.playing === true)[0];
+    } else {
+      newArray[album.length - 1] = {
+        ...newArray[album.length - 1],
+        playing: true
+      }
+
+      album = newArray
+      setInitValues(currentPlaying.id);
+      currentPlaying = album[album.length - 1];
+    }
+    togglePlaying(currentPlaying.id);
+  } else {
+    console.log("NOTHING PLAYING");
+  }
 }
 
-window.onclick = function (event) {
-  if (!event.target.matches('.dropbtn')) {
-    var dropdowns = document.getElementsByClassName("dropdown-content");
-    var i;
-    for (i = 0; i < dropdowns.length; i++) {
-      var openDropdown = dropdowns[i];
-      if (openDropdown.classList.contains('show')) {
-        openDropdown.classList.remove('show');
+function nextSong() {
+  let newArray = album;
+
+  if (currentPlaying) {
+    console.log("FIRST IF");
+    if (currentPlaying.id + 1 !== album.length) {
+      newArray[currentPlaying.id + 1] = {
+        ...newArray[currentPlaying.id + 1],
+        playing: true
       }
+
+      album = newArray
+      setInitValues(currentPlaying.id);
+      currentPlaying = album.filter(a => a.playing === true)[0];
+    } else {
+      newArray[0] = {
+        ...newArray[0],
+        playing: true
+      }
+
+      album = newArray
+      setInitValues(currentPlaying.id);
+      currentPlaying = album[0];
     }
+    togglePlaying(currentPlaying.id);
+  } else {
+    console.log("NOTHING PLAYING");
   }
+
 }
