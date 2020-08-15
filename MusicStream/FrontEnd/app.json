@@ -3,7 +3,8 @@
     "pages/index/index",
     "pages/music-landing-page/music-landing-page",
     "pages/search-page/search-page",
-    "pages/album-view/album-view"
+    "pages/album-view/album-view",
+    "pages/song-view/song-view"
   ],
   "window": {
     "defaultTitle": "Music Streaming"
