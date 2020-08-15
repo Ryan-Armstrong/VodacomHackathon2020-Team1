@@ -130,12 +130,10 @@ function setInitValues(id) {
 }
 
 function togglePlaying(id = '') {
-  console.log("ID", id);
   let newArray = album;
   var audioPlayer = document.getElementById("audio-player");
   duration = audioPlayer.duration;
   document.getElementById("durationTime").innerHTML = "02:26";
-  console.log("PLAYING", playing);
   if (playing) {
     playing = false;
     audioPlayer.pause();
@@ -147,7 +145,6 @@ function togglePlaying(id = '') {
     audioPlayer.play();
     document.getElementById("toggleBtn").src = "/assets/icons/pause_filled.svg";
     if (currentPlaying === undefined && shuffle && !id) {
-      console.log("NO CURRENT SONG");
       let randomSong = Math.floor(Math.random() * (album.length - 1))
       newArray[randomSong] = {
         ...newArray[randomSong],
@@ -164,7 +161,6 @@ function togglePlaying(id = '') {
       album = newArray;
       currentPlaying = album[0];
     } else if (id) {
-      console.log("UPDATE CURRENT SONG", id);
       newArray[id] = {
         ...newArray[id],
         playing: true
@@ -174,18 +170,15 @@ function togglePlaying(id = '') {
     }
     clearInterval(myVar);
     myVar = setInterval(myTimer, 1000);
-    console.log("CURRENTPLAYING", currentPlaying);
     document.getElementById(`play-${currentPlaying.id}`).src = "/assets/icons/pause_filled.svg";
   }
 
 }
 
 function playSelectedSong(id = '') {
-  console.log("SELECTED SONG", id);
   if (currentPlaying) {
 
     if (currentPlaying.id !== id) {
-      console.log("I GOT HERE");
       setInitValues(currentPlaying.id);
       currentPlaying = album.filter(a => a.id === id)[0];
       let newArray = album;
@@ -206,6 +199,9 @@ function updateBar() {
 
   if (timer <= duration) {
     element.style.width = (timer + 0.25) / duration * 100 + '%';
+  } else {
+    nextSongInAlbum()
+    nextSong();
   }
 }
 
@@ -266,8 +262,6 @@ function favouriteClicked(id) {
 }
 
 function shuffleClicked() {
-  console.log("I GOT TRIGGERED")
-
   if (shuffle === true) {
     shuffle = false;
     document.getElementById(`shuffleBtn`).src = "/assets/icons/shuffle_off.svg"
@@ -278,11 +272,10 @@ function shuffleClicked() {
 
 }
 
-function prevSong() {
+function prevSongInAlbum() {
   let newArray = album;
 
   if (currentPlaying) {
-    console.log("FIRST IF");
     if (currentPlaying.id - 1 > 0) {
       newArray[currentPlaying.id - 1] = {
         ...newArray[currentPlaying.id - 1],
@@ -308,11 +301,10 @@ function prevSong() {
   }
 }
 
-function nextSong() {
+function nextSongInAlbum() {
   let newArray = album;
 
   if (currentPlaying) {
-    console.log("FIRST IF");
     if (currentPlaying.id + 1 !== album.length) {
       newArray[currentPlaying.id + 1] = {
         ...newArray[currentPlaying.id + 1],

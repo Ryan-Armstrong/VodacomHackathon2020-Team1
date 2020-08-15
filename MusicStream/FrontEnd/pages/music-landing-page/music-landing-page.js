@@ -36,7 +36,7 @@ Page({
   selectedSong(e){
     app.selectedItem = e.target.dataset.id;
     my.navigateTo({
-      url: '../album-view/album-view'
+      url: '../song-view/song-view'
     });
   }
 });
