@@ -7,8 +7,8 @@ OR via nodemon
 npm run devStart  
 
 ## via Docker:
-docker build --tag webrtcvideobroadcast .  
-docker run -d -p 4000:4000 webrtcvideobroadcast  
+docker build --tag videocasting .  
+docker run -d -p 4000:4000 videocasting  
 
 ## Browse as broadcaster
 https://localhost:4000/cast.html  
