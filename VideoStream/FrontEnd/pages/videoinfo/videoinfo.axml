@@ -12,7 +12,7 @@
       <view class="vidMinutesInfo"> Audio: English</view>
       <view class="vidMinutesInfo">PG 13</view>
       <view class="vidDescription">Natalie is a New York Architect who works hard to get noticed at her job. Things go downhill</view>
-      <button size="mini" class="rentButton" type="primary">Rent: R35</button>
+      <button onTap="rentMovie" size="mini" class="rentButton" type="primary">Rent: R35</button>
     </view>
      
     </view>

@@ -77,4 +77,19 @@ Page({
       }],
   },
   onLoad() { },
+  rentMovie ()
+  {
+my.confirm({
+        title: 'Confirm Rental',
+        content: 'Are you sure you want to rent this video for R35',
+        confirmButtonText: 'Confirm',
+        cancelButtonText: 'Cancel',
+        success: (result) => {
+          my.alert({
+            title: 'Order complete',
+          });
+        },
+        
+      });
+  }
 });
