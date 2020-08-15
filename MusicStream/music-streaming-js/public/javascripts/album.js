@@ -338,3 +338,7 @@ function nextSong() {
   }
 
 }
+
+function addToPlayList(id) {
+
+}
