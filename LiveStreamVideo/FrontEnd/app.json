@@ -3,7 +3,8 @@
     "pages/home/home",
     "pages/index/index",
     "pages/channel/channel",
-    "pages/category/category"
+    "pages/category/category",
+    "pages/genericweb/genericweb"
   ],
   "window": {
     "defaultTitle": "EZ Video Stream"

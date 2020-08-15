@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 24 24">
+  <defs>
+    <path id="skip_forward-a" d="M3.82230578,0.859763455 L20,11.136 L20,3 C20,2.58578644 20.3357864,2.25 20.75,2.25 C21.1296958,2.25 21.443491,2.53215388 21.4931534,2.89822944 L21.5,3 L21.5,21 C21.5,21.4142136 21.1642136,21.75 20.75,21.75 C20.3703042,21.75 20.056509,21.4678461 20.0068466,21.1017706 L20,21 L20,12.863 L3.82230578,23.1402365 C3.35684398,23.4359051 2.75,23.0995058 2.75,22.5458121 L2.75,1.45418793 C2.75,0.900494167 3.35684398,0.564094868 3.82230578,0.859763455 Z"/>
+  </defs>
+  <g fill="none" fill-rule="evenodd">
+    <mask id="skip_forward-b" fill="#fff">
+      <use xlink:href="#skip_forward-a"/>
+    </mask>
+    <use fill="#CCC" fill-rule="nonzero" xlink:href="#skip_forward-a"/>
+    <g fill="#E60202" mask="url(#skip_forward-b)">
+      <rect width="24" height="24"/>
+    </g>
+  </g>
+</svg>

@@ -1,6 +1,6 @@
 App({
   globalData: {
-    
+    source : ''
   },
   onLaunch(options) {
     // Page opens for the first time
