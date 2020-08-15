@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  <title>Client</title>
+  <title>The Space</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
     integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
   <link rel="stylesheet" href="clientstyle.css">
@@ -40,8 +40,8 @@
     <div class="mid-grow">
        <!-- OPEN SPACE FOR VIDEO -->
     </div>
-    <div class="footer container" >
-      <div id="clockproductsdiv" class="row">
+    <div class="footer" >
+      <div id="clockproductsdiv" class="row" style="margin-bottom: 20px;">
         <div class="col-12">          
           <div id="clockdiv" class="hidediv">
             <span>Start shopping in</span><br>
@@ -62,42 +62,78 @@
               <div class="smalltext">seconds</div>
             </div>
           </div>
-          <div id="salesDiv" class="sales-container hidediv" >
+          <div id="salesDiv" class="sales-container container hidediv" >
             <div id="salesItems" class="scrollMenuSquare">
               <!-- ITEMS WILL DISPLAY HERE -->
             </div>
           </div>
         </div>        
       </div>
+      <!-- *************** Product List ************** -->
       <div id="productsDiv" class="products-div hidediv">
-        <div class="products-title">
-          Products
-        </div>
-        <div id="productItems" class="product-items">
-          <!-- <div class="row">
-            <div class="col-4">              
-              <img src="shopimages/shop_item_1.png" class="product-image">
+        <div class="products-title" >
+          <div class="row" >
+            <div class="col-9" onclick="productsGoBack()">
+              <img src="images/nav_back.svg"> Products
             </div>
-            <div class="col-8">
-              <div class="product-info">
-                <h3>Title 1</h3>
-                <span>Some very long description about a very cool dress that you can buy</span>
-                <br>
-                <button>Add to cart</button>
+            <div class="col-3" onclick="goToCart()">
+              <div id="cartControl" class="cart-div hidediv">
+                <div style="text-align: center;">
+                  <img class="cart-images" src="images/cart.svg">
+                  <label id="cartCountControl" class="cart-number-of-items">
+                    0
+                  </label>
+                </div>
               </div>
             </div>
-          </div> -->
+          </div>
+        </div>
+        <div id="productItems" class="product-items">         
         </div>
       </div>
-      <div id="chatContainer">
+      <!-- ********************************************** -->
+      <!-- *************** Cart List ************** -->
+      <div id="cartDiv" class="products-div hidediv" style="text-align: left;">
+        <div class="products-title" onclick="cartGoBack()">
+          <div class="row">
+            <div class="col-12">
+              &nbsp;&nbsp;<img src="images/nav_back.svg"> Cart
+              <div class="cart-row"></div>
+            </div>       
+            
+          </div>
+        </div>
+        <div id="cartItems" class="cart-items">
+          <!-- ITEMS WILL DISPLAY HERE -->
+
+        </div>
+        <div class="row">
+          <div class="col-8">
+            <span class="cart-description"><b>Total</b></span>
+          </div>
+          <div class="col-4" style="text-align: right; right: 40px; font-size : 10pt">
+            <span>
+              R
+            </span>
+            <span id="cartTotal">              
+              xxx,00
+            </span>    
+          </div>
+        </div>
+        <div style="width: 100%; text-align: center;">
+          <button onclick="checkoutBasket()" class="checkout-button">Checkout</button>
+        </div>
+      </div>
+      <!-- ********************************************** -->
+      <div id="chatContainer" class="container" >
         <div id="chatHistoryContainer" class="row chat-history-div" >
-          <div class="col-12" style="margin-left: 0px; margin-right: 0px;" id="chatHistory" >
+          <div class="col-12" style="margin-left: 0px; margin-right: 0px; " id="chatHistory" >
             <!-- DO NOT PUT ANYTHING HERE -->
           </div>        
         </div>
         <div class="row chat-input-div" >
           <div class="col-12" >
-            <input placeholder="Comment" id="chatInput" type="text" class="chat-input">
+            <input placeholder="Type your message here" id="chatInput" type="text" class="chat-input">
             <img src="images/send.svg" onclick="sendMessage()">
           </div>        
         </div>

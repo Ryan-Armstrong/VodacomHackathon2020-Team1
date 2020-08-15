@@ -46,6 +46,24 @@ Page({
   },
   browserMessage(e){
     console.log(e);
+    if (e.detail.type == 'ConfirmCheckout')
+    {
+      var cost = e.detail.cost;
+      console.log("Confirm received");
+      my.confirm({
+        title: 'Check Out',
+        content: 'Are you sure you want to confirm this order: R' + cost,
+        confirmButtonText: 'Confirm',
+        cancelButtonText: 'Cancel',
+        success: (result) => {
+          my.alert({
+            title: 'Order has been placed',
+          });
+        },
+        
+      });
+    }
+    
     // my.alert({
     //   content:JSON.stringify(e.detail),      
     // });
