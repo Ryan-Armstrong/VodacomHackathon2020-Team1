@@ -42,7 +42,7 @@
     <div id="progress-status">
         <div id="myprogressBar"></div>
     </div>
-    {{# each album as |song key|}}
+    {{# each data as |song key|}}
     <div style="height: 50px; border-bottom: 1px solid #d7d7d7; display: flex">
         <img src="/assets/icons/play_filled.svg" style="width: 30px;  margin-right: 14px;" id="play-{{song.id}}"
             onclick="playSelectedSong({{song.id}})">
