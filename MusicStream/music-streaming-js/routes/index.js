@@ -1,6 +1,5 @@
 var express = require('express');
 var router = express.Router();
-var mockData = require('./mock-data')
 
 var songs = [{
   id: 1,
