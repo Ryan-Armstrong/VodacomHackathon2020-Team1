@@ -48,10 +48,11 @@ Page({
     console.log(e);
     if (e.detail.type == 'ConfirmCheckout')
     {
+      var cost = e.detail.cost;
       console.log("Confirm received");
       my.confirm({
         title: 'Check Out',
-        content: 'Are you sure you want to confirm this order: 1234567890?',
+        content: 'Are you sure you want to confirm this order: R' + cost,
         confirmButtonText: 'Confirm',
         cancelButtonText: 'Cancel',
         success: (result) => {
