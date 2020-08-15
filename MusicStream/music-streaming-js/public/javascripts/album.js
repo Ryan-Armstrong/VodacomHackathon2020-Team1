@@ -73,6 +73,30 @@ var album = [{
     thumbnail: "/assets/images/recommended_3.png",
     artistName: "Harry Styles",
     songs: songs
+  },
+  {
+    id: 7,
+    title: "Empini",
+    releaseDate: "03/03/2020",
+    thumbnail: "/assets/images/popular_1.png",
+    artistName: "Kelly Khumalo, Empini",
+    songs: songs
+  },
+  {
+    id: 8,
+    title: "We Made It",
+    releaseDate: "08/07/2020",
+    thumbnail: "/assets/images/popular_2.png",
+    artistName: "Mi Casa",
+    songs: songs
+  },
+  {
+    id: 9,
+    title: "Mortal Man",
+    releaseDate: "01/07/2020",
+    thumbnail: "/assets/images/popular_3.png",
+    artistName: "Jeremy Loops",
+    songs: songs
   }
 ];
 
