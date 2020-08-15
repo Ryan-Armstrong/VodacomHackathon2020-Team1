@@ -5,10 +5,10 @@ var timer = 0;
 var myVar;
 var min = 0;
 var sec = 0;
-var currentSong = undefined;
 var counter = 0;
 var audioPlayer
 var imageSet = false;
+var currentSong = undefined;
 
 var songs = [{
     id: 1,
@@ -131,21 +131,18 @@ var singleSongs = [{
     }
 ];
 
+var selectedSong = singleSongs[0];
+
 function updateSongImg(id) {
-    let selectedSong;
     if (id) {
         selectedSong = singleSongs.filter(s => s.id === id)[0];
-    } else {
-        selectedSong = singleSongs[0];
     }
     if (!imageSet) {
         document.getElementById('songCover').src = selectedSong.thumbnail;
         imageSet = true
     }
-
     document.getElementById('albumName').innerHTML = selectedSong.title;
     document.getElementById('artis').innerHTML = selectedSong.artistName;
-
 }
 
 
@@ -163,7 +160,7 @@ function playSong(id) {
         playing = true;
         document.getElementById("toggleBtn").src = "/assets/icons/pause_filled.svg";
         if (currentSong === undefined && !id) {
-            currentSong = singleSongs[0];
+            currentSong = selectedSong
             audioPlayer.src = currentSong.audio;
         } else if (id) {
             currentSong = singleSongs.filter(s => s.id === id)[0];
@@ -178,8 +175,9 @@ function playSong(id) {
     }
 }
 
-
 function prevSong() {
+    setCurrectSong();
+
     if (currentSong.id !== 1) {
         stopAndClear();
 
@@ -192,6 +190,9 @@ function prevSong() {
 }
 
 function nextSong() {
+
+    setCurrectSong();
+
     if (currentSong.id !== 3) {
         stopAndClear();
         playSong(currentSong.id + 1);
@@ -201,7 +202,6 @@ function nextSong() {
         playSong(1);
     }
 }
-
 
 function stopAndClear() {
     var audioPlayer = document.getElementById("audio-player");
@@ -226,9 +226,7 @@ function addToFav() {
         modal.style.display = "none"
     }, 1000)
 
-    if (currentSong === undefined) {
-        currentSong = singleSongs[0];
-    }
+    setCurrectSong();
     let index = singleSongs.findIndex(s => s.id === currentSong.id);
     if (singleSongs[index].fav) {
         newArray[index] = {
@@ -247,5 +245,13 @@ function addToFav() {
         console.log("singleSongs", singleSongs);
         document.getElementById(`favIcon`).src = "/assets/icons/favourite_filled.svg"
         document.getElementById(`popUpMessage`).innerHTML = currentSong.title + ' was added to favourites'
+    }
+}
+
+function setCurrectSong() {
+    if (!currentSong) {
+        currentSong = selectedSong;
+    } else {
+        return;
     }
 }
