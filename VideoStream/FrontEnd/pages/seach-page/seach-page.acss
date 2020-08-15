@@ -71,7 +71,7 @@
 .holderImage {
   float: left;
   width: 30vw;
-  height: 30vw;
+  height: 20vw;
   border-radius: 10px;
 }
 
@@ -84,13 +84,18 @@
 
 .typeText {
   padding-left: 10px;
-  font-size: 11px;
+  font-size: 9px;
   color: #7D7D7D;
-  padding-top: 3px;
+  padding-top: 9px;
 }
 
-.typeInfoText {
-  font-weight: 400;
-  padding-left: 10px;
-  padding-top: 3px;
+.starRow {
+  padding-left: 6px;
+  display: flex;
+  flex-direction: row;
+}
+
+.starImage {
+  width: 20px;
+  height: 26px;
 }

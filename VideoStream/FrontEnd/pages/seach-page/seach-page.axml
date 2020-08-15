@@ -15,20 +15,18 @@
       <image class="holderImage" src="../../assets/search-thumbnails/{{item.pic}}.png" onTap="loadVideo" data-id="{{item}}"/>
       <view class="columnFlex">
         
-      <view class="typeText">
-      {{item.type}}
-      </view>
       <view class="titleTextArr">
       {{item.name}}
       </view>
-      <view class="typeInfoText">
+      <view class="typeText">
       {{item.info1}}
       </view>
-      <view class="typeInfoText">
-      {{item.info2}}
-      </view>
-      <view class="typeInfoText">
-      {{item.info3}}
+      <view class="starRow">
+        <image class="starImage" src="../../assets/icons/star.svg"/>
+        <image class="starImage" src="../../assets/icons/star.svg"/>
+        <image class="starImage" src="../../assets/icons/star.svg"/>
+        <image class="starImage" src="../../assets/icons/star.svg"/>
+        <image class="starImage" src="../../assets/icons/star_empty.svg"/>
       </view>
       </view>
     </view>

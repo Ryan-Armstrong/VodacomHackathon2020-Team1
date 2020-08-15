@@ -2,11 +2,13 @@ const app = getApp();
 Page({
   data: {
     inputValue: "",
-    searchArr: [{ type: "Album", name: "Chromatica", info1: "Lady Gaga", info2: "16 tracks", info3: "01:04:27", id: "3", pic: "s_1" },
-    { type: "Track", name: "Eve", info1: "Mi Casa", info2: "We Made It", id: "8", pic: "s_2" },
-    { type: "Artist", name: "The Weekend", info1: "52 Tracks", info2: "3 Albums", id: "4", pic: "s_3" },
-    { type: "Artist", name: "Kelly Khumalo", info1: "24 Tracks", id: "7", pic: "s_4" },
-    { type: "Track", name: "Truth Hurts", info1: "Lizzo", info2: "Truth Hurts", id: "7", pic: "s_5" },],
+    searchArr: [{ name: "Isn't It Romantic", info1: "89 minutes | 1 GB", id: "3", pic: "s1" },
+    { name: "Bad Boys For Life", info1: "124 minutes | 1.8 GB", id: "3", pic: "s2" },
+    { name: "1917", info1: "119 minutes | 1.7 GB", id: "3", pic: "s3" },
+    { name: "Joker", info1: "122 minutes | 1.65 GB", id: "3", pic: "s4" },
+    { name: "Little Women", info1: "135 minutes | 2.1 GB", id: "3", pic: "s5" },
+    { name: "Onward", info1: "102 minutes | 1.2 GB", id: "3", pic: "s6" },
+    { name: "Someone Great", info1: "92 minutes | 1 GB", id: "3", pic: "s7" },],
     displayArr: {}
   },
   onLoad() {
@@ -14,7 +16,7 @@ Page({
   },
   searchInput(e) {
     let result = this.data.searchArr.filter(
-      info => info.name.toLowerCase().includes(e.detail.value.toLowerCase()) || info.info1.toLowerCase().includes(e.detail.value.toLowerCase()));
+      info => info.name.toLowerCase().includes(e.detail.value.toLowerCase()));
     this.setData({
       inputValue: e.detail.value,
       displayArr: result
