@@ -1,5 +1,5 @@
 App({
-  selectedItem: String,
+  selectedItem: {},
   newReleases: [
     {
       id:"1",
