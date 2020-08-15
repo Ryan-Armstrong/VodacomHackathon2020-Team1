@@ -5,9 +5,10 @@ var timer = 0;
 var myVar;
 var min = 0;
 var sec = 0;
-var currentPlaying = undefined;
+var currentSong = undefined;
 var counter = 0;
 var audioPlayer
+var imageSet = false;
 
 var songs = [{
     id: 1,
@@ -131,17 +132,19 @@ var singleSongs = [{
 ];
 
 function updateSongImg(id) {
-    let selectedSong
-    audioPlayer = document.getElementById("audio-player");
+    console.log("I GOT TRIGGERED");
     if (id) {
-        selectedSong = singleSongs.filter(s => s.id === id)[0]
+        currentSong = singleSongs.filter(s => s.id === id)[0];
     } else {
-        selectedSong = singleSongs[0]
+        currentSong = singleSongs[0];
+    }
+    if (!imageSet) {
+        document.getElementById('songCover').src = currentSong.thumbnail;
+        imageSet = true
     }
 
-    document.getElementById('albumCover').src = selectedSong.thumbnail;
-    document.getElementById('albumName').innerHTML = selectedSong.title;
-    document.getElementById('artis').innerHTML = selectedSong.artistName;
+    document.getElementById('albumName').innerHTML = currentSong.title;
+    document.getElementById('artis').innerHTML = currentSong.artistName;
 
 }
 
@@ -159,17 +162,17 @@ function playSong(key) {
     } else {
         playing = true;
         document.getElementById("toggleBtn").src = "/assets/icons/pause_filled.svg";
-        if (currentPlaying === undefined && !key) {
+        if (currentSong === undefined && !key) {
             console.log("NOTHING IS PLAYING");
-            currentPlaying = singleSongs[0];
-            audioPlayer.src = currentPlaying.audio;
+            currentSong = singleSongs[0];
+            audioPlayer.src = currentSong.audio;
         } else if (key) {
             console.log("KEY", key);
-            currentPlaying = singleSongs[key];
-            audioPlayer.src = currentPlaying.audio;
-            document.getElementById('albumCover').src = currentPlaying.thumbnail;
-            document.getElementById('albumName').innerHTML = currentPlaying.title;
-            document.getElementById('artis').innerHTML = currentPlaying.artistName;
+            currentSong = singleSongs[key];
+            audioPlayer.src = currentSong.audio;
+            document.getElementById('albumCover').src = currentSong.thumbnail;
+            document.getElementById('albumName').innerHTML = currentSong.title;
+            document.getElementById('artis').innerHTML = currentSong.artistName;
         }
         audioPlayer.load();
         audioPlayer.play();
@@ -229,21 +232,21 @@ function addToFav() {
         modal.style.display = "none"
     }, 1000)
 
-    if (album[counter].fav) {
-        newArray[counter] = {
-            ...newArray[counter],
+    if (currentSong.fav) {
+        newArray[currentSong.id - 1] = {
+            ...newArray[currentSong.id - 1],
             fav: false
         }
         singleSongs = newArray;
         document.getElementById(`favIcon`).src = "/assets/icons/favourite.svg"
-        document.getElementById(`popUpMessage`).innerHTML = album[counter].title + ' was removed from favourites'
+        document.getElementById(`popUpMessage`).innerHTML = singleSongs[counter].title + ' was removed from favourites'
     } else {
-        newArray[counter] = {
-            ...newArray[counter],
+        newArray[currentSong.id - 1] = {
+            ...newArray[currentSong.id - 1],
             fav: true
         }
         singleSongs = newArray;
         document.getElementById(`favIcon`).src = "/assets/icons/favourite_filled.svg"
-        document.getElementById(`popUpMessage`).innerHTML = album[counter].title + ' was added to favourites'
+        document.getElementById(`popUpMessage`).innerHTML = singleSongs[counter].title + ' was added to favourites'
     }
 }

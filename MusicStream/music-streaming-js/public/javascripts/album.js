@@ -8,6 +8,7 @@ var sec = 0;
 var shuffle = true;
 var currentPlaying = undefined;
 var repeat = false;
+var imageSet = false;
 
 var songs = [{
   id: 1,
@@ -109,7 +110,11 @@ function updateCoverImg(id) {
   } else {
     selectedAlbum = album[0];
   }
-  document.getElementById('albumCover').src = selectedAlbum.thumbnail;
+  if (!imageSet) {
+    document.getElementById('albumCover').src = selectedAlbum.thumbnail;
+    imageSet = true;
+  }
+
   document.getElementById('albumName').innerHTML = selectedAlbum.title;
   document.getElementById('artis').innerHTML = selectedAlbum.artistName;
   document.getElementById('releaseData').innerHTML = 'Released:' + selectedAlbum.releaseDate;

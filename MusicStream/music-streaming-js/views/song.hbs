@@ -1,11 +1,16 @@
 <div class="ablum-container">
     <div class="song-cover">
-        <img class="song-img" id="albumCover" onload="updateSongImg({{output}})" src="/assets/images/placeholder.png">
+        <img class="song-img" id="songCover" onload="updateSongImg({{output}})" src="/assets/images/placeholder.png">
     </div>
     <div style="display: flex; margin: 20px 0px;">
         <div style="    margin-left: auto;">
+            {{# if song.fav}}
             <img src="/assets/icons/favourite_filled.svg" id="favIcon" style="margin-right: 10px;" onclick="addToFav()">
+            {{else}}
+            <img src="/assets/icons/favourite.svg" id="favIcon" style="margin-right: 10px;" onclick="addToFav()">
+            {{/if}}
         </div>
+
         <div style="    margin-right: auto;">
             <img src="/assets/icons/plus_red_big.svg" onclick="addToPlayList({{song.id}})">
         </div>

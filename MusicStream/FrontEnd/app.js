@@ -5,7 +5,7 @@ App({
       id:"1",
       title: "Cardigan",
       releaseDate: "03/03/2020",
-      thumbnail: "new-release-thumbnails/new_release_1.png",
+      thumbnail: "new-release-thumbnails/new_release_3.png",
       artistName: "Taylor Swift, Folklore",
       songs: [
         {
@@ -18,7 +18,7 @@ App({
       id:"2",
       title: "Easy",
       releaseDate: "08/07/2020",
-      thumbnail: "new-release-thumbnails/new_release_2.png",
+      thumbnail: "new-release-thumbnails/new_release_1.png",
       artistName: "Troye Sivan",
       songs: [
         {
@@ -31,7 +31,7 @@ App({
       id:"3",
       title: "Stupid Love",
       releaseDate: "01/07/2020",
-      thumbnail: "new-release-thumbnails/new_release_3.png",
+      thumbnail: "new-release-thumbnails/new_release_2.png",
       artistName: "Lady Gaga",
       songs: [
         {
