@@ -4,7 +4,7 @@
       <view class="searchField">
         <image class="searchImage" src="../../assets/icons/search_grey.svg"/>
         <view class="searchInputHolder">
-          <input class="searchInput" placeholder="Search for a track, artist or album" placeholder-class="searchInputPlaceholder" onInput="searchInput" value="{{inputValue}}" />
+          <input class="searchInput" placeholder="Search for a show, movie or genre" placeholder-class="searchInputPlaceholder" onInput="searchInput" value="{{inputValue}}" />
         </view>
       </view>
     </view>
