@@ -26,6 +26,15 @@ Page({
   },
 
   selectedAlbum(e) {
-    console.log("Selected album with event: ", e);
+    console.log("Selected album with event: ", e.target.dataset.id);
+    app.selectedItem = e.target.dataset.id;
+    my.navigateTo({
+      url: '../album-view/album-view'
+    });
+
+  },
+
+  selectedSong(e){
+       console.log("Selected song with event: ", e);
   }
 });

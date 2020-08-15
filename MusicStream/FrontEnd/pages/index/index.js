@@ -42,5 +42,6 @@ Page({
   },
   skipButtonTapped() {
     console.log("Skip button tapped.");
+    my.navigateTo({ url: '../music-landing-page/music-landing-page' });
   }
 });

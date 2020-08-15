@@ -8,7 +8,7 @@ var sec = 0;
 var shuffle = true;
 var currentPlaying = undefined;
 
-var album = [{
+var songs = [{
   id: 1,
   name: 'Sober',
   fav: false,
@@ -50,6 +50,42 @@ var album = [{
   playing: false
 }];
 
+var album = [{
+    id: 4,
+    title: "After Hours",
+    releaseDate: "03/03/2020",
+    thumbnail: "/assets/images/recommended_1.png",
+    artistName: "The Weekend",
+    songs: songs
+  },
+  {
+    id: 5,
+    title: "Dance Monkey",
+    releaseDate: "08/07/2020",
+    thumbnail: "/assets/images/recommended_2.png",
+    artistName: "Tones and I",
+    songs: songs
+  },
+  {
+    id: 6,
+    title: "Fine Line",
+    releaseDate: "01/07/2020",
+    thumbnail: "/assets/images/recommended_3.png",
+    artistName: "Harry Styles",
+    songs: songs
+  }
+];
+
+//document.getElementById('albumCover').src = album
+
+function updateCoverImg(id) {
+  selectedAlbum = album.filter(a => a.id === id)[0];
+  document.getElementById('albumCover').src = selectedAlbum.thumbnail;
+  document.getElementById('albumName').innerHTML = selectedAlbum.title;
+  document.getElementById('artis').innerHTML = selectedAlbum.artistName;
+  document.getElementById('releaseData').innerHTML = 'Released:' + selectedAlbum.releaseDate;
+  document.getElementById('tracks').innerHTML = 'Tracks:' + selectedAlbum.songs.length;
+}
 
 function setInitValues(id) {
 
