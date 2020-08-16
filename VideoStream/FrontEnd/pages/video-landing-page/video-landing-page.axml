@@ -1,0 +1,45 @@
+<view class="music-landing-page-container">
+  <view class="tab-bar">
+    <view class="tab-bar-item">
+      <view class="tab-bar-item-text">Home</view>
+      <view class="tab-bar-indicator"></view>
+    </view>
+    <view class="tab-bar-item-text" onTap="viewPlaylists">Playlists</view>
+    <view class="tab-bar-item-text" onTap="viewPurchasedMusic">Rentals</view>
+    <image class="tab-bar-item-icon" src="../../assets/icons/search.png" onTap="searchMovies"/>
+  </view>
+
+  <swiper class="banner-ad-swiper" indicator-dots="true" indicator-active-color="#E60202" autoplay="true" interval="5000">
+    <block a:for="{{bannerAds}}">
+      <swiper-item>
+        <image class="banner-image-view" src="../../assets/banner-ads/{{item}}.png"/>
+      </swiper-item>
+    </block>
+  </swiper>
+
+  <text class="titleText">New Releases</text>
+  <view class="scrollMenuSquare">
+    <view class="scrollItemSquare" a:for="{{newReleases}}" a:for-index="i" a:key="*this" onTap="selectedAlbum">
+      <image id="{{item}}" class="scrollImageSquare" src="../../assets/{{item.thumbnail}}"/>
+      <view class="scrollTitleTextSquare">{{item.title}}</view>
+      <view class="scrollSubtitleTextSquare">{{item.artistName}}</view>
+    </view>
+  </view>
+
+  <text class="titleText">Your Subscriptions</text>
+  <view class="scrollMenuSquare">
+    <view class="scrollItemSquare" a:for="{{movieCategories}}" a:for-index="i" a:key="*this" onTap="selectedAlbum">
+      <text class="scrollItemGradientSquare" style="background-image: linear-gradient({{item.firstColour}}, {{item.secondColour}});">{{item.name}}</text>
+    </view>
+  </view>
+
+  <text class="titleText">You might like</text>
+  <view class="scrollMenuSquare">
+    <view class="scrollItemSquare" a:for="{{youMightLike}}" a:for-index="i" a:key="*this" onTap="selectedAlbum">
+      <image id="{{item}}" class="scrollImageSquare" src="../../assets/{{item.thumbnail}}"/>
+      <view class="scrollTitleTextSquare">{{item.title}}</view>
+      <view class="scrollSubtitleTextSquare">{{item.artistName}}</view>
+    </view>
+  </view>
+
+</view>

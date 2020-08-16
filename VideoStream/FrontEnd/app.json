@@ -1,9 +1,9 @@
 {
   "pages": [
     "pages/index/index",
+    "pages/video-landing-page/video-landing-page",
     "pages/seach-page/seach-page",
     "pages/videoinfo/videoinfo"
-    
   ],
   "window": {
     "defaultTitle": "My App"
