@@ -2,6 +2,7 @@ const app = getApp();
 
 Page({
   data: {
+    clickedInfo: "hiddenRow",
     watchHidden: true,
     romanticMovies: [
       {
@@ -123,5 +124,9 @@ Page({
     my.reLaunch({
       url: '../videoinfo/videoinfo'
     });
+  },
+  showMovieDetail() 
+  {
+    this.setData({ clickedInfo: "row" });
   }
 });
