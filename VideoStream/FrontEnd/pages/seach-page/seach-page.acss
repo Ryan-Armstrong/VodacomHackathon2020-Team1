@@ -5,17 +5,18 @@
 .searchSreen {
   display: flex;
   flex-direction: column;
+  padding-bottom: 16px;
 }
 
-.searchHolder{
+.searchHolder {
   display: flex;
   flex-direction: row;
   padding: 16px;
 }
 
-.searchImage{
+.searchImage {
   width: 18px;
-  height: 29px;
+  height: 32px;
   float: left;
 }
 
@@ -23,7 +24,7 @@
   width: 100vw;
   padding: 5px 5px 5px 10px;
   border-radius: 10px;
-  background-color: rgba(142,142,147,0.1);
+  background-color: rgba(142, 142, 147, 0.1);
   color: #8E8E93;
 }
 
@@ -34,12 +35,67 @@
   align-items: center;
 }
 
-.searchInput{
+.searchInput {
   display: block;
   font-size: 16px;
   font-weight: 400;
   background: none;
-  border:none;
+  border: none;
   width: 100%;
   color: rgb(77, 77, 77);
+}
+
+.searchInputPlaceholder {
+  color: rgb(155, 155, 155);
+}
+
+.columnFlex{
+  display: flex;
+  flex-direction: column;
+}
+
+.titleText {
+  font-weight: 600;
+  padding-left: 16px;
+}
+
+.arrHolder {
+  padding-left: 16px;
+  padding-top: 10px;
+}
+
+.textHolder {
+  padding-left: 10px;
+}
+
+.holderImage {
+  float: left;
+  width: 30vw;
+  height: 20vw;
+  border-radius: 10px;
+}
+
+.titleTextArr {
+  font-weight: 600;
+  padding-left: 10px;
+  padding-top: 3px;
+  font-size: 14px;
+}
+
+.typeText {
+  padding-left: 10px;
+  font-size: 9px;
+  color: #7D7D7D;
+  padding-top: 9px;
+}
+
+.starRow {
+  padding-left: 6px;
+  display: flex;
+  flex-direction: row;
+}
+
+.starImage {
+  width: 20px;
+  height: 26px;
 }

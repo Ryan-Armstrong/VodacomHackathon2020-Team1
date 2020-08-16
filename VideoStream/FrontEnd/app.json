@@ -1,8 +1,8 @@
 {
   "pages": [
-    "pages/videoinfo/videoinfo",
     "pages/index/index",
-    "pages/seach-page/seach-page"
+    "pages/seach-page/seach-page",
+    "pages/videoinfo/videoinfo"
     
   ],
   "window": {

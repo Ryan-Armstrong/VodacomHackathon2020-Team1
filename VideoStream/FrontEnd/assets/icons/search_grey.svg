@@ -7,7 +7,7 @@
       <use xlink:href="#search-a"/>
     </mask>
     <use fill="#979797" fill-rule="nonzero" xlink:href="#search-a"/>
-    <g fill="#8E8E93" mask="url(#search-b)">
+    <g fill="#9B9B9B" mask="url(#search-b)">
       <rect width="24" height="24"/>
     </g>
   </g>
