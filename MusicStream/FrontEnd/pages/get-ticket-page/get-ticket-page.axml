@@ -1,0 +1,3 @@
+<view>
+  <image class="page-image" src="../../assets/music_stream_ticket.png" onTap="purchaseTicket"/>
+</view>

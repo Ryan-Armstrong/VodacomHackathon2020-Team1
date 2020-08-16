@@ -82,3 +82,14 @@ page {
 {
   border-bottom: 2px solid #E60202;
 }
+
+@font-face {
+  font-family: "SF Pro Text";
+  src: url(/assets/fonts/SF-Pro-Text-Regular.otf) format("opentype");
+}
+
+body {
+  padding: 16px;
+  height: 94vh;
+  font-family: "SF Pro Text";
+}

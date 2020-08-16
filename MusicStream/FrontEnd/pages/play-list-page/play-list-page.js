@@ -15,5 +15,12 @@ Page({
     my.navigateTo({ url: '../search-page/search-page' });
   },
 
+  selectedPlaylist(e){
+    app.selectedItem = e.target.dataset.id;
+    my.navigateTo({
+      url: '../play-list-detail-view/play-list-detail-view'
+    });
+  }
+
 
 });

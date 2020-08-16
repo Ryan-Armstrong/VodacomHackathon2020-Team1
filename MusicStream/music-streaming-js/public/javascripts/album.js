@@ -11,48 +11,6 @@ var repeat = false;
 var imageSet = false;
 var selectedSong = undefined;
 
-var songs = [{
-  id: 1,
-  name: 'Sober',
-  fav: false,
-  playing: false
-}, {
-  id: 2,
-  name: 'Obsessed',
-  fav: false,
-  playing: false
-}, {
-  id: 3,
-  name: 'How could you',
-  fav: true,
-  playing: false
-}, {
-  id: 4,
-  name: 'Sweet wine',
-  fav: false,
-  playing: false
-}, {
-  id: 5,
-  name: 'Love Everything',
-  fav: false,
-  playing: false
-}, {
-  id: 6,
-  name: 'Church bells',
-  fav: false,
-  playing: false
-}, {
-  id: 7,
-  name: 'Love',
-  fav: false,
-  playing: false
-}, {
-  id: 8,
-  name: 'Passion',
-  fav: false,
-  playing: false
-}];
-
 var album = [{
     id: 4,
     title: "After Hours",
@@ -103,6 +61,35 @@ var album = [{
   }
 ];
 
+var singleSongs = [{
+    id: 1,
+    title: "Cardigan",
+    releaseDate: "03/03/2020",
+    thumbnail: "/assets/images/new_release_1.png",
+    artistName: "Taylor Swift, Folklore",
+    audio: "/assets/audio/song.mp3",
+    fav: false
+  },
+  {
+    id: 2,
+    title: "Easy",
+    releaseDate: "08/07/2020",
+    thumbnail: "/assets/images/new_release_2.png",
+    artistName: "Troye Sivan",
+    audio: "/assets/audio/sample.mp3",
+    fav: false
+  },
+  {
+    id: 3,
+    title: "Stupid Love",
+    releaseDate: "01/07/2020",
+    thumbnail: "/assets/images/new_release_3.png",
+    artistName: "Lady Gaga",
+    audio: "/assets/audio/classical.mp3",
+    fav: false
+  }
+];
+
 var playlist = [{
     id: 1,
     title: "90's Hits",
@@ -140,9 +127,73 @@ var playlist = [{
   },
 ]
 
-//document.getElementById('albumCover').src = album
+var songs = [{
+  id: 1,
+  name: 'Sober',
+  fav: false,
+  playing: false,
+  audio: "/assets/audio/sample.mp3",
+  duration: 127.2,
+  durationInString: "02:12"
+}, {
+  id: 2,
+  name: 'Obsessed',
+  fav: false,
+  playing: false,
+  audio: "/assets/audio/song.mp3",
+  duration: 196.5,
+  durationInString: "03:27"
+}, {
+  id: 3,
+  name: 'How could you',
+  fav: true,
+  playing: false,
+  audio: "/assets/audio/classical.mp3",
+  duration: 258,
+  durationInString: "04:30"
+}, {
+  id: 4,
+  name: 'Sweet wine',
+  fav: false,
+  playing: false,
+  audio: "/assets/audio/sample.mp3",
+  duration: 127.2,
+  durationInString: "02:12"
+}, {
+  id: 5,
+  name: 'Love Everything',
+  fav: false,
+  playing: false,
+  audio: "/assets/audio/classical.mp3",
+  duration: 258,
+  durationInString: "04:30"
+}, {
+  id: 6,
+  name: 'Church bells',
+  fav: false,
+  playing: false,
+  audio: "/assets/audio/sample.mp3",
+  duration: 127.2,
+  durationInString: "02:12"
+}, {
+  id: 7,
+  name: 'Love',
+  fav: false,
+  playing: false,
+  audio: "/assets/audio/song.mp3",
+  duration: 196.5,
+  durationInString: "03:27"
+}, {
+  id: 8,
+  name: 'Passion',
+  fav: false,
+  playing: false,
+  audio: "/assets/audio/classical.mp3",
+  duration: 258,
+  durationInString: "04:30"
+}];
 
-function updateCoverImg(id) {
+function updateAlbumCoverImg(id) {
   if (id) {
     selectedAlbum = album.filter(a => a.id === id)[0];
   } else {
@@ -160,29 +211,10 @@ function updateCoverImg(id) {
 
 }
 
-function setInitValues(id) {
-
-  let newArray = album;
-  newArray[id - 1] = {
-    ...newArray[id - 1],
-    playing: false
-  }
-  album = newArray;
-  document.getElementById(`play-${id}`).src = "/assets/icons/play_filled.svg";
-  playing = false;
-  width = 0;
-  duration = undefined;
-  timer = 0;
-  myVar;
-  min = 0;
-  sec = 0;
-}
-
-function togglePlaying(id = '') {
-  let newArray = album;
+function toggleAlbumPlaying(id = '') {
+  let newArray = songs;
   var audioPlayer = document.getElementById("audio-player");
-  duration = audioPlayer.duration;
-  document.getElementById("durationTime").innerHTML = "02:26";
+
   if (playing) {
     playing = false;
     audioPlayer.pause();
@@ -190,72 +222,101 @@ function togglePlaying(id = '') {
     document.getElementById(`play-${currentPlaying.id}`).src = "/assets/icons/play_filled.svg";
     clearInterval(myVar);
   } else {
+    if (id) {
+      let index = songs.findIndex(s => s.id === id);
+      if (currentPlaying === undefined) {
+        newArray[index] = {
+          ...newArray[index],
+          playing: true
+        }
+        songs = newArray;
+        currentPlaying = songs[index];
+        audioPlayer.src = currentPlaying.audio
+        duration = currentPlaying.duration;
+      } else if (currentPlaying !== undefined) {
+        if (id !== currentPlaying.id) {
+          pauseAndClear();
+          newArray[index] = {
+            ...newArray[index],
+            playing: true
+          }
+          songs = newArray;
+          currentPlaying = songs[index];
+          audioPlayer.src = currentPlaying.audio
+          duration = currentPlaying.duration;
+        }
+      }
+    } else if (currentPlaying == undefined) {
+      setCurrentAlbumSong();
+      audioPlayer.src = currentPlaying.audio;
+      duration = currentPlaying.duration;
+    }
+
     playing = true;
     audioPlayer.play();
-    document.getElementById("toggleBtn").src = "/assets/icons/pause_filled.svg";
-    if (currentPlaying === undefined && shuffle && !id) {
-      let randomSong = Math.floor(Math.random() * (album.length - 1))
-      newArray[randomSong] = {
-        ...newArray[randomSong],
-        playing: true
-      }
-      album = newArray;
-      currentPlaying = album[randomSong];
-
-    } else if (currentPlaying === undefined && !id) {
-      newArray[0] = {
-        ...newArray[0],
-        playing: true
-      }
-      album = newArray;
-      currentPlaying = album[0];
-    } else if (id) {
-      newArray[id] = {
-        ...newArray[id],
-        playing: true
-      }
-      album = newArray;
-      currentPlaying = album.filter(a => a.id === id)[0];
-    }
     clearInterval(myVar);
     myVar = setInterval(myTimer, 1000);
+    document.getElementById("durationTime").innerHTML = currentPlaying.durationInString;
+    document.getElementById("toggleBtn").src = "/assets/icons/pause_filled.svg";
     document.getElementById(`play-${currentPlaying.id}`).src = "/assets/icons/pause_filled.svg";
   }
 
 }
 
-function playSelectedSong(id = '') {
-  if (currentPlaying) {
-
-    if (currentPlaying.id !== id) {
-      setInitValues(currentPlaying.id);
-      currentPlaying = album.filter(a => a.id === id)[0];
-      let newArray = album;
-      newArray[id] = {
-        ...newArray[id],
-        playing: true
-      }
-      album = newArray;
+function pauseAndClear() {
+  let newArray = songs;
+  let index = songs.findIndex(s => s.playing === true);
+  document.getElementById("myprogressBar").style.width = "0%";
+  if (index >= 0) {
+    document.getElementById(`play-${songs[index].id}`).src = "/assets/icons/play_filled.svg";
+    newArray[index] = {
+      ...newArray[index],
+      playing: false
     }
   }
-  togglePlaying(id);
+  var audioPlayer = document.getElementById("audio-player");
+  audioPlayer.pause();
+  document.getElementById("toggleBtn").src = "/assets/icons/play_filled.svg";
+  document.getElementById("durationTime").innerHTML = "00:00";
+  playing = false;
+  width = 0;
+  timer = 0;
+  min = 0;
+  sec = 0;
+}
 
+function setCurrentAlbumSong() {
+  let newArray = songs;
+  if (!currentPlaying && shuffle) {
+    let randomSong = Math.floor(Math.random() * (songs.length - 1))
+    newArray[randomSong] = {
+      ...newArray[randomSong],
+      playing: true
+    }
+    songs = newArray;
+    currentPlaying = songs[randomSong];
+  } else if (!currentPlaying) {
+    currentPlaying = songs[0];
+  }
+}
 
+function playSelectedSong(id = '') {
+  if (currentPlaying !== undefined) {
+    if (id !== currentPlaying.id) {
+      pauseAndClear();
+    }
+  }
+  toggleAlbumPlaying(id);
 }
 
 function updateBar() {
   var element = document.getElementById("myprogressBar");
-
   if (timer <= duration) {
     element.style.width = (timer + 0.25) / duration * 100 + '%';
-  } else {
-    nextSongInAlbum()
-    nextSong();
   }
 }
 
 function myTimer() {
-
   if (playing === true) {
     if (sec < 59) {
       sec++;
@@ -294,30 +355,32 @@ function addZero(value) {
 }
 
 function favouriteClicked(id) {
+  console.log("FAV", id);
+  let newArray = songs;
+  let index = songs.findIndex(s => s.id === id);
+  if (songs[index].fav) {
+    newArray[index] = {
+      ...newArray[index],
+      fav: false
+    }
+    songs = newArray;
+    document.getElementById(`fav-${id}`).src = "/assets/icons/favourite.svg"
+    document.getElementById(`popUpMessage`).innerHTML = songs[index].name + ' was removed from favourites'
+  } else {
+    newArray[index] = {
+      ...newArray[index],
+      fav: true
+    }
+    songs = newArray;
+    document.getElementById(`fav-${id}`).src = "/assets/icons/favourite_filled.svg"
+    document.getElementById(`popUpMessage`).innerHTML = songs[index].name + ' was added to favourites'
+  }
+
   var modal = document.getElementById("myModal");
-  let newArray = album;
   modal.style.display = "flex";
   setTimeout(() => {
     modal.style.display = "none"
   }, 1000)
-
-  if (album[id].fav) {
-    newArray[id] = {
-      ...newArray[id],
-      fav: false
-    }
-    album = newArray;
-    document.getElementById(`fav-${id}`).src = "/assets/icons/favourite.svg"
-    document.getElementById(`popUpMessage`).innerHTML = album[id].name + ' was removed from favourites'
-  } else {
-    newArray[id] = {
-      ...newArray[id],
-      fav: true
-    }
-    album = newArray;
-    document.getElementById(`fav-${id}`).src = "/assets/icons/favourite_filled.svg"
-    document.getElementById(`popUpMessage`).innerHTML = album[id].name + ' was added to favourites'
-  }
 }
 
 function shuffleClicked() {
@@ -332,60 +395,40 @@ function shuffleClicked() {
 }
 
 function prevSongInAlbum() {
-  let newArray = album;
-
+  let nextSongId = undefined;
+  pauseAndClear();
   if (currentPlaying) {
-    if (currentPlaying.id - 1 > 0) {
-      newArray[currentPlaying.id - 1] = {
-        ...newArray[currentPlaying.id - 1],
-        playing: true
-      }
-
-      album = newArray
-      setInitValues(currentPlaying.id);
-      currentPlaying = album.filter(a => a.playing === true)[0];
+    let index = songs.findIndex(s => s.id == currentPlaying.id);
+    if (index > 0) {
+      nextSongId = songs[index - 1].id;
     } else {
-      newArray[album.length - 1] = {
-        ...newArray[album.length - 1],
-        playing: true
-      }
-
-      album = newArray
-      setInitValues(currentPlaying.id);
-      currentPlaying = album[album.length - 1];
+      nextSongId = songs[songs.length - 1].id;
     }
-    togglePlaying(currentPlaying.id);
+    setTimeout(() => {
+      toggleAlbumPlaying(nextSongId);
+    }, 200)
+
   } else {
-    console.log("NOTHING PLAYING");
+    toggleAlbumPlaying(songs[0].id);
   }
 }
 
 function nextSongInAlbum() {
-  let newArray = album;
-
+  let nextSongId = undefined;
+  pauseAndClear();
   if (currentPlaying) {
-    if (currentPlaying.id + 1 !== album.length) {
-      newArray[currentPlaying.id + 1] = {
-        ...newArray[currentPlaying.id + 1],
-        playing: true
-      }
-
-      album = newArray
-      setInitValues(currentPlaying.id);
-      currentPlaying = album.filter(a => a.playing === true)[0];
+    let index = songs.findIndex(s => s.id == currentPlaying.id);
+    if (index < songs.length - 1) {
+      nextSongId = songs[index + 1].id;
     } else {
-      newArray[0] = {
-        ...newArray[0],
-        playing: true
-      }
-
-      album = newArray
-      setInitValues(currentPlaying.id);
-      currentPlaying = album[0];
+      nextSongId = songs[0].id;
     }
-    togglePlaying(currentPlaying.id);
+    setTimeout(() => {
+      toggleAlbumPlaying(nextSongId);
+    }, 200)
+
   } else {
-    console.log("NOTHING PLAYING");
+    toggleAlbumPlaying(songs[0].id);
   }
 
 }

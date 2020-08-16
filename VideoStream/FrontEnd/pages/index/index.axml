@@ -16,7 +16,7 @@
   <view class="divider"></view>
 
   <view class="subscription-option">
-    <view class="subscription-option-title">Music Ticket</view>
+    <view class="subscription-option-title">Video Ticket</view>
     <view class="subscription-option-container">
       <view class="subscription-option-subtitle">A ticket to watch any content for a certain amount of time only.</view>
       <button class="subscription-option-button" onTap="getTicketButtonTapped">Get Ticket</button>
