@@ -177,7 +177,8 @@ router.get('/album/:id', function (req, res, next) {
     duration: 168,
     isPlayListView: false,
     album: albumSelected,
-    songs: songs
+    songs: songs,
+    playlist: playlist
   });
 });
 
@@ -189,7 +190,8 @@ router.get('/song/:id', function (req, res, next) {
     output: req.params.id,
     duration: 168,
     song: selectedSong,
-    isPlayListView: false
+    isPlayListView: false,
+    playlist: playlist
   });
 })
 
