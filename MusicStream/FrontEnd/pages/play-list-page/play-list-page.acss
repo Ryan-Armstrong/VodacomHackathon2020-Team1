@@ -1,0 +1,105 @@
+.play-list-page-container {
+  display: flex;
+  flex-direction: column;
+  background: white;
+  width: 100vw;
+}
+
+.tab-bar {
+  display: flex;
+  margin: 25rpx;
+}
+
+.tab-bar-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.tab-bar-item-text {
+  margin-right: 25rpx;
+}
+
+.tab-bar-item-icon {
+  margin-left: 430rpx;
+  height: 15px;
+  width: 15px;
+  object-fit: contain;
+}
+
+.tab-bar-indicator {
+  border-radius: 1px;
+  background: #E60202;
+  height: 2px;
+  width: 35px;
+  margin-left: 10px;
+}
+
+.favourites-view {
+  display: flex;
+  align-items: center;
+  height: 85rpx;
+  width: 94vw;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 10px;
+  box-shadow: 1px 1px 5px rgb(184, 184, 184);
+}
+
+.heart-icon {
+  margin-left: 25rpx;
+  width: 25px;
+  height: 25px;
+}
+
+.favourites-text-container {
+  display: flex;
+  flex-direction: column;
+  margin-left: 25rpx;
+}
+
+.favourites-title-text {
+  font-weight: 600;
+}
+
+.favourites-subtitle-text {
+  color: gray;
+  font-size: 10px;
+}
+
+.expand-icon {
+  margin-left: 195rpx;
+  width: 20px;
+  height: 20px;
+}
+
+.playlistScrollView {
+  display: flex;
+  flex-direction: column;
+  width: 94vw;
+  margin: auto;
+}
+
+.playlistItemView {
+  display: flex;
+  margin-top: 25rpx;
+}
+
+.playlistItemImage {
+  border-radius: 10px;
+  height: 225rpx;
+  width: 225rpx;
+}
+
+.playlist-item-text-container {
+  display: flex;
+  flex-direction: column;
+  margin-left: 25rpx; 
+}
+
+.playlist-item-title-text {
+  font-weight: 600;
+}
+
+.playlist-item-subtitle-text {
+  margin-top: 16rpx;
+}

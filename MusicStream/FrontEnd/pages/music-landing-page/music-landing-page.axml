@@ -5,8 +5,6 @@
       <view class="tab-bar-indicator"></view>
     </view>
     <view class="tab-bar-item-text" onTap="viewPlaylists">Playlists</view>
-    <view class="tab-bar-item-text" onTap="viewPurchasedMusic">Purchased</view>
-    <view class="tab-bar-item-text" onTap="viewSubscriptions">Subscription</view>
     <image class="tab-bar-item-icon" src="../../assets/icons/search.png" onTap="searchMusic"/>
   </view>
 
