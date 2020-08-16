@@ -4,7 +4,6 @@
       <view class="tab-bar-item-text">Home</view>
       <view class="tab-bar-indicator"></view>
     </view>
-    <view class="tab-bar-item-text" onTap="viewPlaylists">Playlists</view>
     <view class="tab-bar-item-text" onTap="viewPurchasedMusic">Rentals</view>
     <image class="tab-bar-item-icon" src="../../assets/icons/search.png" onTap="searchMovies"/>
   </view>
