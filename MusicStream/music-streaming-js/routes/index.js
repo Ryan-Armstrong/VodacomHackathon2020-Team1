@@ -132,7 +132,8 @@ router.get('/album/:id', function (req, res, next) {
   res.render('album', {
     output: req.params.id,
     duration: 168,
-    data: album
+    data: album,
+    isPlayListView: false
   });
 });
 
@@ -143,7 +144,16 @@ router.get('/song/:id', function (req, res, next) {
   res.render('song', {
     output: req.params.id,
     duration: 168,
-    song: selectedSong
+    song: selectedSong,
+    isPlayListView: false
+  });
+})
+
+router.get('/playlist/:id', function (req, res, next) {
+
+  res.render('playList', {
+    output: req.params.id,
+    isPlayListView: true
   });
 })
 

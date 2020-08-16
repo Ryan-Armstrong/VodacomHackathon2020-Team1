@@ -245,48 +245,56 @@ App({
 
   playlists: [
     {
+      id: "1",
       name: "90's Hits",
       numTracks: 241,
       duration: "01:22:40",
       thumbnail: "playlist-thumbnails/playlist_1.png"
     },
     {
+       id: "2",
       name: "Golden Oldies",
       numTracks: 56,
       duration: "01:01:21",
       thumbnail: "playlist-thumbnails/playlist_2.png"
     },
     {
+       id: "3",
       name: "Love Songs",
       numTracks: 198,
       duration: "02:34:21",
       thumbnail: "playlist-thumbnails/playlist_3.png"
     },
-    {
+    { 
+      id: "4",
       name: "Road Trip Mix",
       numTracks: 65,
       duration: "01:49:02",
       thumbnail: "playlist-thumbnails/playlist_4.png"
     },
     {
+       id: "5",
       name: "Workout Mix",
       numTracks: 21,
       duration: "56:45",
       thumbnail: "playlist-thumbnails/playlist_5.png"
     },
     {
+       id: "6",
       name: "90's Hits",
       numTracks: 241,
       duration: "01:22:40",
       thumbnail: "playlist-thumbnails/playlist_1.png"
     },
     {
+       id: "7",
       name: "Golden Oldies",
       numTracks: 56,
       duration: "01:01:21",
       thumbnail: "playlist-thumbnails/playlist_2.png"
     },
     {
+       id: "9",
       name: "Love Songs",
       numTracks: 198,
       duration: "02:34:21",

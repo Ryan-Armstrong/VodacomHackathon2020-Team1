@@ -9,7 +9,11 @@ Page({
   },
 
   browserMessage(e){
-    console.log(e);
+    if(e.detail.navigateToUrl){
+      my.navigateTo({
+        url: e.detail.navigateToUrl
+      });
+    }
   }
 
 });
