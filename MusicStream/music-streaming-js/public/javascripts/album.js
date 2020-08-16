@@ -9,6 +9,7 @@ var shuffle = true;
 var currentPlaying = undefined;
 var repeat = false;
 var imageSet = false;
+var selectedSong = undefined;
 
 var songs = [{
   id: 1,
@@ -101,6 +102,43 @@ var album = [{
     songs: songs
   }
 ];
+
+var playlist = [{
+    id: 1,
+    title: "90's Hits",
+    trakcs: 102,
+    duration: "5:01:22",
+    thumbnail: "/assets/images/playlist_small_1.png"
+  },
+  {
+    id: 2,
+    title: "Golden Oldies",
+    trakcs: 133,
+    duration: "6:21:44",
+    thumbnail: "/assets/images/playlist_small_2.png"
+  },
+  {
+    id: 3,
+    title: "Love Songs",
+    trakcs: 76,
+    duration: "2:15:52",
+    thumbnail: "/assets/images/playlist_small_3.png"
+  },
+  {
+    id: 4,
+    title: "Road Trip Mix",
+    trakcs: 241,
+    duration: "8:55:02",
+    thumbnail: "/assets/images/playlist_small_4.png"
+  },
+  {
+    id: 5,
+    title: "Wokrout Mix",
+    trakcs: 52,
+    duration: "1:25:32",
+    thumbnail: "/assets/images/playlist_small_5.png"
+  },
+]
 
 //document.getElementById('albumCover').src = album
 
@@ -352,6 +390,18 @@ function nextSongInAlbum() {
 
 }
 
-function addToPlayList(id) {
+function showPlayListModal(id) {
+  selectedSong = songs.filter(s => s.id === id)[0];
+  var modal = document.getElementById("playListModal");
+  modal.style.display = "flex";
+}
 
+function addPlaylist(id) {
+  var modal = document.getElementById("myModal");
+  modal.style.display = "flex";
+  document.getElementById(`popUpMessage`).innerHTML = selectedSong.name + ' was added to ' + playlist.filter(p => p.id === id)[0].title;
+  setTimeout(() => {
+    modal.style.display = "none"
+  }, 1000)
+  closePlaylistModal();
 }

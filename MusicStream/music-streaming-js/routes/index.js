@@ -49,7 +49,7 @@ var album = [{
     releaseDate: "03/03/2020",
     thumbnail: "/assets/images/recommended_1.png",
     artistName: "The Weekend",
-    songs: songs
+    songs: []
   },
   {
     id: 5,
@@ -57,7 +57,7 @@ var album = [{
     releaseDate: "08/07/2020",
     thumbnail: "/assets/images/recommended_2.png",
     artistName: "Tones and I",
-    songs: songs
+    songs: []
   },
   {
     id: 6,
@@ -65,7 +65,7 @@ var album = [{
     releaseDate: "01/07/2020",
     thumbnail: "/assets/images/recommended_3.png",
     artistName: "Harry Styles",
-    songs: songs
+    songs: []
   },
   {
     id: 7,
@@ -73,7 +73,7 @@ var album = [{
     releaseDate: "03/03/2020",
     thumbnail: "/assets/images/popular_1.png",
     artistName: "Kelly Khumalo, Empini",
-    songs: songs
+    songs: []
   },
   {
     id: 8,
@@ -81,7 +81,7 @@ var album = [{
     releaseDate: "08/07/2020",
     thumbnail: "/assets/images/popular_2.png",
     artistName: "Mi Casa",
-    songs: songs
+    songs: []
   },
   {
     id: 9,
@@ -89,7 +89,7 @@ var album = [{
     releaseDate: "01/07/2020",
     thumbnail: "/assets/images/popular_3.png",
     artistName: "Jeremy Loops",
-    songs: songs
+    songs: []
   }
 ];
 
@@ -122,6 +122,43 @@ var singleSongs = [{
   }
 ]
 
+var playlist = [{
+    id: 1,
+    title: "90's Hits",
+    trakcs: 102,
+    duration: "5:01:22",
+    thumbnail: "/assets/images/playlist_small_1.png"
+  },
+  {
+    id: 2,
+    title: "Golden Oldies",
+    trakcs: 133,
+    duration: "6:21:44",
+    thumbnail: "/assets/images/playlist_small_2.png"
+  },
+  {
+    id: 3,
+    title: "Love Songs",
+    trakcs: 76,
+    duration: "2:15:52",
+    thumbnail: "/assets/images/playlist_small_3.png"
+  },
+  {
+    id: 4,
+    title: "Road Trip Mix",
+    trakcs: 241,
+    duration: "8:55:02",
+    thumbnail: "/assets/images/playlist_small_4.png"
+  },
+  {
+    id: 5,
+    title: "Wokrout Mix",
+    trakcs: 52,
+    duration: "1:25:32",
+    thumbnail: "/assets/images/playlist_small_5.png"
+  },
+]
+
 /* GET home page. */
 router.get('/', function (req, res, next) {
   res.render('index');
@@ -129,10 +166,20 @@ router.get('/', function (req, res, next) {
 
 router.get('/album/:id', function (req, res, next) {
 
+  const albumSelected = album.filter(a => {
+    if (a.id == req.params.id) {
+      return a;
+    }
+  })[0];
+  console.log("SELECTED", albumSelected);
+  console.log("songs", songs);
+
   res.render('album', {
     output: req.params.id,
     duration: 168,
-    data: album
+    album: albumSelected,
+    playlist: playlist,
+    songs: songs
   });
 });
 
@@ -143,7 +190,8 @@ router.get('/song/:id', function (req, res, next) {
   res.render('song', {
     output: req.params.id,
     duration: 168,
-    song: selectedSong
+    song: selectedSong,
+    playlist: playlist
   });
 })
 
