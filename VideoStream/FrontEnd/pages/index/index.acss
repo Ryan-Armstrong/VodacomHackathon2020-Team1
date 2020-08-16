@@ -62,7 +62,6 @@
 }
 
 .subscription-option-button {
-  /* animation: 2s ease-out 0s 1 shrink; */
   animation: swing 1s ease;
   display: inline-block;
   background: #E60202;
