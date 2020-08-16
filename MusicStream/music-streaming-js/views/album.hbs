@@ -1,6 +1,7 @@
 <div class="ablum-container">
     <div class="album-cover">
-        <img class="album-img" id="albumCover" onload="updateCoverImg({{output}})" src="/assets/images/placeholder.png">
+        <img class="album-img" id="albumCover" onload="updateAlbumCoverImg({{output}})"
+            src="/assets/images/placeholder.png">
     </div>
     <div style='text-align: center;
     margin: 20px 0px 10px 0px;    font-size: large;
@@ -24,7 +25,7 @@
             onclick="repeatClicked()" id="repeatBtn">
         <img src="/assets/icons/skip_back.svg" style="width: 30px;  margin-right: 14px;" onclick="prevSongInAlbum()">
         <img id="toggleBtn" src="/assets/icons/play_filled.svg" style="width: 40px;  margin-right: 14px;"
-            onclick="togglePlaying()">
+            onclick="toggleAlbumPlaying()">
         <img src="/assets/icons/skip_forward.svg" style="width: 30px;  margin-right: 14px;" onclick="nextSongInAlbum()">
         <img src="/assets/icons/shuffle.svg" style="width: 30px; margin-right: auto" id="shuffleBtn"
             onclick="shuffleClicked()">

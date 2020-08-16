@@ -9,49 +9,6 @@ var counter = 0;
 var audioPlayer
 var imageSet = false;
 var currentSong = undefined;
-
-var songs = [{
-    id: 1,
-    name: 'Sober',
-    fav: false,
-    playing: false
-}, {
-    id: 2,
-    name: 'Obsessed',
-    fav: false,
-    playing: false
-}, {
-    id: 3,
-    name: 'How could you',
-    fav: true,
-    playing: false
-}, {
-    id: 4,
-    name: 'Sweet wine',
-    fav: false,
-    playing: false
-}, {
-    id: 5,
-    name: 'Love Everything',
-    fav: false,
-    playing: false
-}, {
-    id: 6,
-    name: 'Church bells',
-    fav: false,
-    playing: false
-}, {
-    id: 7,
-    name: 'Love',
-    fav: false,
-    playing: false
-}, {
-    id: 8,
-    name: 'Passion',
-    fav: false,
-    playing: false
-}];
-
 var album = [{
         id: 4,
         title: "After Hours",
@@ -167,6 +124,56 @@ var playlist = [{
         thumbnail: "/assets/images/playlist_small_5.png"
     },
 ]
+
+var songs = [{
+    id: 1,
+    name: 'Sober',
+    fav: false,
+    playing: false,
+    audio: "/assets/audio/sample.mp3",
+}, {
+    id: 2,
+    name: 'Obsessed',
+    fav: false,
+    playing: false,
+    audio: "/assets/audio/song.mp3",
+}, {
+    id: 3,
+    name: 'How could you',
+    fav: true,
+    playing: false,
+    audio: "/assets/audio/classical.mp3",
+}, {
+    id: 4,
+    name: 'Sweet wine',
+    fav: false,
+    playing: false,
+    audio: "/assets/audio/song.mp3",
+}, {
+    id: 5,
+    name: 'Love Everything',
+    fav: false,
+    playing: false,
+    audio: "/assets/audio/classical.mp3",
+}, {
+    id: 6,
+    name: 'Church bells',
+    fav: false,
+    playing: false,
+    audio: "/assets/audio/sample.mp3",
+}, {
+    id: 7,
+    name: 'Love',
+    fav: false,
+    playing: false,
+    audio: "/assets/audio/song.mp3",
+}, {
+    id: 8,
+    name: 'Passion',
+    fav: false,
+    playing: false,
+    audio: "/assets/audio/sample.mp3",
+}];
 
 var selectedSong = singleSongs[0];
 

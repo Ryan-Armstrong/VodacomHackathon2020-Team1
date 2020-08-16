@@ -5,42 +5,50 @@ var songs = [{
   id: 1,
   name: 'Sober',
   fav: false,
-  playing: false
+  playing: false,
+  audio: "/assets/audio/sample.mp3",
 }, {
   id: 2,
   name: 'Obsessed',
   fav: false,
-  playing: false
+  playing: false,
+  audio: "/assets/audio/song.mp3",
 }, {
   id: 3,
   name: 'How could you',
   fav: true,
-  playing: false
+  playing: false,
+  audio: "/assets/audio/classical.mp3",
 }, {
   id: 4,
   name: 'Sweet wine',
   fav: false,
-  playing: false
+  playing: false,
+  audio: "/assets/audio/song.mp3",
 }, {
   id: 5,
   name: 'Love Everything',
   fav: false,
-  playing: false
+  playing: false,
+  audio: "/assets/audio/classical.mp3",
 }, {
   id: 6,
   name: 'Church bells',
   fav: false,
-  playing: false
+  playing: false,
+  audio: "/assets/audio/sample.mp3",
 }, {
   id: 7,
   name: 'Love',
   fav: false,
-  playing: false
+  playing: false,
+  audio: "/assets/audio/song.mp3",
 }, {
   id: 8,
   name: 'Passion',
   fav: false,
-  playing: false
+  playing: false,
+  audio: "/assets/audio/sample.mp3",
 }];
 
 var album = [{
