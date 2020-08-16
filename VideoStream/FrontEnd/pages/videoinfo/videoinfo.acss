@@ -179,6 +179,17 @@
   margin-top: 16px;
 }
 
+.mainImageAvailable
+{
+  border-top: 20px solid #E60202;
+}
+
+.available-font
+{
+  color: white;
+  font-size: 8pt;
+  font-weight: 500;
+}
 
 .wrapper {
   display: flex;
@@ -199,6 +210,13 @@
   flex-direction: row;
   flex-wrap: wrap;
   width: 100%;
+  position: relative;
+}
+
+.text-watch {
+  position: absolute;
+  top: 16px;
+  left: 20px;
 }
 
 .column {
