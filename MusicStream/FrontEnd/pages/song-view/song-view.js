@@ -5,6 +5,7 @@ Page({
     id: String
   },
   onLoad() {
+    console.log("ID", app.selectedItem.id);
     this.setData({id: app.selectedItem.id});   
   },
 

@@ -7,6 +7,8 @@ var min = 0;
 var sec = 0;
 var shuffle = true;
 var currentPlaying = undefined;
+var repeat = false;
+var imageSet = false;
 
 var songs = [{
   id: 1,
@@ -103,12 +105,21 @@ var album = [{
 //document.getElementById('albumCover').src = album
 
 function updateCoverImg(id) {
-  selectedAlbum = album.filter(a => a.id === id)[0];
-  document.getElementById('albumCover').src = selectedAlbum.thumbnail;
+  if (id) {
+    selectedAlbum = album.filter(a => a.id === id)[0];
+  } else {
+    selectedAlbum = album[0];
+  }
+  if (!imageSet) {
+    document.getElementById('albumCover').src = selectedAlbum.thumbnail;
+    imageSet = true;
+  }
+
   document.getElementById('albumName').innerHTML = selectedAlbum.title;
   document.getElementById('artis').innerHTML = selectedAlbum.artistName;
   document.getElementById('releaseData').innerHTML = 'Released:' + selectedAlbum.releaseDate;
   document.getElementById('tracks').innerHTML = 'Tracks:' + selectedAlbum.songs.length;
+
 }
 
 function setInitValues(id) {
@@ -130,12 +141,10 @@ function setInitValues(id) {
 }
 
 function togglePlaying(id = '') {
-  console.log("ID", id);
   let newArray = album;
   var audioPlayer = document.getElementById("audio-player");
   duration = audioPlayer.duration;
   document.getElementById("durationTime").innerHTML = "02:26";
-  console.log("PLAYING", playing);
   if (playing) {
     playing = false;
     audioPlayer.pause();
@@ -147,7 +156,6 @@ function togglePlaying(id = '') {
     audioPlayer.play();
     document.getElementById("toggleBtn").src = "/assets/icons/pause_filled.svg";
     if (currentPlaying === undefined && shuffle && !id) {
-      console.log("NO CURRENT SONG");
       let randomSong = Math.floor(Math.random() * (album.length - 1))
       newArray[randomSong] = {
         ...newArray[randomSong],
@@ -164,7 +172,6 @@ function togglePlaying(id = '') {
       album = newArray;
       currentPlaying = album[0];
     } else if (id) {
-      console.log("UPDATE CURRENT SONG", id);
       newArray[id] = {
         ...newArray[id],
         playing: true
@@ -174,18 +181,15 @@ function togglePlaying(id = '') {
     }
     clearInterval(myVar);
     myVar = setInterval(myTimer, 1000);
-    console.log("CURRENTPLAYING", currentPlaying);
     document.getElementById(`play-${currentPlaying.id}`).src = "/assets/icons/pause_filled.svg";
   }
 
 }
 
 function playSelectedSong(id = '') {
-  console.log("SELECTED SONG", id);
   if (currentPlaying) {
 
     if (currentPlaying.id !== id) {
-      console.log("I GOT HERE");
       setInitValues(currentPlaying.id);
       currentPlaying = album.filter(a => a.id === id)[0];
       let newArray = album;
@@ -206,6 +210,9 @@ function updateBar() {
 
   if (timer <= duration) {
     element.style.width = (timer + 0.25) / duration * 100 + '%';
+  } else {
+    nextSongInAlbum()
+    nextSong();
   }
 }
 
@@ -223,6 +230,16 @@ function myTimer() {
     secString = addZero(sec);
     minString = addZero(min);
     document.getElementById('currentTime').innerHTML = minString + ":" + secString;
+  }
+}
+
+function repeatClicked() {
+  if (repeat === true) {
+    repeat = false;
+    document.getElementById(`repeatBtn`).src = "/assets/icons/repeat_off.svg"
+  } else {
+    repeat = true;
+    document.getElementById(`repeatBtn`).src = "/assets/icons/repeat.svg"
   }
 }
 
@@ -266,8 +283,6 @@ function favouriteClicked(id) {
 }
 
 function shuffleClicked() {
-  console.log("I GOT TRIGGERED")
-
   if (shuffle === true) {
     shuffle = false;
     document.getElementById(`shuffleBtn`).src = "/assets/icons/shuffle_off.svg"
@@ -278,11 +293,10 @@ function shuffleClicked() {
 
 }
 
-function prevSong() {
+function prevSongInAlbum() {
   let newArray = album;
 
   if (currentPlaying) {
-    console.log("FIRST IF");
     if (currentPlaying.id - 1 > 0) {
       newArray[currentPlaying.id - 1] = {
         ...newArray[currentPlaying.id - 1],
@@ -308,11 +322,10 @@ function prevSong() {
   }
 }
 
-function nextSong() {
+function nextSongInAlbum() {
   let newArray = album;
 
   if (currentPlaying) {
-    console.log("FIRST IF");
     if (currentPlaying.id + 1 !== album.length) {
       newArray[currentPlaying.id + 1] = {
         ...newArray[currentPlaying.id + 1],

@@ -1,12 +1,16 @@
 <div class="ablum-container">
     <div class="song-cover">
-        <img class="song-img" id="albumCover" onload="updateCoverImg({{output}})" src="/assets/images/placeholder.png">
+        <img class="song-img" id="songCover" onload="updateSongImg({{output}})" src="/assets/images/placeholder.png">
     </div>
     <div style="display: flex; margin: 20px 0px;">
         <div style="    margin-left: auto;">
-            <img src="/assets/icons/favourite_filled.svg" id="fav-{{song.id}}" style="margin-right: 10px;"
-                onclick="favouriteClicked({{song.id}})">
+            {{# if song.fav}}
+            <img src="/assets/icons/favourite_filled.svg" id="favIcon" style="margin-right: 10px;" onclick="addToFav()">
+            {{else}}
+            <img src="/assets/icons/favourite.svg" id="favIcon" style="margin-right: 10px;" onclick="addToFav()">
+            {{/if}}
         </div>
+
         <div style="    margin-right: auto;">
             <img src="/assets/icons/plus_red_big.svg" onclick="addToPlayList({{song.id}})">
         </div>
@@ -19,13 +23,13 @@
     margin: 0px 0px 20px 0px;' id="artis">by Mi Casa</div>
 
     <div style="display: flex; margin-bottom: 10px">
-        <img src="/assets/icons/repeat.svg" style="width: 30px; margin-left: auto; margin-right: 14px;">
+        <img src="/assets/icons/repeat_off.svg" style="width: 30px; margin-left: auto; margin-right: 14px;"
+            onclick="repeatClicked()" id="repeatBtn">
         <img src="/assets/icons/skip_back.svg" style="width: 30px;  margin-right: 14px;" onclick="prevSong()">
         <img id="toggleBtn" src="/assets/icons/play_filled.svg" style="width: 40px;  margin-right: 14px;"
-            onclick="togglePlaying()">
+            onclick="playSong()">
         <img src="/assets/icons/skip_forward.svg" style="width: 30px;  margin-right: 14px;" onclick="nextSong()">
-        <img src="/assets/icons/shuffle.svg" style="width: 30px; margin-right: auto" id="shuffleBtn"
-            onclick="shuffleClicked()">
+        <img src="/assets/icons/shuffle_off.svg" style="width: 30px; margin-right: auto" id="shuffleBtn">
     </div>
     <audio id="audio-player" ontimeupdate="updateBar()">
         <source src="/assets/audio/song.mp3" type="audio/mpeg">
@@ -40,6 +44,15 @@
 
     <div id="progress-status">
         <div id="myprogressBar"></div>
+    </div>
+
+    <div id="myModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+            <p style="margin: 5px;" id="popUpMessage"></p>
+        </div>
+
     </div>
 
 </div>

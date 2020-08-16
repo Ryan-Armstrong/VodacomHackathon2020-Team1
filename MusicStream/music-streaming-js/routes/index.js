@@ -1,6 +1,5 @@
 var express = require('express');
 var router = express.Router();
-var mockData = require('./mock-data')
 
 var songs = [{
   id: 1,
@@ -95,25 +94,31 @@ var album = [{
 ];
 
 var singleSongs = [{
-    id: "1",
+    id: 1,
     title: "Cardigan",
     releaseDate: "03/03/2020",
     thumbnail: "/assets/images/new_release_1.png",
     artistName: "Taylor Swift, Folklore",
+    audio: "/assets/audio/song.mp3",
+    fav: false
   },
   {
-    id: "2",
+    id: 2,
     title: "Easy",
     releaseDate: "08/07/2020",
     thumbnail: "new-release-thumbnails/new_release_2.png",
     artistName: "Troye Sivan",
+    audio: "/assets/audio/sample.mp3",
+    fav: false
   },
   {
-    id: "3",
+    id: 3,
     title: "Stupid Love",
     releaseDate: "01/07/2020",
     thumbnail: "new-release-thumbnails/new_release_3.png",
     artistName: "Lady Gaga",
+    audio: "/assets/audio/classical.mp3",
+    fav: false
   }
 ]
 
