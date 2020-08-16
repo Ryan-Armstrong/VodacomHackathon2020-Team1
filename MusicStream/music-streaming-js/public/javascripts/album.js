@@ -409,7 +409,7 @@ function prevSongInAlbum() {
     }, 200)
 
   } else {
-    console.log("NOTHING PLAYING");
+    toggleAlbumPlaying(songs[0].id);
   }
 }
 
@@ -428,7 +428,7 @@ function nextSongInAlbum() {
     }, 200)
 
   } else {
-    console.log("NOTHING PLAYING");
+    toggleAlbumPlaying(songs[0].id);
   }
 
 }
