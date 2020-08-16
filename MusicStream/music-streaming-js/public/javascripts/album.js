@@ -156,9 +156,9 @@ var songs = [{
   name: 'Sweet wine',
   fav: false,
   playing: false,
-  audio: "/assets/audio/song.mp3",
-  duration: 196.5,
-  durationInString: "03:27"
+  audio: "/assets/audio/sample.mp3",
+  duration: 127.2,
+  durationInString: "02:12"
 }, {
   id: 5,
   name: 'Love Everything',
@@ -234,7 +234,6 @@ function toggleAlbumPlaying(id = '') {
         audioPlayer.src = currentPlaying.audio
         duration = currentPlaying.duration;
       } else if (currentPlaying !== undefined) {
-        console.log("ID", id);
         if (id !== currentPlaying.id) {
           pauseAndClear();
           newArray[index] = {
@@ -267,7 +266,6 @@ function toggleAlbumPlaying(id = '') {
 function pauseAndClear() {
   let newArray = songs;
   let index = songs.findIndex(s => s.playing === true);
-  console.log("INDEX", index);
   document.getElementById("myprogressBar").style.width = "0%";
   if (index >= 0) {
     document.getElementById(`play-${songs[index].id}`).src = "/assets/icons/play_filled.svg";
@@ -313,8 +311,6 @@ function playSelectedSong(id = '') {
 
 function updateBar() {
   var element = document.getElementById("myprogressBar");
-  console.log("TIME", timer);
-  console.log("DURATIOn", duration);
   if (timer <= duration) {
     element.style.width = (timer + 0.25) / duration * 100 + '%';
   }
@@ -427,35 +423,25 @@ function shuffleClicked() {
 //   }
 // }
 
-// function nextSongInAlbum() {
-//   let newArray = album;
+function nextSongInAlbum() {
+  let nextSongId = undefined;
+  pauseAndClear();
+  if (currentPlaying) {
+    let index = songs.findIndex(s => s.id == currentPlaying.id);
+    if (index < songs.length - 1) {
+      nextSongId = songs[index + 1].id;
+    } else {
+      nextSongId = songs[0].id;
+    }
+    setTimeout(() => {
+      toggleAlbumPlaying(nextSongId);
+    }, 200)
 
-//   if (currentPlaying) {
-//     if (currentPlaying.id + 1 !== album.length) {
-//       newArray[currentPlaying.id + 1] = {
-//         ...newArray[currentPlaying.id + 1],
-//         playing: true
-//       }
+  } else {
+    console.log("NOTHING PLAYING");
+  }
 
-//       album = newArray
-//       setInitValues(currentPlaying.id);
-//       currentPlaying = album.filter(a => a.playing === true)[0];
-//     } else {
-//       newArray[0] = {
-//         ...newArray[0],
-//         playing: true
-//       }
-
-//       album = newArray
-//       setInitValues(currentPlaying.id);
-//       currentPlaying = album[0];
-//     }
-//     toggleAlbumPlaying(currentPlaying.id);
-//   } else {
-//     console.log("NOTHING PLAYING");
-//   }
-
-// }
+}
 
 function showPlayListModal(id) {
   selectedSong = songs.filter(s => s.id === id)[0];

@@ -154,9 +154,9 @@ var songs = [{
     name: 'Sweet wine',
     fav: false,
     playing: false,
-    audio: "/assets/audio/song.mp3",
-    duration: 196.5,
-    durationInString: "03:27"
+    audio: "/assets/audio/sample.mp3",
+    duration: 127.2,
+    durationInString: "02:12"
 }, {
     id: 5,
     name: 'Love Everything',
