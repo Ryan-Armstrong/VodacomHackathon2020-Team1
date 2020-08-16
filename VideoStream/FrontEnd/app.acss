@@ -4,6 +4,42 @@ page {
   background: #f7f7f7;
 }
 
+
+
+.tab-bar {
+  display: flex;
+  margin: 25rpx;
+}
+
+.tab-bar-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.tab-bar-item-text {
+  margin-right: 25rpx;
+}
+
+.tab-bar-item-icon {
+  margin-right: 25rpx;
+  height: 15px;
+  width: 15px;
+  object-fit: contain;
+}
+
+.tab-bar-indicator {
+  border-radius: 1px;
+  background: #E60202;
+  height: 2px;
+  width: 35px;
+  margin-left: 1px;
+}
+
+.tab-bar-indicator2
+{
+  border-bottom: 2px solid #E60202;
+}
+
 @font-face {
   font-family: "SF Pro Text";
   src: url(/assets/fonts/SF-Pro-Text-Regular.otf) format("opentype");

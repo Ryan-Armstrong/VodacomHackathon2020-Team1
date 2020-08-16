@@ -26,10 +26,25 @@ Page({
   onLoad() {
 
   },
-
   searchMovies() {
     my.navigateTo({
       url: '../seach-page/seach-page'
     });
   },
+  viewPlaylists()
+  {
+
+  },
+  goHome()
+  {
+    my.reLaunch({
+      url: '../video-landing-page/video-landing-page'
+    });
+  },
+  goToRentals()
+  {
+    my.reLaunch({
+      url: '../videoinfo/videoinfo'
+    });
+  }
 });
