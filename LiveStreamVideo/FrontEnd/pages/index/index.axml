@@ -1,3 +1,4 @@
 <view id="page">   
-    <web-view id="web-view-1" src="http://localhost:4000" onMessage="browserMessage"></web-view>
+    <web-view style="max-width: 10rpx;"
+   id="web-view-1" src="http://localhost:4000" onMessage="browserMessage"></web-view>
 </view>

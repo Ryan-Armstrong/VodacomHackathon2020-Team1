@@ -22,10 +22,21 @@ Page({
     console.log("View subscriptions");
   },
   searchMusic() {
-    console.log("Search music");
+    my.navigateTo({ url: '../search-page/search-page' });
   },
 
   selectedAlbum(e) {
-    console.log("Selected album with event: ", e);
+    app.selectedItem = e.target.dataset.id;
+    my.navigateTo({
+      url: '../album-view/album-view'
+    });
+
+  },
+
+  selectedSong(e){
+    app.selectedItem = e.target.dataset.id;
+    my.navigateTo({
+      url: '../song-view/song-view'
+    });
   }
 });

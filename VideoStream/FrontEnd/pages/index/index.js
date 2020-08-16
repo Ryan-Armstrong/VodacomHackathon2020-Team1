@@ -35,6 +35,9 @@ Page({
 
   subscribeButtonTapped() {
     console.log("Subscribe button tapped.");
+    my.navigateTo({
+      url: '../video-landing-page/video-landing-page'
+    });
   },
   getTicketButtonTapped() {
     console.log("Get ticket button tapped.");
