@@ -9,7 +9,7 @@ Page({
   },
 
   viewHome() {
-    console.log("View home tapped");
+    my.navigateTo({ url: '../music-landing-page/music-landing-page' });
   },
   searchMusic() {
     my.navigateTo({ url: '../search-page/search-page' });
