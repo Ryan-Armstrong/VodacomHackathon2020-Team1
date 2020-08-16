@@ -5,7 +5,8 @@
       <view class="tab-bar-indicator"></view>
     </view>
     <view class="tab-bar-item-text" onTap="viewPlaylists">Playlists</view>
-    <image class="tab-bar-item-icon" src="../../assets/icons/search.png" onTap="searchMusic"/>
+    <view class="tab-bar-item-text" onTap="viewPurchasedMusic">Rentals</view>
+    <image class="tab-bar-item-icon" src="../../assets/icons/search.png" onTap="searchMovies"/>
   </view>
 
   <swiper class="banner-ad-swiper" indicator-dots="true" indicator-active-color="#E60202" autoplay="true" interval="5000">
@@ -18,26 +19,24 @@
 
   <text class="titleText">New Releases</text>
   <view class="scrollMenuSquare">
-    <view class="scrollItemSquare" a:for="{{newReleases}}" a:for-index="i" a:key="*this" >
-      <image data-id="{{item}}" class="scrollImageSquare" src="../../assets/{{item.thumbnail}}" onTap="selectedSong"/>
+    <view class="scrollItemSquare" a:for="{{newReleases}}" a:for-index="i" a:key="*this" onTap="selectedAlbum">
+      <image id="{{item}}" class="scrollImageSquare" src="../../assets/{{item.thumbnail}}"/>
       <view class="scrollTitleTextSquare">{{item.title}}</view>
       <view class="scrollSubtitleTextSquare">{{item.artistName}}</view>
     </view>
   </view>
 
-  <text class="titleText">Recommended Albums</text>
+  <text class="titleText">Your Subscriptions</text>
   <view class="scrollMenuSquare">
-    <view class="scrollItemSquare" a:for="{{recommendedAlbums}}" a:for-index="i" a:key="*this" >
-      <image data-id="{{item}}" class="scrollImageSquare" src="../../assets/{{item.thumbnail}}" onTap="selectedAlbum"/>
-      <view class="scrollTitleTextSquare">{{item.title}}</view>
-      <view class="scrollSubtitleTextSquare">{{item.artistName}}</view>
+    <view class="scrollItemSquare" a:for="{{movieCategories}}" a:for-index="i" a:key="*this" onTap="selectedAlbum">
+      <text class="scrollItemGradientSquare" style="background-image: linear-gradient({{item.firstColour}}, {{item.secondColour}});">{{item.name}}</text>
     </view>
   </view>
 
-  <text class="titleText">Popular in South Africa</text>
+  <text class="titleText">You might like</text>
   <view class="scrollMenuSquare">
-    <view class="scrollItemSquare" a:for="{{popularAlbums}}" a:for-index="i" a:key="*this" >
-      <image data-id="{{item}}" class="scrollImageSquare" src="../../assets/{{item.thumbnail}}" onTap="selectedAlbum"/>
+    <view class="scrollItemSquare" a:for="{{youMightLike}}" a:for-index="i" a:key="*this" onTap="selectedAlbum">
+      <image id="{{item}}" class="scrollImageSquare" src="../../assets/{{item.thumbnail}}"/>
       <view class="scrollTitleTextSquare">{{item.title}}</view>
       <view class="scrollSubtitleTextSquare">{{item.artistName}}</view>
     </view>

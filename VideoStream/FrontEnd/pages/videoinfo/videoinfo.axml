@@ -8,7 +8,13 @@
     <view class="col-2">
       <view class="selectedTitleText">{{romanticMovies[0].name}}</view>
       <view class="vidMinutesInfo">118 minutes | 1.28 GB</view>
-      <view class="starView"> ⭐️️️️️️️️⭐️⭐️⭐️⭐️</view>
+      <view class="starView"> 
+         <image class="starImage" src="../../assets/icons/star.svg"/>
+        <image class="starImage" src="../../assets/icons/star.svg"/>
+        <image class="starImage" src="../../assets/icons/star.svg"/>
+        <image class="starImage" src="../../assets/icons/star.svg"/>
+        <image class="starImage" src="../../assets/icons/star_empty.svg"/>
+      </view>
       <view class="vidMinutesInfo"> Audio: English</view>
       <view class="vidMinutesInfo">PG 13</view>
       <view class="vidDescription">Natalie is a New York Architect who works hard to get noticed at her job. Things go downhill</view>
@@ -23,7 +29,7 @@
     </view>
     <text class="titleText">Romantic Comedy</text>
     <view class="scrollMenuSquare">
-      <view class="scrollItemSquare" a:for="{{romanticMovies}}" a:for-index="i" a:key="*this" onTap="selectVideo">
+      <view class="scrollItemSquare" a:for="{{romanticMovies}}" a:for-index="i" a:key="*this" >
         <image id="{{item}}" class="scrollImageSquare" src="../../assets/{{item.image}}"/>
         <view class="scrollTextSquare">
           {{item.name}}
@@ -32,7 +38,7 @@
     </view>
     <text class="titleText">Action</text>
     <view class="scrollMenuSquare">
-      <view class="scrollItemSquare" a:for="{{actionMovies}}" a:for-index="i" a:key="*this" onTap="selectVideo">
+      <view class="scrollItemSquare" a:for="{{actionMovies}}" a:for-index="i" a:key="*this" >
         <image id="{{item}}" class="scrollImageSquare" src="../../assets/{{item.image}}"/>
         <view class="scrollTextSquare">
           {{item.name}}
@@ -41,7 +47,7 @@
     </view>
     <text class="titleText">Drama</text>
     <view class="scrollMenuSquare">
-      <view class="scrollItemSquare" a:for="{{dramaMovies}}" a:for-index="i" a:key="*this" onTap="selectVideo">
+      <view class="scrollItemSquare" a:for="{{dramaMovies}}" a:for-index="i" a:key="*this" >
         <image id="{{item}}" class="scrollImageSquare" src="../../assets/{{item.image}}"/>
         <view class="scrollTextSquare">
           {{item.name}}

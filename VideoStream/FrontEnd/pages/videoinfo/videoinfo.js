@@ -1,3 +1,5 @@
+const app = getApp();
+
 Page({
   data: {
     watchHidden: true,
@@ -95,5 +97,9 @@ Page({
   },
   onWatch(){
     console.log("WATCH MOVIE");
+    app.globalData.source = 'https://www.youtube.com/embed/8ZwgoVmILQU?autoplay=1&controls=0';
+    my.navigateTo({
+      url: '../generic-web/generic-web'
+    });
   }
 });
