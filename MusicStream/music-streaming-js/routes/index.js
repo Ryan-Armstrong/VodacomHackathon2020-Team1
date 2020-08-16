@@ -171,15 +171,14 @@ router.get('/album/:id', function (req, res, next) {
       return a;
     }
   })[0];
-  console.log("SELECTED", albumSelected);
-  console.log("songs", songs);
 
   res.render('album', {
     output: req.params.id,
     duration: 168,
+    isPlayListView: false,
     album: albumSelected,
-    playlist: playlist,
-    songs: songs
+    songs: songs,
+    playlist: playlist
   });
 });
 
@@ -191,7 +190,16 @@ router.get('/song/:id', function (req, res, next) {
     output: req.params.id,
     duration: 168,
     song: selectedSong,
+    isPlayListView: false,
     playlist: playlist
+  });
+})
+
+router.get('/playlist/:id', function (req, res, next) {
+
+  res.render('playList', {
+    output: req.params.id,
+    isPlayListView: true
   });
 })
 

@@ -22,8 +22,12 @@
     margin-right: 20px;">
       Home
     </div>
-    <div style="font-size: 16px;">
+    <div style="font-size: 16px; margin-right: auto;" {{#if isPlayListView}} class="underline" {{/if}}
+      onclick="navigateToPlayList()">
       Playlist
+    </div>
+    <div style="font-size: 16px;" onclick="navigateToSearch()">
+      <img src="/assets/icons/search.svg" style="width: 18px;">
     </div>
   </div>
   {{{ body }}}
