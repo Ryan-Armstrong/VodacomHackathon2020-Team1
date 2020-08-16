@@ -218,6 +218,7 @@ function toggleAlbumPlaying(id = '') {
   var audioPlayer = document.getElementById("audio-player");
   duration = audioPlayer.duration;
   document.getElementById("durationTime").innerHTML = "02:26";
+
   if (playing) {
     playing = false;
     audioPlayer.pause();
@@ -226,20 +227,23 @@ function toggleAlbumPlaying(id = '') {
     clearInterval(myVar);
   } else {
     if (id) {
-      pauseAndClear();
-      let index = songs.findIndex(s => s.id === id);
-      newArray[index] = {
-        ...newArray[index],
-        playing: true
-      }
-      songs = newArray;
-      if (currentPlaying != undefined) {
+      if (currentPlaying === undefined) {
+        let index = songs.findIndex(s => s.id === id);
+        console.log("ID", id);
+        newArray[index] = {
+          ...newArray[index],
+          playing: true
+        }
+        songs = newArray;
+        currentPlaying = songs[index];
+        audioPlayer.src = currentPlaying.audio
+      } else if (currentPlaying !== undefined) {
         if (id !== currentPlaying.id) {
+          pauseAndClear();
           audioPlayer.src = songs[index].audio;
         }
       }
-      currentPlaying = songs[index];
-    } else {
+    } else if (currentPlaying == undefined) {
       setCurrentAlbumSong();
       audioPlayer.src = currentPlaying.audio;
     }
@@ -295,10 +299,7 @@ function setCurrentAlbumSong() {
 }
 
 function playSelectedSong(id = '') {
-  setTimeout(() => {
-    toggleAlbumPlaying(id);
-  }, 200)
-
+  toggleAlbumPlaying(id);
 }
 
 function updateBar() {
