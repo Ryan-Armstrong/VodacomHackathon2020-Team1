@@ -101,5 +101,27 @@ Page({
     my.navigateTo({
       url: '../generic-web/generic-web'
     });
+  },
+  viewPlaylists()
+  {
+
+  },
+  searchMovies()
+  {
+     my.navigateTo({
+      url: '../seach-page/seach-page'
+    });
+  },
+  goHome()
+  {
+    my.reLaunch({
+      url: '../video-landing-page/video-landing-page'
+    });
+  },
+  goToRentals()
+  {
+    my.reLaunch({
+      url: '../videoinfo/videoinfo'
+    });
   }
 });

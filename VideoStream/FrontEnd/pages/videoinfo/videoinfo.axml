@@ -1,6 +1,13 @@
 <view class="homePage">
-  <view class="homescreen">
 
+  <view class="tab-bar">    
+    <view class="tab-bar-item-text" onTap="goHome">Home</view>      
+    <view class="tab-bar-item-text" onTap="viewPlaylists">Playlists</view>
+    <view class="tab-bar-item-text tab-bar-indicator2">Rentals</view>
+    <image class="tab-bar-item-icon" src="../../assets/icons/search.png" onTap="searchMovies"/>
+  </view>
+
+  <view class="homescreen">
   <view class="row">
   <view class="col-1">
     <image class="mainImage" src="../../assets/{{romanticMovies[0].image}}"/>
