@@ -91,35 +91,35 @@ var singleSongs = [{
 var playlist = [{
         id: 1,
         title: "90's Hits",
-        trakcs: 102,
+        tracks: 102,
         duration: "5:01:22",
         thumbnail: "/assets/images/playlist_small_1.png"
     },
     {
         id: 2,
         title: "Golden Oldies",
-        trakcs: 133,
+        tracks: 133,
         duration: "6:21:44",
         thumbnail: "/assets/images/playlist_small_2.png"
     },
     {
         id: 3,
         title: "Love Songs",
-        trakcs: 76,
+        tracks: 76,
         duration: "2:15:52",
         thumbnail: "/assets/images/playlist_small_3.png"
     },
     {
         id: 4,
         title: "Road Trip Mix",
-        trakcs: 241,
+        tracks: 241,
         duration: "8:55:02",
         thumbnail: "/assets/images/playlist_small_4.png"
     },
     {
         id: 5,
         title: "Wokrout Mix",
-        trakcs: 52,
+        tracks: 52,
         duration: "1:25:32",
         thumbnail: "/assets/images/playlist_small_5.png"
     },
