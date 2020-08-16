@@ -57,6 +57,9 @@ body {
   color: black;
 }
 
+.underline {
+  border-bottom: 2px solid #e60202;
+}
 
 .playlist-modal {
   display: none;
