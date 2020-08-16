@@ -243,6 +243,57 @@ App({
     }
   ],
 
+  playlists: [
+    {
+      name: "90's Hits",
+      numTracks: 241,
+      duration: "01:22:40",
+      thumbnail: "playlist-thumbnails/playlist_1.png"
+    },
+    {
+      name: "Golden Oldies",
+      numTracks: 56,
+      duration: "01:01:21",
+      thumbnail: "playlist-thumbnails/playlist_2.png"
+    },
+    {
+      name: "Love Songs",
+      numTracks: 198,
+      duration: "02:34:21",
+      thumbnail: "playlist-thumbnails/playlist_3.png"
+    },
+    {
+      name: "Road Trip Mix",
+      numTracks: 65,
+      duration: "01:49:02",
+      thumbnail: "playlist-thumbnails/playlist_4.png"
+    },
+    {
+      name: "Workout Mix",
+      numTracks: 21,
+      duration: "56:45",
+      thumbnail: "playlist-thumbnails/playlist_5.png"
+    },
+    {
+      name: "90's Hits",
+      numTracks: 241,
+      duration: "01:22:40",
+      thumbnail: "playlist-thumbnails/playlist_1.png"
+    },
+    {
+      name: "Golden Oldies",
+      numTracks: 56,
+      duration: "01:01:21",
+      thumbnail: "playlist-thumbnails/playlist_2.png"
+    },
+    {
+      name: "Love Songs",
+      numTracks: 198,
+      duration: "02:34:21",
+      thumbnail: "playlist-thumbnails/playlist_3.png"
+    },
+  ],
+
   onLaunch(options) {
     // Page opens for the first time
     console.info('App onLaunch');
