@@ -26,4 +26,10 @@ Page({
   onLoad() {
 
   },
+
+  searchMovies() {
+    my.navigateTo({
+      url: '../seach-page/seach-page'
+    });
+  },
 });
