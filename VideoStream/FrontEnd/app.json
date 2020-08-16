@@ -4,6 +4,7 @@
     "pages/video-landing-page/video-landing-page",
     "pages/seach-page/seach-page",
     "pages/videoinfo/videoinfo",
+    "pages/get-ticket-page/get-ticket-page",
     "pages/generic-web/generic-web"
   ],
   "window": {
