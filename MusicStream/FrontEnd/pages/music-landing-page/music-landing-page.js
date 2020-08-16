@@ -14,12 +14,7 @@ Page({
 
   viewPlaylists() {
     console.log("View playlists");
-  },
-  viewPurchasedMusic() {
-    console.log("View purchased");
-  },
-  viewSubscriptions() {
-    console.log("View subscriptions");
+    my.navigateTo({ url: '../play-list-page/play-list-page' });
   },
   searchMusic() {
     my.navigateTo({ url: '../search-page/search-page' });
