@@ -41,9 +41,15 @@ Page({
   },
   getTicketButtonTapped() {
     console.log("Get ticket button tapped.");
+    my.navigateTo({
+      url: '../get-ticket-page/get-ticket-page'
+    });
   },
   skipButtonTapped() {
     console.log("Skip button tapped.");
+    my.navigateTo({
+      url: '../video-landing-page/video-landing-page'
+    });
   },
   rentOrPurchaseViewTapped() {
     console.log("Rent or purchase view tapped.")
