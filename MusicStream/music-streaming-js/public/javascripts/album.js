@@ -217,7 +217,6 @@ function toggleAlbumPlaying(id = '') {
   let newArray = songs;
   var audioPlayer = document.getElementById("audio-player");
   duration = audioPlayer.duration;
-  document.getElementById("durationTime").innerHTML = "02:26";
 
   if (playing) {
     playing = false;
@@ -227,8 +226,8 @@ function toggleAlbumPlaying(id = '') {
     clearInterval(myVar);
   } else {
     if (id) {
+      let index = songs.findIndex(s => s.id === id);
       if (currentPlaying === undefined) {
-        let index = songs.findIndex(s => s.id === id);
         console.log("ID", id);
         newArray[index] = {
           ...newArray[index],
@@ -238,9 +237,16 @@ function toggleAlbumPlaying(id = '') {
         currentPlaying = songs[index];
         audioPlayer.src = currentPlaying.audio
       } else if (currentPlaying !== undefined) {
+        console.log("ID", id);
         if (id !== currentPlaying.id) {
           pauseAndClear();
-          audioPlayer.src = songs[index].audio;
+          newArray[index] = {
+            ...newArray[index],
+            playing: true
+          }
+          songs = newArray;
+          currentPlaying = songs[index];
+          audioPlayer.src = currentPlaying.audio
         }
       }
     } else if (currentPlaying == undefined) {
@@ -252,6 +258,7 @@ function toggleAlbumPlaying(id = '') {
     audioPlayer.play();
     clearInterval(myVar);
     myVar = setInterval(myTimer, 1000);
+    document.getElementById("durationTime").innerHTML = "02:26";
     document.getElementById("toggleBtn").src = "/assets/icons/pause_filled.svg";
     document.getElementById(`play-${currentPlaying.id}`).src = "/assets/icons/pause_filled.svg";
   }
@@ -262,6 +269,7 @@ function pauseAndClear() {
   let newArray = songs;
   let index = songs.findIndex(s => s.playing === true);
   console.log("INDEX", index);
+  document.getElementById("myprogressBar").style.width = "0%";
   if (index >= 0) {
     document.getElementById(`play-${songs[index].id}`).src = "/assets/icons/play_filled.svg";
     newArray[index] = {
@@ -273,7 +281,6 @@ function pauseAndClear() {
   audioPlayer.pause();
   document.getElementById("toggleBtn").src = "/assets/icons/play_filled.svg";
   document.getElementById("durationTime").innerHTML = "00:00";
-  clearInterval(myVar);
   playing = false;
   width = 0;
   duration = undefined;
@@ -299,6 +306,11 @@ function setCurrentAlbumSong() {
 }
 
 function playSelectedSong(id = '') {
+  if (currentPlaying !== undefined) {
+    if (id !== currentPlaying.id) {
+      pauseAndClear();
+    }
+  }
   toggleAlbumPlaying(id);
 }
 
