@@ -1,4 +1,5 @@
 const app = getApp();
+let currentIndex = 0;
 
 Page({
   data: {
@@ -26,10 +27,48 @@ Page({
   onLoad() {
 
   },
-
   searchMovies() {
     my.navigateTo({
       url: '../seach-page/seach-page'
     });
   },
+
+  bannerChanged(e)
+  {
+    currentIndex = e.detail.current;    
+  },
+  viewPlaylists()
+  {
+
+  },
+  goHome()
+  {
+    my.reLaunch({
+      url: '../video-landing-page/video-landing-page'
+    });
+  },
+  goToRentals()
+  {
+    my.reLaunch({
+      url: '../videoinfo/videoinfo'
+    });
+  },
+  bannerTapped()
+  {
+    
+    if (currentIndex == 0)
+    {
+      app.globalData.source = "https://www.samsung.com/za/";
+    }
+    else if (currentIndex == 1)
+    {
+      app.globalData.source = "https://www.vodacom.co.za/";
+    }
+    else{
+      app.globalData.source = "https://www.takealot.com/";
+    }
+    my.navigateTo({
+      url: '../generic-web/generic-web'
+    });
+  }
 });

@@ -55,4 +55,27 @@
 
     </div>
 
-</div>
+    <div id="playListModal" class="playlist-modal">
+
+        <!-- Modal content -->
+        <div class="playlist-modal-content">
+            <div style="display: flex; margin-bottom:15px;">
+                <div class="playlist-header">Select Playlist</div>
+                <div onclick="closePlaylistModal()"><img src="/assets/icons/close.svg" style="width: 18px;"></div>
+            </div>
+            {{# each playlist as |item key|}}
+            <div style="display: flex; margin-bottom: 10px;" onclick="playListAdd({{item.id}})">
+                <div class="image-container">
+                    <img src={{item.thumbnail}} class="playlist-img">
+                </div>
+                <div style="display: flex; flex-direction: column">
+                    <div class="playlist-title">{{item.title}}</div>
+                    <div style="margin-bottom: 5px;">{{item.tracks}} Tracks</div>
+                    <div>{{item.duration}}</div>
+                </div>
+            </div>
+            {{/each}}
+
+        </div>
+
+    </div>
