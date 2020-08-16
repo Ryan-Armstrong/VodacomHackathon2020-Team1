@@ -133,48 +133,64 @@ var songs = [{
   fav: false,
   playing: false,
   audio: "/assets/audio/sample.mp3",
+  duration: 127.2,
+  durationInString: "02:12"
 }, {
   id: 2,
   name: 'Obsessed',
   fav: false,
   playing: false,
   audio: "/assets/audio/song.mp3",
+  duration: 196.5,
+  durationInString: "03:27"
 }, {
   id: 3,
   name: 'How could you',
   fav: true,
   playing: false,
   audio: "/assets/audio/classical.mp3",
+  duration: 258,
+  durationInString: "04:30"
 }, {
   id: 4,
   name: 'Sweet wine',
   fav: false,
   playing: false,
   audio: "/assets/audio/song.mp3",
+  duration: 196.5,
+  durationInString: "03:27"
 }, {
   id: 5,
   name: 'Love Everything',
   fav: false,
   playing: false,
   audio: "/assets/audio/classical.mp3",
+  duration: 258,
+  durationInString: "04:30"
 }, {
   id: 6,
   name: 'Church bells',
   fav: false,
   playing: false,
   audio: "/assets/audio/sample.mp3",
+  duration: 127.2,
+  durationInString: "02:12"
 }, {
   id: 7,
   name: 'Love',
   fav: false,
   playing: false,
   audio: "/assets/audio/song.mp3",
+  duration: 196.5,
+  durationInString: "03:27"
 }, {
   id: 8,
   name: 'Passion',
   fav: false,
   playing: false,
-  audio: "/assets/audio/sample.mp3",
+  audio: "/assets/audio/classical.mp3",
+  duration: 258,
+  durationInString: "04:30"
 }];
 
 function updateAlbumCoverImg(id) {
@@ -195,28 +211,9 @@ function updateAlbumCoverImg(id) {
 
 }
 
-// function setInitValues(id) {
-
-//   let newArray = album;
-//   newArray[id - 1] = {
-//     ...newArray[id - 1],
-//     playing: false
-//   }
-//   album = newArray;
-//   document.getElementById(`play-${id}`).src = "/assets/icons/play_filled.svg";
-//   playing = false;
-//   width = 0;
-//   duration = undefined;
-//   timer = 0;
-//   myVar;
-//   min = 0;
-//   sec = 0;
-// }
-
 function toggleAlbumPlaying(id = '') {
   let newArray = songs;
   var audioPlayer = document.getElementById("audio-player");
-  duration = audioPlayer.duration;
 
   if (playing) {
     playing = false;
@@ -228,7 +225,6 @@ function toggleAlbumPlaying(id = '') {
     if (id) {
       let index = songs.findIndex(s => s.id === id);
       if (currentPlaying === undefined) {
-        console.log("ID", id);
         newArray[index] = {
           ...newArray[index],
           playing: true
@@ -236,6 +232,7 @@ function toggleAlbumPlaying(id = '') {
         songs = newArray;
         currentPlaying = songs[index];
         audioPlayer.src = currentPlaying.audio
+        duration = currentPlaying.duration;
       } else if (currentPlaying !== undefined) {
         console.log("ID", id);
         if (id !== currentPlaying.id) {
@@ -247,18 +244,20 @@ function toggleAlbumPlaying(id = '') {
           songs = newArray;
           currentPlaying = songs[index];
           audioPlayer.src = currentPlaying.audio
+          duration = currentPlaying.duration;
         }
       }
     } else if (currentPlaying == undefined) {
       setCurrentAlbumSong();
       audioPlayer.src = currentPlaying.audio;
+      duration = currentPlaying.duration;
     }
 
     playing = true;
     audioPlayer.play();
     clearInterval(myVar);
     myVar = setInterval(myTimer, 1000);
-    document.getElementById("durationTime").innerHTML = "02:26";
+    document.getElementById("durationTime").innerHTML = currentPlaying.durationInString;
     document.getElementById("toggleBtn").src = "/assets/icons/pause_filled.svg";
     document.getElementById(`play-${currentPlaying.id}`).src = "/assets/icons/pause_filled.svg";
   }
@@ -283,9 +282,7 @@ function pauseAndClear() {
   document.getElementById("durationTime").innerHTML = "00:00";
   playing = false;
   width = 0;
-  duration = undefined;
   timer = 0;
-  myVar;
   min = 0;
   sec = 0;
 }
@@ -316,7 +313,8 @@ function playSelectedSong(id = '') {
 
 function updateBar() {
   var element = document.getElementById("myprogressBar");
-
+  console.log("TIME", timer);
+  console.log("DURATIOn", duration);
   if (timer <= duration) {
     element.style.width = (timer + 0.25) / duration * 100 + '%';
   }
