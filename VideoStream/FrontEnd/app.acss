@@ -3,3 +3,15 @@ page {
   display: flex;
   background: #f7f7f7;
 }
+
+@font-face {
+  font-family: "SF Pro Text";
+  src: url(/assets/fonts/SF-Pro-Text-Regular.otf) format("opentype");
+}
+
+body {
+  padding: 16px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  height: 94vh;
+  font-family: "SF Pro Text";
+}
