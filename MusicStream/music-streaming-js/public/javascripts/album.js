@@ -394,34 +394,24 @@ function shuffleClicked() {
 
 }
 
-// function prevSongInAlbum() {
-//   let newArray = album;
+function prevSongInAlbum() {
+  let nextSongId = undefined;
+  pauseAndClear();
+  if (currentPlaying) {
+    let index = songs.findIndex(s => s.id == currentPlaying.id);
+    if (index > 0) {
+      nextSongId = songs[index - 1].id;
+    } else {
+      nextSongId = songs[songs.length - 1].id;
+    }
+    setTimeout(() => {
+      toggleAlbumPlaying(nextSongId);
+    }, 200)
 
-//   if (currentPlaying) {
-//     if (currentPlaying.id - 1 > 0) {
-//       newArray[currentPlaying.id - 1] = {
-//         ...newArray[currentPlaying.id - 1],
-//         playing: true
-//       }
-
-//       album = newArray
-//       setInitValues(currentPlaying.id);
-//       currentPlaying = album.filter(a => a.playing === true)[0];
-//     } else {
-//       newArray[album.length - 1] = {
-//         ...newArray[album.length - 1],
-//         playing: true
-//       }
-
-//       album = newArray
-//       setInitValues(currentPlaying.id);
-//       currentPlaying = album[album.length - 1];
-//     }
-//     toggleAlbumPlaying(currentPlaying.id);
-//   } else {
-//     console.log("NOTHING PLAYING");
-//   }
-// }
+  } else {
+    console.log("NOTHING PLAYING");
+  }
+}
 
 function nextSongInAlbum() {
   let nextSongId = undefined;
