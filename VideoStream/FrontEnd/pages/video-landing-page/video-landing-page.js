@@ -12,7 +12,7 @@ Page({
         secondColour: "#e60302"
       }, 
       {
-        name: "Best of SA",
+        name: "Best in South Africa",
         firstColour: "#f3e65b",
         secondColour: "#26a23d"
       }, 
