@@ -1,10 +1,8 @@
 <view class="music-landing-page-container">
-  <view class="tab-bar">
-    <view class="tab-bar-item">
-      <view class="tab-bar-item-text">Home</view>
-      <view class="tab-bar-indicator"></view>
-    </view>
-    <view class="tab-bar-item-text" onTap="viewPurchasedMusic">Rentals</view>
+  <view class="tab-bar">    
+    <view class="tab-bar-item-text tab-bar-indicator2">Home</view>
+    <view class="tab-bar-item-text" onTap="viewPlaylists">Playlists</view>
+    <view class="tab-bar-item-text" onTap="goToRentals">Rentals</view>
     <image class="tab-bar-item-icon" src="../../assets/icons/search.png" onTap="searchMovies"/>
   </view>
 
