@@ -1,7 +1,7 @@
 {
   "pages": [
-    "pages/song-view/song-view",
     "pages/index/index",
+    "pages/song-view/song-view",
     "pages/play-list-page/play-list-page",
     "pages/music-landing-page/music-landing-page",
     "pages/album-view/album-view",
