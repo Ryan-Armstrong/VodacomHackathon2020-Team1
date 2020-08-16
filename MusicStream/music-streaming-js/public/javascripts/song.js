@@ -66,7 +66,9 @@ var singleSongs = [{
         thumbnail: "/assets/images/new_release_1.png",
         artistName: "Taylor Swift, Folklore",
         audio: "/assets/audio/song.mp3",
-        fav: false
+        fav: false,
+        duration: 196.5,
+        durationInString: "03:27"
     },
     {
         id: 2,
@@ -75,7 +77,9 @@ var singleSongs = [{
         thumbnail: "/assets/images/new_release_2.png",
         artistName: "Troye Sivan",
         audio: "/assets/audio/sample.mp3",
-        fav: false
+        fav: false,
+        duration: 127.2,
+        durationInString: "02:12"
     },
     {
         id: 3,
@@ -84,7 +88,9 @@ var singleSongs = [{
         thumbnail: "/assets/images/new_release_3.png",
         artistName: "Lady Gaga",
         audio: "/assets/audio/classical.mp3",
-        fav: false
+        fav: false,
+        duration: 258,
+        durationInString: "04:30"
     }
 ];
 
@@ -199,18 +205,22 @@ function updateSongImg(id) {
     }
     if (!imageSet) {
         document.getElementById('songCover').src = selectedSong.thumbnail;
+        document.getElementById('albumName').innerHTML = selectedSong.title;
+        document.getElementById('artis').innerHTML = selectedSong.artistName;
         imageSet = true
     }
-    document.getElementById('albumName').innerHTML = selectedSong.title;
-    document.getElementById('artis').innerHTML = selectedSong.artistName;
+
 }
 
 
 
 function playSong(id) {
+    if (id) {
+        selectedSong = singleSongs.filter(s => s.id === id)[0];
+    }
     audioPlayer = document.getElementById("audio-player");
-    duration = audioPlayer.duration;
-    document.getElementById("durationTime").innerHTML = "02:26";
+    document.getElementById("durationTime").innerHTML = selectedSong.durationInString;
+    duration = selectedSong.duration;
     if (playing) {
         playing = false;
         audioPlayer.pause();
@@ -228,7 +238,9 @@ function playSong(id) {
             document.getElementById('songCover').src = currentSong.thumbnail;
             document.getElementById('albumName').innerHTML = currentSong.title;
             document.getElementById('artis').innerHTML = currentSong.artistName;
+
         }
+
         audioPlayer.play();
         clearInterval(myVar);
         myVar = setInterval(myTimer, 1000);
@@ -240,9 +252,7 @@ function prevSong() {
 
     if (currentSong.id !== 1) {
         stopAndClear();
-
         playSong(currentSong.id - 1);
-
     } else {
         stopAndClear();
         playSong(3);
@@ -268,12 +278,9 @@ function stopAndClear() {
     audioPlayer.pause();
     document.getElementById("toggleBtn").src = "/assets/icons/play_filled.svg";
     document.getElementById("durationTime").innerHTML = "00:00";
-    clearInterval(myVar);
     playing = false;
     width = 0;
-    duration = undefined;
     timer = 0;
-    myVar;
     min = 0;
     sec = 0;
 }
