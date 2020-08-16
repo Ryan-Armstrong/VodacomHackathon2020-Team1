@@ -5,6 +5,7 @@
     "pages/music-landing-page/music-landing-page",
     "pages/album-view/album-view",
     "pages/search-page/search-page",
+    "pages/get-ticket-page/get-ticket-page",
     "pages/song-view/song-view"
   ],
   "window": {
