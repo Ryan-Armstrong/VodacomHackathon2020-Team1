@@ -6,7 +6,7 @@
     "pages/music-landing-page/music-landing-page",
     "pages/album-view/album-view",
     "pages/search-page/search-page",
-    "pages/play-list-detail-view/play-list-detail-view"
+    "pages/play-list-detail-view/play-list-detail-view",
     "pages/get-ticket-page/get-ticket-page",
     "pages/song-view/song-view"
   ],
