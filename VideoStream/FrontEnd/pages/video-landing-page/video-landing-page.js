@@ -1,4 +1,5 @@
 const app = getApp();
+let currentIndex = 0;
 
 Page({
   data: {
@@ -32,4 +33,9 @@ Page({
       url: '../seach-page/seach-page'
     });
   },
+  bannerChanged(e)
+  {    
+    currentIndex = e.detail.current;
+    console.log(currentIndex);
+  }
 });
