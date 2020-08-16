@@ -269,6 +269,7 @@
 
 .rentButton
 {
+  animation: swing 1s ease;
   border-radius: 25px;
   background-color: #E60202;
   color: white;
