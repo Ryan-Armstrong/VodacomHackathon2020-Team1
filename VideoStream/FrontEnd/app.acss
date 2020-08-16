@@ -47,7 +47,6 @@ page {
 
 body {
   padding: 16px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   height: 94vh;
   font-family: "SF Pro Text";
 }
