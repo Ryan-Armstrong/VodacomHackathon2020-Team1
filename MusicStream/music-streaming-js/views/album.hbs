@@ -43,13 +43,14 @@
     <div id="progress-status">
         <div id="myprogressBar"></div>
     </div>
-    {{# each data as |song key|}}
+
+    {{# each songs as |song key|}}
     <div style="height: 50px; border-bottom: 1px solid #d7d7d7; display: flex">
         <img src="/assets/icons/play_filled.svg" style="width: 30px;  margin-right: 14px;" id="play-{{song.id}}"
             onclick="playSelectedSong({{song.id}})">
         <p style="margin-right: auto;">{{ song.name }}</p>
 
-        {{# if val.fav}}
+        {{# if song.fav}}
         <img src="/assets/icons/favourite_filled.svg" id="fav-{{song.id}}" style="margin-right: 10px;"
             onclick="favouriteClicked({{song.id}})">
         {{else}}
@@ -57,7 +58,7 @@
             onclick="favouriteClicked({{song.id}})">
         {{/if}}
 
-        <img src="/assets/icons/plus_red_big.svg" onclick="addToPlayList({{song.id}})">
+        <img src="/assets/icons/plus_red_big.svg" onclick="showPlayListModal({{song.id}})">
 
     </div>
     {{/each}}
@@ -67,6 +68,32 @@
         <!-- Modal content -->
         <div class="modal-content">
             <p style="margin: 5px;" id="popUpMessage"></p>
+        </div>
+
+    </div>
+
+
+    <div id="playListModal" class="playlist-modal">
+
+        <!-- Modal content -->
+        <div class="playlist-modal-content">
+            <div style="display: flex; margin-bottom:15px;">
+                <div class="playlist-header">Select Playlist</div>
+                <div onclick="closePlaylistModal()"><img src="/assets/icons/close.svg" style="width: 18px;"></div>
+            </div>
+            {{# each playlist as |item key|}}
+            <div style="display: flex; margin-bottom: 10px;" onclick="addPlaylist({{item.id}})">
+                <div class="image-container">
+                    <img src={{item.thumbnail}} class="playlist-img">
+                </div>
+                <div style="display: flex; flex-direction: column">
+                    <div class="playlist-title">{{item.title}}</div>
+                    <div style="margin-bottom: 5px;">{{item.tracks}} Tracks</div>
+                    <div>{{item.duration}}</div>
+                </div>
+            </div>
+            {{/each}}
+
         </div>
 
     </div>
