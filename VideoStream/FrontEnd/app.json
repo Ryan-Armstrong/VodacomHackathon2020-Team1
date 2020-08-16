@@ -3,7 +3,8 @@
     "pages/index/index",
     "pages/video-landing-page/video-landing-page",
     "pages/seach-page/seach-page",
-    "pages/videoinfo/videoinfo"
+    "pages/videoinfo/videoinfo",
+    "pages/generic-web/generic-web"
   ],
   "window": {
     "defaultTitle": "My App"

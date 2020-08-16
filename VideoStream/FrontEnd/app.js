@@ -1,4 +1,7 @@
 App({
+  globalData : {
+    source : ''
+  },
   newReleasesMovies: [
     {
       title: "Bloodshot",
