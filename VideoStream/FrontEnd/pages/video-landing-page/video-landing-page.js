@@ -29,7 +29,7 @@ Page({
   },
   searchMovies() {
     my.navigateTo({
-      url: '../seach-page/seach-page'
+      url: '../search-page/search-page'
     });
   },
 
