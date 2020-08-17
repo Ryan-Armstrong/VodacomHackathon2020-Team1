@@ -4,7 +4,10 @@ const app = getApp();
 Page({
  onLoad(query) {
     // Page loading
-    this.webViewContext = my.createWebViewContext('web-view-1');   
+    this.webViewContext = my.createWebViewContext('web-view-1');
+    my.showLoading({
+      content: 'Loading Video Stream...'
+    });
   },
   onShow() {
     // Page showing
@@ -25,25 +28,9 @@ Page({
         });
      });
   },
-  onHide() {
-    // Page hiding
-  },
-  onUnload() {
-    // Page closed
-  },
   onTitleClick() {
     // Title clicked
     my.postMessage();
-
-  },
-  onPullDownRefresh() {
-    // Page pulled down
-  },
-  onReachBottom() {
-    // Page pulled down till bottom
-  },
-  onShareAppMessage() {
-   // Return customized sharing information
   },
   browserMessage(e){
     console.log(e);
@@ -64,11 +51,12 @@ Page({
         
       });
     }
-    
-    // my.alert({
-    //   content:JSON.stringify(e.detail),      
-    // });
-    //this.webViewContext.postMessage({'sendToWebView': '1'});
-    //this.webViewContext.postMessage({'sendToWebView': '1'});
+    else if(e.detail.type === 'StopLoading')
+    {
+      const that = this;
+      my.hideLoading({
+        page: that,  // Prevents switching to other pages when execution, page pointing is not accurate
+      });
+    }
   },
 })
