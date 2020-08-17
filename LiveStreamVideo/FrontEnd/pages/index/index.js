@@ -28,25 +28,9 @@ Page({
         });
      });
   },
-  onHide() {
-    // Page hiding
-  },
-  onUnload() {
-    // Page closed
-  },
   onTitleClick() {
     // Title clicked
     my.postMessage();
-
-  },
-  onPullDownRefresh() {
-    // Page pulled down
-  },
-  onReachBottom() {
-    // Page pulled down till bottom
-  },
-  onShareAppMessage() {
-   // Return customized sharing information
   },
   browserMessage(e){
     console.log(e);
@@ -74,11 +58,5 @@ Page({
         page: that,  // Prevents switching to other pages when execution, page pointing is not accurate
       });
     }
-    
-    // my.alert({
-    //   content:JSON.stringify(e.detail),      
-    // });
-    //this.webViewContext.postMessage({'sendToWebView': '1'});
-    //this.webViewContext.postMessage({'sendToWebView': '1'});
   },
 })
