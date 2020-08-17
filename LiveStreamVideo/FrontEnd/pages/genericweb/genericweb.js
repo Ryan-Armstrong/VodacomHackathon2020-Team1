@@ -6,8 +6,7 @@ Page({
     source : ""
   },
   onLoad(query) {
-    this.data.source = app.globalData.source;
-    //this.setData({source  : query.source});
+    this.data.source = app.globalData.source;    
   },
   onReady()
   {
