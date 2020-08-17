@@ -11,9 +11,8 @@ let selected = -1; // Default no filter
 
 /*
  * **p5.js** library automatically executes the `preload()` function. Basically, it is used to load external files. In our case, we'll use it to load the images for our filters and assign them to separate variables for later use.
-*/
-function preload()
-{
+ */
+function preload() {
   // Spiderman Mask Filter asset
   imgSpidermanMask = loadImage("https://i.ibb.co/9HB2sSv/spiderman-mask-1.png");
 
@@ -25,9 +24,8 @@ function preload()
 
 /**
  * In p5.js, `setup()` function is executed at the beginning of our program, but after the `preload()` function.
-*/
-function setup()
-{
+ */
+function setup() {
   const maxWidth = Math.min(windowWidth, windowHeight);
   pixelDensity(1);
   outputWidth = maxWidth;
@@ -36,7 +34,7 @@ function setup()
   createCanvas(outputWidth, outputHeight);
 
   // webcam capture
-  var vid = document.getElementById('videoElement');
+  var vid = document.getElementById("videoElement");
   videoInput = new p5.MediaElement(vid);
 
   //videoInput = createCapture(VIDEO);
@@ -45,63 +43,62 @@ function setup()
 
   // select filter
   const sel = createSelect();
-  const selectList = ['Spiderman Mask', 'Dog Filter']; // list of filters
-  sel.option('Select Filter', -1); // Default no filter
-  for (let i = 0; i < selectList.length; i++)
-  {
+  const selectList = ["Spiderman Mask", "Dog Filter"]; // list of filters
+  sel.option("Select Filter", -1); // Default no filter
+  for (let i = 0; i < selectList.length; i++) {
     sel.option(selectList[i], i);
   }
   sel.changed(applyFilter);
 
   // tracker
   faceTracker = new clm.tracker();
-  faceTracker.init();
+  faceTracker.init(pModel);
   faceTracker.start(videoInput.elt);
 }
 
 // callback function
-function applyFilter()
-{
+function applyFilter() {
   selected = this.selected(); // change filter type
 }
 
 /*
  * In p5.js, draw() function is executed after setup(). This function runs inside a loop until the program is stopped.
-*/
-function draw()
-{
+ */
+function draw() {
   image(videoInput, 0, 0, outputWidth, outputHeight); // render video from webcam
 
   // apply filter based on choice
-  switch(selected)
-  {
-    case '-1': break;
-    case '0': drawSpidermanMask(); break;
-    case '1': drawDogFace(); break;
+  switch (selected) {
+    case "-1":
+      break;
+    case "0":
+      drawSpidermanMask();
+      break;
+    case "1":
+      drawDogFace();
+      break;
   }
 }
 
 // Spiderman Mask Filter
-function drawSpidermanMask()
-{
+function drawSpidermanMask() {
   const positions = faceTracker.getCurrentPosition();
-  if (positions !== false)
-  {
+  if (positions !== false) {
     push();
     const wx = Math.abs(positions[13][0] - positions[1][0]) * 1.2; // The width is given by the face width, based on the geometry
-    const wy = Math.abs(positions[7][1] - Math.min(positions[16][1], positions[20][1])) * 1.2; // The height is given by the distance from nose to chin, times 2
-    translate(-wx/2, -wy/2);
+    const wy =
+      Math.abs(positions[7][1] - Math.min(positions[16][1], positions[20][1])) *
+      1.2; // The height is given by the distance from nose to chin, times 2
+    translate(-wx / 2, -wy / 2);
     image(imgSpidermanMask, positions[62][0], positions[62][1], wx, wy); // Show the mask at the center of the face
     pop();
   }
 }
 
 // Dog Face Filter
-function drawDogFace()
-{
+function drawDogFace() {
   const positions = faceTracker.getCurrentPosition();
-  if (positions !== false)
-  {
+  if (positions !== false) {
     if (positions.length >= 20) {
       push();
       translate(-100, -150); // offset adjustment
@@ -125,8 +122,7 @@ function drawDogFace()
   }
 }
 
-function windowResized()
-{
+function windowResized() {
   const maxWidth = Math.min(windowWidth, windowHeight);
   pixelDensity(1);
   outputWidth = maxWidth;
