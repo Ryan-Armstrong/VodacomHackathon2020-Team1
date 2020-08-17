@@ -12,7 +12,7 @@ Page({
 
   browserMessage(e){
     if(e.detail.navigateToUrl){
-      my.navigateTo({
+      my.reLaunch({
         url: e.detail.navigateToUrl
       });
     }

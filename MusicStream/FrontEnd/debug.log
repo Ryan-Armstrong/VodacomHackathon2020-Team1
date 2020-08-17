@@ -9574,6 +9574,7 @@
 [0817/092029.750:WARNING:archive.cc(145)] Opening \\?\C:\Program Files\MiniProgramStudio\resources\app\vol_modules.asar\node_modules\babel-preset-C:\Program Files\MiniProgramStudio\resources\app\vol_modules.asar: FILE_ERROR_FAILED
 [0817/092029.750:WARNING:archive.cc(145)] Opening \\?\C:\Program Files\MiniProgramStudio\resources\app\vol_modules.asar\node_modules\babel-preset-C:\Program Files\MiniProgramStudio\resources\app\vol_modules.asar: FILE_ERROR_FAILED
 [0817/092029.750:WARNING:archive.cc(145)] Opening \\?\C:\Program Files\MiniProgramStudio\resources\app\vol_modules.asar\node_modules\babel-preset-C:\Program Files\MiniProgramStudio\resources\app\vol_modules.asar: FILE_ERROR_FAILED
+<<<<<<< HEAD
 [0817/092045.696:WARNING:archive.cc(145)] Opening \\?\c:\Users\S.Visser\Documents\dev\VodacomHackathon2020-Team1\MusicStream\FrontEnd\node_modules\babel-preset-C:\Program Files\MiniProgramStudio\resources\app\vol_modules.asar: FILE_ERROR_FAILED
 [0817/092045.696:WARNING:archive.cc(145)] Opening \\?\c:\Users\S.Visser\Documents\dev\VodacomHackathon2020-Team1\MusicStream\FrontEnd\node_modules\babel-preset-C:\Program Files\MiniProgramStudio\resources\app\vol_modules.asar: FILE_ERROR_FAILED
 [0817/092045.696:WARNING:archive.cc(145)] Opening \\?\c:\Users\S.Visser\Documents\dev\VodacomHackathon2020-Team1\MusicStream\FrontEnd\node_modules\babel-preset-C:\Program Files\MiniProgramStudio\resources\app\vol_modules.asar: FILE_ERROR_FAILED
@@ -9766,3 +9767,5 @@
 [0817/092045.734:WARNING:archive.cc(145)] Opening \\?\C:\Program Files\MiniProgramStudio\resources\app\vol_modules.asar\node_modules\babel-preset-C:\Program Files\MiniProgramStudio\resources\app\vol_modules.asar: FILE_ERROR_FAILED
 [0817/092045.734:WARNING:archive.cc(145)] Opening \\?\C:\Program Files\MiniProgramStudio\resources\app\vol_modules.asar\node_modules\babel-preset-C:\Program Files\MiniProgramStudio\resources\app\vol_modules.asar: FILE_ERROR_FAILED
 [0817/092045.734:WARNING:archive.cc(145)] Opening \\?\C:\Program Files\MiniProgramStudio\resources\app\vol_modules.asar\node_modules\babel-preset-C:\Program Files\MiniProgramStudio\resources\app\vol_modules.asar: FILE_ERROR_FAILED
+=======
+>>>>>>> master
