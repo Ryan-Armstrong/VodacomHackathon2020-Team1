@@ -64,7 +64,7 @@ page {
 }
 
 .tab-bar-item-icon {
-  margin-right: 25rpx;
+  margin-left: 430rpx;
   height: 15px;
   width: 15px;
   object-fit: contain;
