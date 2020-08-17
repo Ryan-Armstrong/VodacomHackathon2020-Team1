@@ -1,32 +1,49 @@
 <view class="subscription-container">
-
-  <image class="page-header-image" src="../../assets/music_welcome_header.png"/>
-
-  <view class="page-title">Welcome to Music Streaming</view>
-  <view class="page-subtitle">Subscribe to start streaming your favourite music in the way that suits you best.</view>
-
-  <view class="subscription-option">
-    <view class="subscription-option-title">Subscribe</view>
-    <view class="subscription-option-container">
-      <view class="subscription-option-subtitle">A monthly subscription service where you only pay for the music you love.</view>
-      <view class="subscription-option-button" onTap="subscribeButtonTapped">
-        <text class="subscription-option-button-text">Subscribe</text>
+    <image class="page-header-image" src="../../assets/music_welcome_header.png"/>
+    <view class="page-title">Welcome to Music Streaming</view>
+    <view class="page-subtitle">Subscribe to start streaming your favourite music in the way that suits you best.</view>
+    <view class="subscription-option">
+      <view class="subscription-option-title">Subscribe</view>
+      <view class="subscription-option-container">
+        <view class="subscription-option-subtitle">A monthly subscription service where you only pay for the music you love.</view>
+        <view class="subscription-option-button" onTap="subscribeButtonTapped">
+          <text class="subscription-option-button-text">Subscribe</text>
+        </view>
       </view>
     </view>
-  </view>
-
-  <view class="divider"></view>
-
-  <view class="subscription-option">
-    <view class="subscription-option-title">Music Ticket</view>
-    <view class="subscription-option-container">
-      <view class="subscription-option-subtitle">A ticket to listen to and download music for a certain amount of time only.</view>
-      <view class="subscription-option-button" onTap="getTicketButtonTapped">
-        <text class="subscription-option-button-text">Get Ticket</text>
+    <view class="divider"></view>
+    <view class="subscription-option">
+      <view class="subscription-option-title">Music Ticket</view>
+      <view class="subscription-option-container">
+        <view class="subscription-option-subtitle">A ticket to listen to and download music for a certain amount of time only.</view>
+        <view class="subscription-option-button" onTap="getTicketButtonTapped">
+          <text class="subscription-option-button-text">Get Ticket</text>
+        </view>
       </view>
     </view>
-  </view>
-
-  <button class="skip-button" onTap="skipButtonTapped">Skip for now and start browsing</button>
-
+    <button class="skip-button" onTap="skipButtonTapped">Skip for now and start browsing</button>
+     <view>
+      <list>
+        <view a:for="{{list}}" key="{{item.content}}">
+          <swipe-action
+            index="{{index}}"
+            restore="{{swipeIndex === null || swipeIndex !== index}}"
+            right="{{item.right}}"
+            onRightItemClick="onRightItemClick"
+            onSwipeStart="onSwipeStart"
+            extra="item{{index}}"
+          >
+            <list-item
+              arrow="horizontal"
+              index="{{index}}"
+              key="items-{{index}}"
+              onClick="onItemClick"
+              last="{{index === list.length - 1}}"
+            >
+              {{item.content}}
+            </list-item>
+          </swipe-action>
+        </view>
+      </list>
+    </view>
 </view>

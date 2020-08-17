@@ -1,6 +1,15 @@
 import ext from '../../extensions.js';
 
 Page({
+  data: {
+        swipeIndex: null,
+        list: [
+          { right: [{ type: 'edit', text: ' Unfavorite ', bgColor: '#ccc', fColor: '#f00' }, { type: 'delete', text: ' Delete ', bgColor: '#0ff', fColor: '#333' }], content: ' Text & background color change at the same time Execute swipe deletion recovery ' },
+          { right: [{ type: 'delete', text: ' Delete ' }], content: 'AAA' },
+          { right: [{ type: 'edit', text: ' Unfavorite ' }, { type: 'delete', text: ' Delete ' }], content: 'BBB' },
+          { right: [{ type: 'delete', text: ' Delete ' }], content: 'CCC' },
+        ],
+      },
   onLoad(query) {
     // Page load
     console.info(`Page onLoad with query: ${JSON.stringify(query)}`);
@@ -46,5 +55,42 @@ Page({
   skipButtonTapped() {
     console.log("Skip button tapped.");
     my.navigateTo({ url: '../music-landing-page/music-landing-page' });
-  }
+  },
+  onSwipeStart() {
+    console.log("swiping")
+  },
+  onRightItemClick(e) {
+        const { type } = e.detail;
+        my.confirm({
+          title: 'Tips',
+          content: `${e.index}-${e.extra}-${JSON.stringify(e.detail)}`,
+          confirmButtonText: 'Confirm',
+          cancelButtonText: 'Cancel',
+          success: (result) => {
+            const { list } = this.data;
+            if (result.confirm) {
+              if (type === 'delete') {
+                list.splice(this.data.swipeIndex, 1);
+                this.setData({
+                  list: [...list],
+                });
+              }
+    
+              my.showToast({
+                content: 'Confirm => Execute swipe deletion recovery ',
+              });
+              e.done();
+            } else {
+              my.showToast({
+                content: 'Cancel => Swipe deletion status remains unchanged ',
+              });
+            }
+          },
+        });
+      },
+      onItemClick(e) {
+        my.alert({
+          content: `dada${e.index}`,
+        });
+      },
 });
