@@ -41,8 +41,9 @@
   width: 94vw;
   margin-left: auto;
   margin-right: auto;
+  margin-top: 25rpx;
   border-radius: 10px;
-  box-shadow: 1px 1px 5px rgb(184, 184, 184);
+  box-shadow: 1px 1px 5px rgba(194, 194, 194, 0.678);
 }
 
 .heart-icon {
