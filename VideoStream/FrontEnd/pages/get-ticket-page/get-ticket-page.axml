@@ -1,3 +1,16 @@
-<view>
-  <image class="page-image" src="../../assets/video_stream_ticket.png" onTap="purchaseTicket"/>
+<view class="ticket-container">
+   <image class="page-header-image" src="../../assets/music_ticket_empty.svg"/>
+  <view style="font-weight:bold;
+font-size:22px; margin: 10px 0px;">Purchase Video Ticket</view>
+  <view style="margin-bottom: 20px;">Select the video ticket you want to purchase.</view>
+
+<radio-group class="radio-group" onChange="radioChange">
+  <label class="radio" a:for="{{items}}" a:key="*this">
+    <radio value="{{item.value}}" checked="{{item.checked}}" color="e60202"/><view style="margin-right:150px;
+width:165px">{{item.name}}</view>
+  </label>
+</radio-group>
+
+<view><button class="purchase-button" onTap="purchaseTicket">Purchase</button></view>
+
 </view>
