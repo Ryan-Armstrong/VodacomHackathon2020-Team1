@@ -364,6 +364,7 @@ function favouriteClicked(id) {
       fav: false
     }
     songs = newArray;
+    document.getElementById(`fav-${id}`).classList.remove('imageLikeFav');
     document.getElementById(`fav-${id}`).src = "/assets/icons/favourite.svg"
     document.getElementById(`popUpMessage`).innerHTML = songs[index].name + ' was removed from favourites'
   } else {
@@ -372,6 +373,7 @@ function favouriteClicked(id) {
       fav: true
     }
     songs = newArray;
+    document.getElementById(`fav-${id}`).classList.add('imageLikeFav');
     document.getElementById(`fav-${id}`).src = "/assets/icons/favourite_filled.svg"
     document.getElementById(`popUpMessage`).innerHTML = songs[index].name + ' was added to favourites'
   }

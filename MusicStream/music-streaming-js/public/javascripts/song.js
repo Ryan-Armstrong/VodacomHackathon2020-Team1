@@ -301,6 +301,7 @@ function addToFav() {
             fav: false
         }
         singleSongs = newArray;
+        document.getElementById('favIcon').classList.remove('imageLikeFav');
         document.getElementById(`favIcon`).src = "/assets/icons/favourite.svg"
         document.getElementById(`popUpMessage`).innerHTML = currentSong.title + ' was removed from favourites'
     } else {
@@ -309,7 +310,7 @@ function addToFav() {
             fav: true
         }
         singleSongs = newArray;
-        console.log("singleSongs", singleSongs);
+        document.getElementById('favIcon').classList.add('imageLikeFav');
         document.getElementById(`favIcon`).src = "/assets/icons/favourite_filled.svg"
         document.getElementById(`popUpMessage`).innerHTML = currentSong.title + ' was added to favourites'
     }
