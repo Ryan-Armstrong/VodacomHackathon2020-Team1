@@ -52,6 +52,9 @@ Page({
     });
   },
   rentOrPurchaseViewTapped() {
+    my.reLaunch({
+      url: '../videoinfo/videoinfo'
+    });
     console.log("Rent or purchase view tapped.")
   }
 });
