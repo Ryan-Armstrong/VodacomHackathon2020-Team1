@@ -36,7 +36,18 @@
 
 .imageLike {
   width: 18px;
+  height: 18px; 
+  /* -webkit-transition-duration: 1s; 
+  transition-duration: 1s;  */
+  /* animation: beat 1s ease;   */
+}
+
+.imageLikeFav
+{
+  width: 18px;
   height: 18px;
+   animation: beat 1s ease;
+  
 }
 
 .textLike {

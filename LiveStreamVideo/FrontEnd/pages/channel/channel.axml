@@ -21,7 +21,7 @@
      Get exclusive access to the new creations some of our most popular designers have in store for summer 2020!
         </view>
         <view class="likeRow">
-          <image id="favourite" class="imageLike" src="../../assets/thumbnails/favourite{{isFavourited}}.svg" onTap="toggleFavourite"/>
+          <image id="favourite" class="{{isFav ? 'imageLikeFav' : 'imageLike'}}" src="../../assets/thumbnails/favourite{{isFavourited}}.svg" onTap="toggleFavourite"/>
           <view class="textLike">
       {{amountLikes}} likes
           </view>

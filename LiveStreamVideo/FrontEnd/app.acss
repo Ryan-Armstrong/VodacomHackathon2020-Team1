@@ -14,3 +14,39 @@ body {
   height: 94vh;
   font-family: "SF Pro Text";
 }
+
+
+
+@keyframes beat
+{
+    15%
+    {
+        -webkit-transform: scale(1.1);
+        transform: scale(1.1);
+    }
+    30%
+    {
+        -webkit-transform: scale(1.3);
+        transform: scale(1.3);
+    }
+    50%
+    {
+        -webkit-transform:  scale(1.1);
+        transform:  scale(1.1);
+    }
+    65%
+    {
+         -webkit-transform: scale(1.4);
+        transform: scale(1.4);
+    }
+    80%
+    {
+        -webkit-transform: scale(1.1);
+        transform: scale(1.1);
+    }
+    100%
+    {
+         -webkit-transform: scale(1.0);
+        transform: scale(1.0);
+    }
+}
