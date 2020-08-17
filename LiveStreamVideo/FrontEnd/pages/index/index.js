@@ -4,7 +4,10 @@ const app = getApp();
 Page({
  onLoad(query) {
     // Page loading
-    this.webViewContext = my.createWebViewContext('web-view-1');   
+    this.webViewContext = my.createWebViewContext('web-view-1');
+    my.showLoading({
+      content: 'Loading Video Stream...'
+    });
   },
   onShow() {
     // Page showing
@@ -62,6 +65,13 @@ Page({
           });
         },
         
+      });
+    }
+    else if(e.detail.type === 'StopLoading')
+    {
+      const that = this;
+      my.hideLoading({
+        page: that,  // Prevents switching to other pages when execution, page pointing is not accurate
       });
     }
     
