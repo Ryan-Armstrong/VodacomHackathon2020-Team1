@@ -1,3 +1,5 @@
+import ext from '../../extensions.js'
+
 Page({
   data: {},
   onLoad() { },
@@ -26,5 +28,9 @@ Page({
   goToNextPage() {
     my.navigateTo({ url: '../video-landing-page/video-landing-page' });
   },
+  onReady() {
+    // Page loading is complete
+    ext.setNav();
+  }
 
 });

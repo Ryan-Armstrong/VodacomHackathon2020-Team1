@@ -1,3 +1,5 @@
+import ext from '../../extensions.js';
+
 const app = getApp();
 
 Page({
@@ -11,7 +13,10 @@ Page({
     console.log("Music landing page loaded.")
 
   },
-
+  onReady()
+  {
+    ext.setNav();
+  },
   viewPlaylists() {
     console.log("View playlists");
     my.navigateTo({ url: '../play-list-page/play-list-page' });

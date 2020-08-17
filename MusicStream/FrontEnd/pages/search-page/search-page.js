@@ -1,3 +1,5 @@
+import ext from '../../extensions.js';
+
 const app = getApp();
 Page({
   data: {
@@ -25,5 +27,9 @@ Page({
     my.navigateTo({
       url: '../album-view/album-view'
     });
+  },
+  onReady()
+  {
+    ext.setNav();
   }
 });
