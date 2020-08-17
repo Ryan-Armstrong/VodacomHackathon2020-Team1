@@ -1,0 +1,102 @@
+<div class="ablum-container" style="margin-top: 45px;">
+    <div class="album-cover">
+        <img class="album-img" id="albumCover" onload="updateAlbumCoverImg({{output}})"
+            src="/assets/images/placeholder.png">
+    </div>
+    <div style='text-align: center;
+    margin: 20px 0px 10px 0px;    font-size: large;
+    font-weight: bold;' id="albumName">We Made It</div>
+    <div style='text-align: center;
+    margin: 0px 0px 20px 0px;' id="artis">by Mi Casa</div>
+    <div style='display: flex; margin-bottom: 20px'>
+        <div style="font-size: 12px;    margin-right: auto; color: #7D7D7D" id="releaseData">
+            Released: 03/07/2020
+        </div>
+        <div style="font-size: 12px; margin-right: auto; color: #7D7D7D" id="tracks">
+            Tracks: 13
+        </div>
+
+        <div style="font-size: 12px; color: #7D7D7D">
+            Length: 01:02:24
+        </div>
+    </div>
+    <div style="display: flex; margin-bottom: 10px">
+        <img src="/assets/icons/repeat_off.svg" style="width: 30px; margin-left: auto; margin-right: 14px;"
+            onclick="repeatClicked()" id="repeatBtn">
+        <img src="/assets/icons/skip_back.svg" style="width: 30px;  margin-right: 14px;" onclick="prevSongInAlbum()">
+        <img id="toggleBtn" src="/assets/icons/play_filled.svg" style="width: 40px;  margin-right: 14px;"
+            onclick="toggleAlbumPlaying()">
+        <img src="/assets/icons/skip_forward.svg" style="width: 30px;  margin-right: 14px;" onclick="nextSongInAlbum()">
+        <img src="/assets/icons/shuffle.svg" style="width: 30px; margin-right: auto" id="shuffleBtn"
+            onclick="shuffleClicked()">
+    </div>
+    <audio id="audio-player" ontimeupdate="updateBar()">
+        <source src="/assets/audio/song.mp3" type="audio/mpeg">
+    </audio>
+
+    <div style="display: flex;">
+        <div id="currentTime" style="margin-right: auto;font-size: 14px;">00:00</div>
+        <div id="durationTime" style="font-size: 14px;">00:00</div>
+    </div>
+
+
+
+    <div id="progress-status">
+        <div id="myprogressBar"></div>
+    </div>
+
+    {{# each songs as |song key|}}
+    <div style="height: 50px; border-bottom: 1px solid #d7d7d7; display: flex">
+        <img src="/assets/icons/play_filled.svg" style="width: 30px;  margin-right: 14px;" id="play-{{song.id}}"
+            onclick="playSelectedSong({{song.id}})">
+        <p style="margin-right: auto;">{{ song.name }}</p>
+
+        {{# if song.fav}}
+        <img src="/assets/icons/favourite_filled.svg" id="fav-{{song.id}}" style="margin-right: 10px;"
+            onclick="favouriteClicked({{song.id}})">
+        {{else}}
+        <img src="/assets/icons/favourite.svg" id="fav-{{song.id}}" style="margin-right: 10px;"
+            onclick="favouriteClicked({{song.id}})">
+        {{/if}}
+
+        <img src="/assets/icons/plus_red_big.svg" onclick="showPlayListModal({{song.id}})">
+
+    </div>
+    {{/each}}
+
+    <div id="myModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+            <p style="margin: 5px;" id="popUpMessage"></p>
+        </div>
+
+    </div>
+
+
+    <div id="playListModal" class="playlist-modal">
+
+        <!-- Modal content -->
+        <div class="playlist-modal-content">
+            <div style="display: flex; margin-bottom:15px;">
+                <div class="playlist-header">Select Playlist</div>
+                <div onclick="closePlaylistModal()"><img src="/assets/icons/close.svg" style="width: 18px;"></div>
+            </div>
+            {{# each playlist as |item key|}}
+            <div style="display: flex; margin-bottom: 10px;" onclick="addPlaylist({{item.id}})">
+                <div class="image-container">
+                    <img src={{item.thumbnail}} class="playlist-img">
+                </div>
+                <div style="display: flex; flex-direction: column">
+                    <div class="playlist-title">{{item.title}}</div>
+                    <div style="margin-bottom: 5px;">{{item.tracks}} Tracks</div>
+                    <div>{{item.duration}}</div>
+                </div>
+            </div>
+            {{/each}}
+
+        </div>
+
+    </div>
+
+</div>

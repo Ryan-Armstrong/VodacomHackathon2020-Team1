@@ -1,4 +1,7 @@
+import ext from '../../extensions.js';
+
 const app = getApp();
+let currentIndex = 0;
 
 Page({
   data: {
@@ -12,20 +15,51 @@ Page({
 
   },
 
+  bannerChanged(e) {
+    currentIndex = e.detail.current;
+  },
+
+  onReady() {
+    ext.setNav();
+  },
   viewPlaylists() {
     console.log("View playlists");
-  },
-  viewPurchasedMusic() {
-    console.log("View purchased");
-  },
-  viewSubscriptions() {
-    console.log("View subscriptions");
+    my.navigateTo({
+      url: '../play-list-page/play-list-page'
+    });
   },
   searchMusic() {
-    console.log("Search music");
+    my.navigateTo({
+      url: '../search-page/search-page'
+    });
   },
 
   selectedAlbum(e) {
-    console.log("Selected album with event: ", e);
+    app.selectedItem = e.target.dataset.id;
+    my.navigateTo({
+      url: '../album-view/album-view'
+    });
+
+  },
+
+  selectedSong(e) {
+    app.selectedItem = e.target.dataset.id;
+    my.navigateTo({
+      url: '../song-view/song-view'
+    });
+  },
+
+  bannerTapped() {
+
+    if (currentIndex == 0) {
+      app.globalData.source = "https://www.samsung.com/za/";
+    } else if (currentIndex == 1) {
+      app.globalData.source = "https://www.vodacom.co.za/";
+    } else {
+      app.globalData.source = "https://www.takealot.com/";
+    }
+    my.navigateTo({
+      url: '../generic-web-view/generic-web-view'
+    });
   }
 });

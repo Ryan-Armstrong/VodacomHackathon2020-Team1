@@ -1,0 +1,287 @@
+.homePage {
+  width: 100vw;
+}
+
+.homescreen {
+  display: flex;
+  flex-direction: column;
+}
+
+.titleText {
+  font-weight: 600;
+  padding-left: 16px;
+  padding-top: 16px;
+  padding-bottom: 5px;
+}
+
+.selectedTitleText {
+  font-weight: 600;
+  margin-top: 16px;
+  margin-left: 16px;
+  /* padding-left: 16px; */
+  /* padding-top: 16px; */
+  padding-bottom: 5px;
+}
+
+.vidMinutesInfo {
+  margin-left: 16px;
+  font-weight: 300;
+  /* padding-left: 16px; */
+  font-size: 8pt;
+}
+
+.vidDescription
+{
+  margin-top: 10px;
+  font-weight: 400;
+  font-size: 10pt;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  hyphens: auto;
+  margin-left: 16px;
+}
+
+.starView{
+  font-weight: 300;
+  /* padding-left: 16px; */
+  font-size: 8pt;
+  /* margin-bottom: 10px; */
+  margin-left: 16px;
+}
+
+.sponsoredTextHolder {
+  position: absolute;
+  right: 16px;
+  top: 16px;
+}
+
+.sponsoredText {
+  color: rgb(173, 173, 173);
+  border-radius: 25px;
+  border: 1px solid rgb(199, 199, 199);
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  font-size: 9px;
+}
+
+.videoContainer {
+  display: flex;
+  align-items:center;
+  padding-top: 6px;
+}
+
+.videoThumbnail {
+  z-index: 1;
+  border-radius: 15px;
+  width: 92vw;
+  height: 20vh;
+  margin-left: 16px;
+}
+
+.scrollItem {
+  display: inline-block;
+  text-align: center;
+  padding: 3px;
+  margin: 3px;
+  text-decoration: none;
+}
+
+.scrollMenu {
+  overflow: auto;
+  white-space: nowrap;
+  padding: 1px 1px 1px 7px;
+}
+
+.scrollText{
+  color: rgb(54, 54, 54);
+  font-weight: 400;
+  font-size: 9px;
+  width: 90rpx;
+  padding-top: 6px;
+}
+
+.scrollImageView {
+  background: #E60202;
+  border-radius: 50px;
+  width: 40px;
+  height: 40px;
+  margin: auto;
+}
+
+.scrollChannelImageView{
+  border-radius: 50px;
+  width: 40px;
+  height: 40px;
+  margin: auto;
+}
+
+.scrollImage{
+  width: 22px;
+  height: 30px;
+  display: block;
+  position: relative;
+  margin: auto;
+  top: 5px;
+}
+
+.scrollItemSquare {
+  display: inline-block;
+  text-align: center;
+  padding: 3px;
+  margin: 3px;
+  text-decoration: none;
+}
+
+.scrollMenuSquare {
+  overflow: auto;
+  white-space: nowrap;
+  padding: 1px;
+  padding: 1px 1px 1px 11px;
+}
+
+.selectedMovieView
+{
+  display: flex;
+  white-space: nowrap;
+  padding: 1px;
+  padding: 11px 11px 1px 11px;
+}
+
+.selectedMovieDetail
+{
+  /* display: inline-block */
+}
+
+.scrollTextSquare {
+  color: rgb(54, 54, 54);
+  font-weight: 600;
+  font-size: 12px;
+  text-overflow: ellipsis; 
+  overflow: hidden;
+  width: 180rpx;
+  padding-top: 6px;
+}
+
+.scrollImageSquare {
+  border-radius: 10px;
+  width: 90px;
+  height: 120px;
+}
+
+.mainImage
+{
+  border-radius: 10px;
+  width: 120px;
+  height: 165px;
+  margin-left: 16px;
+  margin-top: 16px;
+}
+
+.mainImageAvailable
+{
+  border-top: 20px solid #E60202;
+}
+
+.available-font
+{
+  color: white;
+  font-size: 8pt;
+  font-weight: 500;
+}
+
+.wrapper {
+  display: flex;
+  width: 100%;  
+  background-image: linear-gradient(to bottom, rgba(255,0,0,0), rgba(0, 0, 0, 0.315));
+}
+
+.about-image
+{
+  width: 70rpx;
+  height: 70rpx;
+  margin: 25rpx;
+}
+
+
+.row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  position: relative;
+}
+
+.hiddenRow {
+  display: none;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  position: relative;
+}
+
+.text-watch {
+  position: absolute;
+  top: 16px;
+  left: 20px;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 100%;
+  flex: 1;
+}
+
+.col-1
+{
+   display: flex;
+  flex-direction: column;
+  flex-basis: 50%;
+  flex: 1;
+}
+
+.col-2
+{
+   display: flex;
+  flex-direction: column;
+  flex-basis: 50%;
+  flex: 2;
+}
+
+.double-column {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 100%;
+  flex: 2;
+}
+
+.blue-column {
+  background-color: blue;
+  height: 100px;
+}
+
+.green-column {
+    height: 100px;
+    background-color: green;
+}
+
+.rentButton
+{
+  animation: swing 1s ease;
+  border-radius: 25px;
+  background-color: #E60202;
+  color: white;
+  font-size: 10pt;
+  border: 0px hidden #E60202;
+  margin-left: 16px;
+  margin-top: 5px;
+  width: 90px;
+  height: 23px;
+}
+
+.starImage {
+  width: 20px;
+  height: 26px;
+}

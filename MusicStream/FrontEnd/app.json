@@ -1,7 +1,15 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/music-landing-page/music-landing-page"
+    "pages/song-view/song-view",
+    "pages/play-list-page/play-list-page",
+    "pages/music-landing-page/music-landing-page",
+    "pages/album-view/album-view",
+    "pages/search-page/search-page",
+    "pages/play-list-detail-view/play-list-detail-view",
+    "pages/get-ticket-page/get-ticket-page",
+    "pages/song-view/song-view",
+    "pages/generic-web-view/generic-web-view"
   ],
   "window": {
     "defaultTitle": "Music Streaming"

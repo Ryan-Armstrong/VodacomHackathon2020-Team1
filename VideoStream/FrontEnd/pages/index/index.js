@@ -1,3 +1,5 @@
+import ext from '../../extensions.js'
+
 Page({
   onLoad(query) {
     // Page load
@@ -5,6 +7,7 @@ Page({
   },
   onReady() {
     // Page loading is complete
+    ext.setNav();
   },
   onShow() {
     // Page display
@@ -35,14 +38,26 @@ Page({
 
   subscribeButtonTapped() {
     console.log("Subscribe button tapped.");
+    my.navigateTo({
+      url: '../video-landing-page/video-landing-page'
+    });
   },
   getTicketButtonTapped() {
     console.log("Get ticket button tapped.");
+    my.navigateTo({
+      url: '../get-ticket-page/get-ticket-page'
+    });
   },
   skipButtonTapped() {
     console.log("Skip button tapped.");
+    my.navigateTo({
+      url: '../video-landing-page/video-landing-page'
+    });
   },
   rentOrPurchaseViewTapped() {
+    my.reLaunch({
+      url: '../videoinfo/videoinfo'
+    });
     console.log("Rent or purchase view tapped.")
   }
 });

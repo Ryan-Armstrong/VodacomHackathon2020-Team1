@@ -9,17 +9,21 @@
     <view class="subscription-option-title">Subscribe</view>
     <view class="subscription-option-container">
       <view class="subscription-option-subtitle">A monthly subscription service where you only pay for the content you love to watch.</view>
-      <button class="subscription-option-button" onTap="subscribeButtonTapped">Subscribe</button>
+      <view class="subscription-option-button" onTap="subscribeButtonTapped">
+        <text class="subscription-option-button-text">Subscribe</text>
+      </view>
     </view>
   </view>
 
   <view class="divider"></view>
 
   <view class="subscription-option">
-    <view class="subscription-option-title">Music Ticket</view>
+    <view class="subscription-option-title">Video Ticket</view>
     <view class="subscription-option-container">
       <view class="subscription-option-subtitle">A ticket to watch any content for a certain amount of time only.</view>
-      <button class="subscription-option-button" onTap="getTicketButtonTapped">Get Ticket</button>
+      <view class="subscription-option-button" onTap="getTicketButtonTapped">
+        <text class="subscription-option-button-text">Get Ticket</text>
+      </view>
     </view>
   </view>
 

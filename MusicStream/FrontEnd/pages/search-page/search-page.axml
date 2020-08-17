@@ -1,0 +1,36 @@
+<view class="searchPage">
+  <view class="searchSreen">
+    <view class="searchHolder">
+      <view class="searchField">
+        <image class="searchImage" src="../../assets/icons/search_grey.svg"/>
+        <view class="searchInputHolder">
+          <input class="searchInput" placeholder="Search for a track, artist or album" placeholder-class="searchInputPlaceholder" onInput="searchInput" value="{{inputValue}}" />
+        </view>
+      </view>
+    </view>
+    <view class="titleText">
+      Popular Searches
+    </view>
+    <view class="arrHolder" a:for="{{displayArr}}" a:for-index="i" a:key="*this" >
+      <image class="holderImage" src="../../assets/search-thumbnails/{{item.pic}}.png" onTap="loadSong" data-id="{{item}}"/>
+      <view class="columnFlex">
+        
+      <view class="typeText">
+      {{item.type}}
+      </view>
+      <view class="titleTextArr">
+      {{item.name}}
+      </view>
+      <view class="typeInfoText">
+      {{item.info1}}
+      </view>
+      <view class="typeInfoText">
+      {{item.info2}}
+      </view>
+      <view class="typeInfoText">
+      {{item.info3}}
+      </view>
+      </view>
+    </view>
+  </view>
+</view>

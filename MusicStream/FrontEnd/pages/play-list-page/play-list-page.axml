@@ -1,0 +1,30 @@
+<view class="play-list-page-container">
+  <view class="tab-bar">
+    <view class="tab-bar-item-text" onTap="viewHome">Home</view>
+    <view class="tab-bar-item">
+      <view class="tab-bar-item-text">Playlists</view>
+      <view class="tab-bar-indicator"></view>
+    </view>
+    <image class="tab-bar-item-icon" src="../../assets/icons/search.png" onTap="searchMusic"/>
+  </view>
+
+  <view class="favourites-view">
+    <image class="heart-icon" src="../../assets/icons/favourite_filled.png"/>
+    <view class="favourites-text-container">
+      <text class="favourites-title-text">Favourites</text>
+      <text class="favourites-subtitle-text">All the tracks you've liked in one place</text>
+    </view>
+    <image class="expand-icon" src="../../assets/icons/expand.png"/>
+  </view>
+
+  <view class="playlistScrollView">
+    <view class="playlistItemView" a:for="{{playlists}}" a:for-index="i" a:key="*this" >
+      <image data-id="{{item}}" class="playlistItemImage" src="../../assets/{{item.thumbnail}}" onTap="selectedPlaylist"/>
+      <view class="playlist-item-text-container">
+        <text class="playlist-item-title-text">{{item.name}}</text>
+        <text class="playlist-item-subtitle-text">{{item.numTracks}} Tracks</text>
+        <text class="playlist-item-subtitle-text">{{item.duration}}</text>
+      </view>
+    </view>
+  </view>
+</view>

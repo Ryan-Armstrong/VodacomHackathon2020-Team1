@@ -1,10 +1,12 @@
+import ext from '../../extensions.js';
+
 Page({
   onLoad(query) {
     // Page load
     console.info(`Page onLoad with query: ${JSON.stringify(query)}`);
   },
   onReady() {
-    // Page loading is complete
+    ext.setNav();
   },
   onShow() {
     // Page display
@@ -39,8 +41,10 @@ Page({
   },
   getTicketButtonTapped() {
     console.log("Get ticket button tapped.");
+    my.navigateTo({ url: '../get-ticket-page/get-ticket-page' });
   },
   skipButtonTapped() {
     console.log("Skip button tapped.");
+    my.navigateTo({ url: '../music-landing-page/music-landing-page' });
   }
 });

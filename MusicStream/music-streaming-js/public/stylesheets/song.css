@@ -1,0 +1,12 @@
+.song-cover {
+    display: flex;
+    max-height: 320px;
+    border-radius: 15px;
+    margin: auto;
+    box-shadow: 0 1px 8px 0 rgba(0, 0, 0, 0.1);
+}
+
+.song-img {
+    max-width: 100%;
+    border-radius: 15px;
+}

@@ -1,3 +1,5 @@
+import ext from '../../extensions.js';
+
 Page({
   data: {
       spaceArr: ['Summer 2020', 'It\'s A Wrap Dress', 'Autumn Collection', 'Shell Tops'],
@@ -9,4 +11,8 @@ Page({
     console.log(ev)
     my.navigateTo({ url: '../index/index' });
   },
+  onReady()
+  {
+    ext.setNav();
+  }
 });

@@ -1,3 +1,6 @@
+import ext from '../../extensions.js';
+const app = getApp();
+
 Page({
   data: {
       categoriesArr: ['Clothing', 'Electronics', 'Home', 'Accessories', 'Fitness', 'Pets', 'Travel'],
@@ -16,5 +19,19 @@ Page({
   selectVideo(ev) {
     console.log(ev)
     my.navigateTo({ url: '../index/index' });
+  },
+  openGithub()
+  {
+    app.globalData.source = 'https://github.com/Ryan-Armstrong/VodacomHackathon2020-Team1';
+    my.navigateTo({ url: "../genericweb/genericweb"})
+  },
+  openLinkedin()
+  {
+    app.globalData.source = 'https://www.linkedin.com/company/fastcomm-com/';
+     my.navigateTo({ url: "../genericweb/genericweb"})
+  },
+  onReady()
+  {
+    ext.setNav();
   }
 });
