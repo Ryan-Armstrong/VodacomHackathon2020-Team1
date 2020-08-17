@@ -1,4 +1,4 @@
-<div class="ablum-container">
+<div style="margin-top: 45px;">
     <div class="album-cover">
         <img class="album-img" id="playListCover" onload="updatePlayListCover({{output}})"
             src="/assets/images/placeholder.png">
@@ -6,12 +6,13 @@
     <div style='text-align: center;
     margin: 20px 0px 10px 0px;    font-size: large;
     font-weight: bold;' id="albumName"></div>
-    <div style='display: flex; margin-bottom: 20px'>
-        <div style="font-size: 12px; margin-right: auto;" id="tracks">
+    <div style='display: flex; margin-bottom: 20px; '>
+        <div style="font-size: 12px; margin-left: auto; color: #7D7D7D" id="tracks">
             Tracks: 0
         </div>
 
-        <div style="font-size: 12px; " id="totalDuration">
+        <div style="font-size: 12px; margin-right: auto;
+    margin-left: 10px; color: #7D7D7D" id="totalDuration">
             Length: 00:00:00
         </div>
     </div>
@@ -30,8 +31,8 @@
     </audio>
 
     <div style="display: flex;">
-        <div id="currentTime" style="margin-right: auto">00:00</div>
-        <div id="durationTime">00:00</div>
+        <div id="currentTime" style="margin-right: auto; font-size: 14px;">00:00</div>
+        <div id="durationTime" style="font-size: 14px;">00:00</div>
     </div>
 
 
