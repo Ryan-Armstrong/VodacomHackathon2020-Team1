@@ -1,3 +1,4 @@
+import ext from '../../extensions.js';
 const app = getApp();
 
 Page({
@@ -28,5 +29,9 @@ Page({
   {
     app.globalData.source = 'https://www.linkedin.com/company/fastcomm-com/';
      my.navigateTo({ url: "../genericweb/genericweb"})
+  },
+  onReady()
+  {
+    ext.setNav();
   }
 });

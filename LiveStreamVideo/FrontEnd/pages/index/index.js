@@ -1,3 +1,4 @@
+import ext from '../../extensions.js'
 const app = getApp();
 
 Page({

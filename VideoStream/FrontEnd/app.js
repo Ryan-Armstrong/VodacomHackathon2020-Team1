@@ -60,6 +60,14 @@ App({
   onLaunch(options) {
     // Page opens for the first time
     console.info('App onLaunch');
+    
+  },
+  onReady()
+  {
+    console.log("READ");
+    my.setNavigationBar({
+      borderBottomColor: '#BFBFBF'
+    });
   },
   onShow(options) {
     // Reopened by scheme from the background

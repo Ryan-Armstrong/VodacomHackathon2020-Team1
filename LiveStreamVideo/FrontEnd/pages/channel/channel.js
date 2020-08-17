@@ -1,3 +1,5 @@
+import ext from '../../extensions.js';
+
 Page({
   data: {
     fluidityArr: ['It\'s A Wrap Dress', 'Shell Tops', 'Swing Tunic & Tie', 'Two Tone Tunic'],
@@ -22,5 +24,9 @@ Page({
     }
     
     this.setData({amountLikes: this.data.amountLikes, isFavourited: this.data.isFavourited})
+  },
+  onReady()
+  {
+    ext.setNav();
   }
 });

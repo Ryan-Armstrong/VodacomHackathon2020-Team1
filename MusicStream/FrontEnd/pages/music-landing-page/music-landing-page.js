@@ -1,4 +1,7 @@
+import ext from '../../extensions.js';
+
 const app = getApp();
+let currentIndex = 0;
 
 Page({
   data: {
@@ -12,12 +15,23 @@ Page({
 
   },
 
+  bannerChanged(e) {
+    currentIndex = e.detail.current;
+  },
+
+  onReady() {
+    ext.setNav();
+  },
   viewPlaylists() {
     console.log("View playlists");
-    my.navigateTo({ url: '../play-list-page/play-list-page' });
+    my.navigateTo({
+      url: '../play-list-page/play-list-page'
+    });
   },
   searchMusic() {
-    my.navigateTo({ url: '../search-page/search-page' });
+    my.navigateTo({
+      url: '../search-page/search-page'
+    });
   },
 
   selectedAlbum(e) {
@@ -28,10 +42,24 @@ Page({
 
   },
 
-  selectedSong(e){
+  selectedSong(e) {
     app.selectedItem = e.target.dataset.id;
     my.navigateTo({
       url: '../song-view/song-view'
+    });
+  },
+
+  bannerTapped() {
+
+    if (currentIndex == 0) {
+      app.globalData.source = "https://www.samsung.com/za/";
+    } else if (currentIndex == 1) {
+      app.globalData.source = "https://www.vodacom.co.za/";
+    } else {
+      app.globalData.source = "https://www.takealot.com/";
+    }
+    my.navigateTo({
+      url: '../generic-web-view/generic-web-view'
     });
   }
 });

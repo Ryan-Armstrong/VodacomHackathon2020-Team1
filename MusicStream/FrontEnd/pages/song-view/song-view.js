@@ -1,3 +1,4 @@
+import ext from '../../extensions.js';
 const app = getApp();
 
 Page({
@@ -10,10 +11,14 @@ Page({
 
   browserMessage(e){
     if(e.detail.navigateToUrl){
-      my.navigateTo({
+      my.reLaunch({
         url: e.detail.navigateToUrl
       });
     }
+  },
+  onReady()
+  {
+    ext.setNav();
   }
   
 
