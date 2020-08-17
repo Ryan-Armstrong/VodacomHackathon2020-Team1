@@ -35,9 +35,27 @@ Page({
 
   subscribeButtonTapped() {
     console.log("Subscribe button tapped.");
-    my.navigateTo({
-      url: '../video-landing-page/video-landing-page'
-    });
+    my.confirm({
+      title: 'Subscribe',
+      message: 'By tapping on "I Agree", you agree to EZ Video streaming terms and conditions. You will be invoiced R99,99 on the anniversary of your subscription',  
+      confirmButtonText: 'I Agree',
+      cancelButtonText: 'Cancel',
+      success: (result) => {
+        if (result.confirm)
+        {
+         my.alert({
+            title: "Subscription successful",
+            success : (result) =>
+            {
+              my.navigateTo({
+                url: '../video-landing-page/video-landing-page'
+              });
+            }
+        });
+    }
+    },
+  });
+   
   },
   getTicketButtonTapped() {
     console.log("Get ticket button tapped.");

@@ -46,6 +46,7 @@ function registerForStream(peer)
   peer.ontrack = event => {
     var video = document.querySelector("video");
     video.srcObject = event.streams[0];
+    sendMiniStopLoading();
   };
 }
 
@@ -240,4 +241,11 @@ if (typeof(my) !== 'undefined') {
     video.style.marginLeft = marginLeftVlaue + "px";
     my.postMessage({ offset : video.style.marginLeft });
   }
+}
+
+function sendMiniStopLoading()
+{
+  my.postMessage({ 
+      type : 'StopLoading'
+  });
 }
