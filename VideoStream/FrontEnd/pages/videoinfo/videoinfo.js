@@ -1,3 +1,4 @@
+import ext from '../../extensions.js'
 const app = getApp();
 
 Page({
@@ -136,5 +137,9 @@ Page({
   showMovieDetail() 
   {
     this.setData({ clickedInfo: "row" });
+  },
+  onReady()
+  {
+    ext.setNav();
   }
 });

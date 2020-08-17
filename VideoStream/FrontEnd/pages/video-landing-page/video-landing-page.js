@@ -1,3 +1,4 @@
+import ext from '../../extensions.js'
 const app = getApp();
 let currentIndex = 0;
 
@@ -26,6 +27,10 @@ Page({
   },
   onLoad() {
 
+  },
+  onReady()
+  {
+    ext.setNav();
   },
   searchMovies() {
     my.navigateTo({
