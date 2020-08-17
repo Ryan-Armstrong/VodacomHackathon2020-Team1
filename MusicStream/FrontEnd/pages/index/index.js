@@ -6,6 +6,7 @@ Page({
     console.info(`Page onLoad with query: ${JSON.stringify(query)}`);
   },
   onReady() {
+    // Page loading is complete
     ext.setNav();
   },
   onShow() {
@@ -36,8 +37,24 @@ Page({
   },
 
   subscribeButtonTapped() {
+    my.confirm({
+      title: 'Subscribe',
+      message: 'By tapping on "I Agree", you agree to EZ Music streaming terms and conditions. You will be invoiced R99,99 on the anniversary of your subscription',
+      confirmButtonText: 'I Agree',
+      cancelButtonText: 'Cancel',
+      success: (result) => {
+        if (result.confirm) {
+          my.alert({
+            title: "Subscription successful",
+            success: (result) => {
+              my.navigateTo({ url: '../music-landing-page/music-landing-page' });
+            }
+          });
+        }
+      },
+    });
     console.log("Subscribe button tapped.");
-    my.navigateTo({ url: '../music-landing-page/music-landing-page' });
+
   },
   getTicketButtonTapped() {
     console.log("Get ticket button tapped.");

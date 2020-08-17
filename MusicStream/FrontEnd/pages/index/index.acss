@@ -64,6 +64,7 @@
 }
 
 .subscription-option-button {
+  animation: swing 1s ease;
   display: flex;
   flex-direction: column;
   align-items: center;
