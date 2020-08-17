@@ -1,10 +1,7 @@
 <view class="subscription-container">
-
   <image class="page-header-image" src="../../assets/music_welcome_header.png"/>
-
   <view class="page-title">Welcome to Music Streaming</view>
   <view class="page-subtitle">Subscribe to start streaming your favourite music in the way that suits you best.</view>
-
   <view class="subscription-option">
     <view class="subscription-option-title">Subscribe</view>
     <view class="subscription-option-container">
@@ -14,9 +11,7 @@
       </view>
     </view>
   </view>
-
   <view class="divider"></view>
-
   <view class="subscription-option">
     <view class="subscription-option-title">Music Ticket</view>
     <view class="subscription-option-container">
@@ -26,7 +21,5 @@
       </view>
     </view>
   </view>
-
   <button class="skip-button" onTap="skipButtonTapped">Skip for now and start browsing</button>
-
 </view>
