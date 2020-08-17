@@ -1,10 +1,12 @@
+import ext from '../../extensions.js';
+
 Page({
   onLoad(query) {
     // Page load
     console.info(`Page onLoad with query: ${JSON.stringify(query)}`);
   },
   onReady() {
-    // Page loading is complete
+    ext.setNav();
   },
   onShow() {
     // Page display

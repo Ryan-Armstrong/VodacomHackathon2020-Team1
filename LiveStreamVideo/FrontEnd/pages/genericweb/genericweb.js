@@ -1,3 +1,4 @@
+import ext from '../../extensions.js';
 const app = getApp();
 
 Page({
@@ -8,6 +9,8 @@ Page({
     this.data.source = app.globalData.source;
     //this.setData({source  : query.source});
   },
-  onReady() {
+  onReady()
+  {
+    ext.setNav();
   }
 });

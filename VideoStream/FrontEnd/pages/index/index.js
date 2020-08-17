@@ -1,3 +1,5 @@
+import ext from '../../extensions.js'
+
 Page({
   onLoad(query) {
     // Page load
@@ -5,6 +7,7 @@ Page({
   },
   onReady() {
     // Page loading is complete
+    ext.setNav();
   },
   onShow() {
     // Page display
