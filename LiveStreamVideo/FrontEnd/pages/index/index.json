@@ -1,3 +1,4 @@
 { 
-  "defaultTitle": "The Space" 
+  "defaultTitle": " " ,
+  "transparentTitle" : "always"
 }
