@@ -6,7 +6,7 @@
     <image class="tab-bar-item-icon" src="../../assets/icons/search.png" onTap="searchMovies"/>
   </view>
   <view class="homescreen">
-    <view class="row">
+    <view class="{{clickedInfo}}">
       <view class="col-1">        
         <image class="mainImage {{watchHidden ? '' : 'mainImageAvailable'}}" src="../../assets/{{romanticMovies[0].image}}">          
         </image>
@@ -38,7 +38,7 @@
     <text class="titleText">Romantic Comedy</text>
     <view class="scrollMenuSquare">
       <view class="scrollItemSquare" a:for="{{romanticMovies}}" a:for-index="i" a:key="*this">
-        <image id="{{item}}" class="scrollImageSquare" src="../../assets/{{item.image}}"/>
+        <image id="{{item}}" class="scrollImageSquare" src="../../assets/{{item.image}}" onTap="showMovieDetail"/>
         <view class="scrollTextSquare">
           {{item.name}}
         </view>

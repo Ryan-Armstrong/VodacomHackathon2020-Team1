@@ -213,6 +213,14 @@
   position: relative;
 }
 
+.hiddenRow {
+  display: none;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  position: relative;
+}
+
 .text-watch {
   position: absolute;
   top: 16px;
