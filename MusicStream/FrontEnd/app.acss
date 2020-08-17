@@ -1,13 +1,15 @@
+@font-face {
+  font-family: "SF Pro Text";
+  src: url('./assets/fonts/SF-Pro-Text-Regular.otf') format("opentype");
+}
+
 page {
   flex: 1;
   display: flex;
   background: #f7f7f7;
+  font-family: "SF Pro Text";
 }
 
-@font-face {
-  font-family: "SF Pro Text";
-  src: url(/assets/fonts/SF-Pro-Text-Regular.otf) format("opentype");
-}
 body {
   padding: 16px;
   height: 94vh;
