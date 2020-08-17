@@ -1,3 +1,5 @@
+import ext from '../../extensions.js';
+
 const app = getApp();
 
 Page({
@@ -20,6 +22,10 @@ Page({
     my.navigateTo({
       url: '../play-list-detail-view/play-list-detail-view'
     });
+  },
+  onReady()
+  {
+    ext.setNav();
   }
 
 

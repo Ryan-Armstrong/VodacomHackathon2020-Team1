@@ -1,3 +1,4 @@
+import ext from '../../extensions.js';
 const app = getApp();
 
 Page({
@@ -14,6 +15,10 @@ Page({
         url: e.detail.navigateToUrl
       });
     }
+  },
+  onReady()
+  {
+    ext.setNav();
   }
   
 
