@@ -2,6 +2,7 @@ const app = getApp();
 
 Page({
   data: {
+    selectedItem: {},
     clickedInfo: "hiddenRow",
     watchHidden: true,
     romanticMovies: [
@@ -80,7 +81,14 @@ Page({
         name: "Onward"
       }],
   },
-  onLoad() { },
+  onLoad() { 
+    this.setData({selectedItem: app.selectedItem.id});  
+    if (app.selectedItem.id === '3') 
+        this.showMovieDetail()
+  },
+  onUnload() {
+    app.selectedItem ="-1";
+  },
   rentMovie() {
     my.confirm({
       title: 'Confirm Rental',

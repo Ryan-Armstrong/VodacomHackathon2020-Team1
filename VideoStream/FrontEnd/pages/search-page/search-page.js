@@ -14,6 +14,9 @@ Page({
   onLoad() {
     this.data.displayArr = this.data.searchArr;
   },
+  onUnload() {
+    app.selectedItem ="-1";
+  },
   searchInput(e) {
     let result = this.data.searchArr.filter(
       info => info.name.toLowerCase().includes(e.detail.value.toLowerCase()));
@@ -23,7 +26,7 @@ Page({
     });
   },
   loadVideo(e) {
-    // app.selectedItem = e.target.dataset.id;
+    app.selectedItem = e.target.dataset.id;
     my.navigateTo({
       url: '../videoinfo/videoinfo'
     });
