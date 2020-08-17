@@ -30,12 +30,11 @@
   <view class="divider"></view>
 
   <view class="subscription-option" onTap="rentOrPurchaseViewTapped">
-    <view class="subscription-option-title-container">
-      <view class="subscription-option-title">Rent or Purchase</view>
+  <view class="subscription-option-title">Rent or Purchase</view>
+    <view class="subscription-option-container">
+      <view class="subscription-option-subtitle">Only pay a once off fee when you choose to rent or purchase your favourites.</view>
       <image class="suscription-option-expand-image" src="../../assets/icons/expand.png"/>
     </view>
-    
-    <view class="subscription-option-subtitle">Only pay a once off fee when you choose to rent or purchase your favourites.</view>
   </view>
 
   <button class="skip-button" onTap="skipButtonTapped">Skip for now and start browsing</button>
