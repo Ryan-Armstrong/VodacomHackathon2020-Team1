@@ -1,4 +1,5 @@
 const app = getApp();
+let currentIndex = 0;
 
 Page({
   data: {
@@ -10,6 +11,11 @@ Page({
   onLoad() {
     console.log("Music landing page loaded.")
 
+  },
+
+  bannerChanged(e)
+  {
+    currentIndex = e.detail.current;    
   },
 
   viewPlaylists() {
@@ -32,6 +38,25 @@ Page({
     app.selectedItem = e.target.dataset.id;
     my.navigateTo({
       url: '../song-view/song-view'
+    });
+  },
+
+  bannerTapped()
+  {
+    
+    if (currentIndex == 0)
+    {
+      app.globalData.source = "https://www.samsung.com/za/";
+    }
+    else if (currentIndex == 1)
+    {
+      app.globalData.source = "https://www.vodacom.co.za/";
+    }
+    else{
+      app.globalData.source = "https://www.takealot.com/";
+    }
+    my.navigateTo({
+      url: '../generic-web-view/generic-web-view'
     });
   }
 });

@@ -1,5 +1,8 @@
 App({
   selectedItem: {},
+  globalData : {
+    source : ''
+  },
   newReleases: [
     {
       id:"1",
