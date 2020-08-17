@@ -97,10 +97,12 @@ Page({
       confirmButtonText: 'Confirm',
       cancelButtonText: 'Cancel',
       success: (result) => {
+        if (result.confirm) {
         my.alert({
           title: 'Order complete',
         });
         this.setData({ watchHidden: false });
+        }
       },
 
     });
