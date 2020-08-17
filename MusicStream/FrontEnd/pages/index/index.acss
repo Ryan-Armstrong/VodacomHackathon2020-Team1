@@ -1,10 +1,12 @@
 .subscription-container {
   background: white;
+  width: 100vw;
 }
 
 .page-header-image {
   margin: 25rpx;
   width: 94vw;
+  height: 400rpx;
   object-fit: contain;
 }
 
@@ -62,16 +64,24 @@
 }
 
 .subscription-option-button {
-  display: inline-block;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   background: #E60202;
   width: 350rpx;
-  border: #E60202;
+  height: 75rpx;
+  border: none;
   border-radius: 60rpx;
 
   font-family: sans-serif;
   font-size: 15px;
   color: white;
   font-weight: normal;
+  text-align: center;
+}
+
+.subscription-option-button-text {
+  margin-top: 10px;
 }
 
 .skip-button {
