@@ -1,3 +1,5 @@
+import ext from '../../extensions.js';
+
 Page({
   data: {},
   onLoad() { },
@@ -26,5 +28,9 @@ Page({
   goToNextPage() {
     my.navigateTo({ url: '../music-landing-page/music-landing-page' });
   },
+  onReady()
+  {
+    ext.setNav();
+  }
 
 });
